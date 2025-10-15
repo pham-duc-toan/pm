@@ -1,0 +1,148 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin001",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "fullName": "Quản trị viên hệ thống",
+      "role": "admin",
+      "avatar": "https://via.placeholder.com/150/FF0000/FFFFFF?text=AD",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "lastLogin": "2025-10-15T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "moderator001",
+      "email": "moderator@example.com",
+      "password": "mod123",
+      "fullName": "Nguyễn Văn Kiểm",
+      "role": "moderator",
+      "avatar": "https://via.placeholder.com/150/00FF00/FFFFFF?text=MD",
+      "isActive": true,
+      "createdAt": "2024-01-02T00:00:00Z",
+      "lastLogin": "2025-10-15T07:30:00Z"
+    },
+    {
+      "id": 3,
+      "username": "support001",
+      "email": "support@example.com",
+      "password": "support123",
+      "fullName": "Trần Thị Hỗ Trợ",
+      "role": "support",
+      "avatar": "https://via.placeholder.com/150/0000FF/FFFFFF?text=SP",
+      "isActive": true,
+      "createdAt": "2024-01-03T00:00:00Z",
+      "lastLogin": "2025-10-15T07:00:00Z"
+    },
+    {
+      "id": 4,
+      "username": "teacher001",
+      "email": "teacher@example.com",
+      "password": "teacher123",
+      "fullName": "Phạm Văn Giảng",
+      "role": "teacher",
+      "avatar": "https://via.placeholder.com/150/FF00FF/FFFFFF?text=TC",
+      "isActive": true,
+      "createdAt": "2024-01-04T00:00:00Z",
+      "lastLogin": "2025-10-15T06:30:00Z",
+      "department": "Khoa Công nghệ thông tin",
+      "subjects": ["Lập trình Web", "Cơ sở dữ liệu", "Mạng máy tính"]
+    },
+    {
+      "id": 5,
+      "username": "student001",
+      "email": "student@example.com",
+      "password": "student123",
+      "fullName": "Lê Thị Học Viên",
+      "role": "student",
+      "avatar": "https://via.placeholder.com/150/FFFF00/000000?text=ST",
+      "isActive": true,
+      "createdAt": "2024-01-05T00:00:00Z",
+      "lastLogin": "2025-10-15T06:00:00Z",
+      "studentId": "SV001",
+      "class": "IT2024A",
+      "enrolledCourses": [1, 2, 3]
+    },
+    {
+      "id": 6,
+      "username": "student002",
+      "email": "student2@example.com",
+      "password": "student123",
+      "fullName": "Hoàng Văn Học",
+      "role": "student",
+      "avatar": "https://via.placeholder.com/150/00FFFF/000000?text=ST",
+      "isActive": true,
+      "createdAt": "2024-01-06T00:00:00Z",
+      "lastLogin": "2025-10-14T20:00:00Z",
+      "studentId": "SV002",
+      "class": "IT2024A",
+      "enrolledCourses": [1, 3]
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Lập trình Web với React",
+      "description": "Khóa học cơ bản về React và Redux",
+      "teacherId": 4,
+      "duration": "12 tuần",
+      "level": "Trung cấp",
+      "price": 2000000,
+      "isActive": true,
+      "thumbnail": "https://via.placeholder.com/300x200/4A90E2/FFFFFF?text=React",
+      "createdAt": "2024-02-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Cơ sở dữ liệu MySQL",
+      "description": "Thiết kế và quản lý cơ sở dữ liệu",
+      "teacherId": 4,
+      "duration": "8 tuần",
+      "level": "Cơ bản",
+      "price": 1500000,
+      "isActive": true,
+      "thumbnail": "https://via.placeholder.com/300x200/F5A623/FFFFFF?text=MySQL",
+      "createdAt": "2024-02-15T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Mạng máy tính nâng cao",
+      "description": "Kiến thức chuyên sâu về mạng",
+      "teacherId": 4,
+      "duration": "16 tuần",
+      "level": "Nâng cao",
+      "price": 3000000,
+      "isActive": true,
+      "thumbnail": "https://via.placeholder.com/300x200/7ED321/FFFFFF?text=Network",
+      "createdAt": "2024-03-01T00:00:00Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Chào mừng đến với hệ thống",
+      "message": "Chúc bạn có trải nghiệm tốt",
+      "type": "info",
+      "isRead": false,
+      "userId": null,
+      "createdAt": "2025-10-15T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Khóa học mới đã được thêm",
+      "message": "Khóa học Lập trình Web với React đã được cập nhật",
+      "type": "success",
+      "isRead": false,
+      "userId": 5,
+      "createdAt": "2025-10-14T00:00:00Z"
+    }
+  ],
+  "settings": {
+    "siteName": "Hệ thống Quản lý Học tập",
+    "maintenanceMode": false,
+    "allowRegistration": true,
+    "emailVerificationRequired": false
+  }
+}
