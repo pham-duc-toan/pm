@@ -1,30 +1,12 @@
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../store/authSlice";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { DEFAULT_AVATAR, ROLE_NAMES, ROLE_COLORS } from "../utils/constants";
+import NotificationDropdown from "./NotificationDropdown";
+import UserMenu from "./UserMenu";
 import "./Header.css";
 
 const Header = () => {
-  const { user, isAuthenticated } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/login");
-  };
-
-  const getRoleDisplayName = (role) => {
-    return ROLE_NAMES[role] || role;
-  };
-
-  const getRoleColor = (role) => {
-    return ROLE_COLORS[role] || "#666";
-  };
-
-  const getUserAvatar = (user) => {
-    return user?.avatar || DEFAULT_AVATAR;
-  };
 
   return (
     <header className="header">
@@ -36,29 +18,10 @@ const Header = () => {
         </div>
 
         <div className="header-right">
-          {isAuthenticated && user ? (
-            <div className="user-info">
-              <div className="user-avatar">
-                <img
-                  src={getUserAvatar(user)}
-                  alt={user.fullName}
-                  onError={(e) => {
-                    e.target.src = DEFAULT_AVATAR;
-                  }}
-                />
-              </div>
-              <div className="user-details">
-                <span className="user-name">{user.fullName}</span>
-                <span
-                  className="user-role"
-                  style={{ color: getRoleColor(user.role) }}
-                >
-                  {getRoleDisplayName(user.role)}
-                </span>
-              </div>
-              <button onClick={handleLogout} className="logout-btn">
-                Đăng xuất
-              </button>
+          {isAuthenticated ? (
+            <div className="user-actions">
+              <NotificationDropdown />
+              <UserMenu />
             </div>
           ) : (
             <div className="auth-buttons">

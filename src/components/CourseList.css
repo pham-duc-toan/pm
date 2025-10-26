@@ -1,0 +1,48 @@
+.course-list-container {
+  width: 100%;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.no-courses {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.no-courses-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.no-courses h3 {
+  font-size: 24px;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.no-courses p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+@media (max-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

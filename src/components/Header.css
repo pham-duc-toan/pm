@@ -34,51 +34,10 @@
   align-items: center;
 }
 
-.user-info {
+.user-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.user-avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.user-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.user-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.user-role {
-  font-size: 0.8rem;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.2rem 0.5rem;
-  border-radius: 12px;
-  margin-top: 0.2rem;
-}
-
-.logout-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.logout-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  gap: 16px;
 }
 
 .auth-buttons {
