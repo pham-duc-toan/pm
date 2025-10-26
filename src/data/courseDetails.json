@@ -1,0 +1,1720 @@
+{
+  "1": {
+    "fullDescription": "Khóa học Lập trình Web với React là khóa học toàn diện giúp bạn nắm vững kiến thức về ReactJS và Redux. Bạn sẽ học cách xây dựng các ứng dụng web hiện đại, responsive và có hiệu năng cao. Khóa học bao gồm cả lý thuyết và thực hành với các dự án thực tế, giúp bạn tự tin ứng dụng kiến thức vào công việc.",
+    "whatYouWillLearn": [
+      "Nắm vững các khái niệm cơ bản và nâng cao của React",
+      "Sử dụng React Hooks hiệu quả trong dự án",
+      "Quản lý state với Redux và Redux Toolkit",
+      "Tích hợp API và xử lý dữ liệu bất đồng bộ",
+      "Xây dựng ứng dụng Single Page Application (SPA)",
+      "Tối ưu hóa hiệu năng ứng dụng React",
+      "Deploy ứng dụng lên production",
+      "Áp dụng best practices trong React development"
+    ],
+    "requirements": [
+      "Có kiến thức cơ bản về HTML, CSS và JavaScript",
+      "Hiểu về ES6+ syntax (arrow functions, destructuring, ...)",
+      "Máy tính có cài đặt Node.js và VS Code",
+      "Tinh thần học hỏi và sẵn sàng thực hành"
+    ],
+    "curriculum": [
+      {
+        "title": "Giới thiệu và cài đặt môi trường",
+        "lessons": [
+          {
+            "title": "Giới thiệu về React và ecosystem",
+            "type": "video",
+            "duration": "15 phút"
+          },
+          {
+            "title": "Cài đặt Node.js và VS Code",
+            "type": "video",
+            "duration": "10 phút"
+          },
+          {
+            "title": "Tạo dự án React với Vite",
+            "type": "video",
+            "duration": "20 phút"
+          },
+          {
+            "title": "Kiểm tra kiến thức",
+            "type": "quiz"
+          }
+        ]
+      },
+      {
+        "title": "React Fundamentals",
+        "lessons": [
+          {
+            "title": "JSX và Components",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Props và State",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Event Handling",
+            "type": "video",
+            "duration": "20 phút"
+          },
+          {
+            "title": "Conditional Rendering",
+            "type": "video",
+            "duration": "15 phút"
+          },
+          {
+            "title": "Lists và Keys",
+            "type": "video",
+            "duration": "18 phút"
+          },
+          {
+            "title": "Bài tập thực hành",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "React Hooks",
+        "lessons": [
+          {
+            "title": "useState Hook",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "useEffect Hook",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "useContext Hook",
+            "type": "video",
+            "duration": "22 phút"
+          },
+          {
+            "title": "Custom Hooks",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Quiz: React Hooks",
+            "type": "quiz"
+          }
+        ]
+      },
+      {
+        "title": "State Management với Redux",
+        "lessons": [
+          {
+            "title": "Giới thiệu Redux",
+            "type": "video",
+            "duration": "20 phút"
+          },
+          {
+            "title": "Redux Toolkit Setup",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Slices và Reducers",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Async Actions với Thunks",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Dự án thực hành",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Routing và Navigation",
+        "lessons": [
+          {
+            "title": "React Router DOM",
+            "type": "video",
+            "duration": "20 phút"
+          },
+          {
+            "title": "Dynamic Routes",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Protected Routes",
+            "type": "video",
+            "duration": "22 phút"
+          }
+        ]
+      },
+      {
+        "title": "Dự án cuối khóa",
+        "lessons": [
+          {
+            "title": "Yêu cầu dự án",
+            "type": "document"
+          },
+          {
+            "title": "Hướng dẫn thực hiện",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Code review và feedback",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Nộp bài dự án",
+            "type": "quiz"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Nguyễn Văn An",
+        "userAvatar": "https://i.pravatar.cc/150?img=11",
+        "rating": 5,
+        "comment": "Khóa học rất chi tiết và dễ hiểu. Giảng viên nhiệt tình, giải đáp thắc mắc rất nhanh. Sau khóa học tôi đã tự tin làm được dự án React cho công ty.",
+        "createdAt": "2025-10-20T10:30:00Z"
+      },
+      {
+        "userName": "Trần Thị Bình",
+        "userAvatar": "https://i.pravatar.cc/150?img=28",
+        "rating": 5,
+        "comment": "Nội dung cập nhật, bài giảng chất lượng. Đặc biệt phần Redux Toolkit rất hữu ích cho công việc thực tế.",
+        "createdAt": "2025-10-18T14:20:00Z"
+      },
+      {
+        "userName": "Lê Hoàng Minh",
+        "userAvatar": "https://i.pravatar.cc/150?img=35",
+        "rating": 4,
+        "comment": "Khóa học tốt, phù hợp cho người mới bắt đầu. Tuy nhiên nên có thêm bài tập thực hành để củng cố kiến thức.",
+        "createdAt": "2025-10-15T09:15:00Z"
+      },
+      {
+        "userName": "Phạm Minh Tuấn",
+        "userAvatar": "https://i.pravatar.cc/150?img=42",
+        "rating": 5,
+        "comment": "Xuất sắc! Đây là khóa học React hay nhất mà tôi từng tham gia. Cảm ơn giảng viên!",
+        "createdAt": "2025-10-12T16:45:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Lập trình Web với React",
+      "thumbnail": "https://images.unsplash.com/photo-1589330273594-faddc8d7fd67?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã hoàn thành khóa học Lập trình Web với React và nắm vững các kiến thức về ReactJS, Redux, và xây dựng ứng dụng web hiện đại. Chứng chỉ này được công nhận bởi các doanh nghiệp công nghệ hàng đầu."
+    }
+  },
+  "2": {
+    "fullDescription": "Khóa học Cơ sở dữ liệu MySQL cung cấp kiến thức toàn diện về thiết kế, quản lý và tối ưu hóa cơ sở dữ liệu quan hệ. Bạn sẽ học cách viết các câu truy vấn SQL hiệu quả, thiết kế schema database, và xử lý dữ liệu phức tạp.",
+    "whatYouWillLearn": [
+      "Nắm vững SQL cơ bản và nâng cao",
+      "Thiết kế cơ sở dữ liệu chuẩn hóa",
+      "Viết các truy vấn phức tạp với JOIN, Subquery",
+      "Tối ưu hóa hiệu năng database",
+      "Backup và Recovery dữ liệu",
+      "Quản lý users và permissions",
+      "Stored Procedures và Triggers",
+      "Indexing và Query Optimization"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về máy tính",
+      "Tư duy logic tốt",
+      "Cài đặt MySQL Server và MySQL Workbench"
+    ],
+    "curriculum": [
+      {
+        "title": "Giới thiệu MySQL",
+        "lessons": [
+          {
+            "title": "Tổng quan về Database",
+            "type": "video",
+            "duration": "20 phút"
+          },
+          {
+            "title": "Cài đặt MySQL",
+            "type": "video",
+            "duration": "15 phút"
+          },
+          {
+            "title": "MySQL Workbench",
+            "type": "video",
+            "duration": "18 phút"
+          }
+        ]
+      },
+      {
+        "title": "SQL Cơ bản",
+        "lessons": [
+          {
+            "title": "SELECT Statement",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "WHERE và Filtering",
+            "type": "video",
+            "duration": "22 phút"
+          },
+          {
+            "title": "ORDER BY và LIMIT",
+            "type": "video",
+            "duration": "18 phút"
+          },
+          {
+            "title": "Aggregate Functions",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      },
+      {
+        "title": "Database Design",
+        "lessons": [
+          {
+            "title": "Normalization",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Primary và Foreign Keys",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Relationships",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Võ Thị Hương",
+        "userAvatar": "https://i.pravatar.cc/150?img=20",
+        "rating": 5,
+        "comment": "Khóa học rất bổ ích cho người mới bắt đầu. Giảng viên giải thích rất rõ ràng và dễ hiểu.",
+        "createdAt": "2025-10-19T11:00:00Z"
+      },
+      {
+        "userName": "Đặng Văn Hải",
+        "userAvatar": "https://i.pravatar.cc/150?img=38",
+        "rating": 4,
+        "comment": "Nội dung tốt, nhưng nên có thêm bài tập thực hành nhiều hơn.",
+        "createdAt": "2025-10-16T15:30:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Cơ sở dữ liệu MySQL",
+      "thumbnail": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững kiến thức về MySQL, thiết kế database và viết SQL queries hiệu quả."
+    }
+  },
+  "3": {
+    "fullDescription": "Khóa học Mạng máy tính nâng cao cung cấp kiến thức chuyên sâu về mạng máy tính, từ các giao thức cơ bản đến các kỹ thuật nâng cao. Bạn sẽ học cách thiết kế, triển khai và quản lý hệ thống mạng doanh nghiệp, đồng thời nắm vững các kỹ thuật bảo mật mạng.",
+    "whatYouWillLearn": [
+      "Hiểu sâu về mô hình OSI và TCP/IP",
+      "Cấu hình Router và Switch Cisco",
+      "Thiết kế và triển khai mạng LAN/WAN",
+      "VLAN, Routing và Switching nâng cao",
+      "Network Security và Firewall",
+      "VPN và Remote Access",
+      "Troubleshooting và Network Monitoring",
+      "Cloud Networking cơ bản"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về mạng máy tính",
+      "Hiểu về IP Address và Subnetting",
+      "Có thiết bị thực hành hoặc sử dụng Packet Tracer",
+      "Tư duy logic và giải quyết vấn đề tốt"
+    ],
+    "curriculum": [
+      {
+        "title": "Network Fundamentals",
+        "lessons": [
+          {
+            "title": "Mô hình OSI và TCP/IP",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "IP Addressing và Subnetting",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Network Devices",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Network Topologies",
+            "type": "video",
+            "duration": "30 phút"
+          }
+        ]
+      },
+      {
+        "title": "Routing và Switching",
+        "lessons": [
+          {
+            "title": "Router Configuration",
+            "type": "video",
+            "duration": "50 phút"
+          },
+          {
+            "title": "Static và Dynamic Routing",
+            "type": "video",
+            "duration": "55 phút"
+          },
+          {
+            "title": "VLAN Configuration",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "STP và VTP",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Lab thực hành",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Network Security",
+        "lessons": [
+          {
+            "title": "Security Fundamentals",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Firewall Configuration",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "ACL và Security Policies",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "VPN Setup",
+            "type": "video",
+            "duration": "50 phút"
+          }
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "lessons": [
+          {
+            "title": "Network Troubleshooting Tools",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Common Network Issues",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Performance Optimization",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Dự án cuối khóa",
+            "type": "document"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Nguyễn Quang Huy",
+        "userAvatar": "https://i.pravatar.cc/150?img=13",
+        "rating": 5,
+        "comment": "Khóa học rất chuyên sâu, phù hợp cho người muốn trở thành Network Engineer. Giảng viên có kinh nghiệm thực tế cao.",
+        "createdAt": "2025-10-24T10:00:00Z"
+      },
+      {
+        "userName": "Trần Văn Nam",
+        "userAvatar": "https://i.pravatar.cc/150?img=47",
+        "rating": 5,
+        "comment": "Nội dung cập nhật, bài lab thực hành rất hay. Sau khóa học đã pass được CCNA.",
+        "createdAt": "2025-10-21T14:30:00Z"
+      },
+      {
+        "userName": "Lê Thị Lan",
+        "userAvatar": "https://i.pravatar.cc/150?img=26",
+        "rating": 4,
+        "comment": "Khóa học tốt nhưng khá khó đối với người mới. Cần có kiến thức nền tảng vững.",
+        "createdAt": "2025-10-18T09:15:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Mạng máy tính nâng cao",
+      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững kiến thức về mạng máy tính, có khả năng thiết kế, triển khai và quản trị hệ thống mạng doanh nghiệp."
+    }
+  },
+  "4": {
+    "fullDescription": "Khóa học Thiết kế UI/UX cơ bản giúp bạn nắm vững các nguyên lý thiết kế giao diện người dùng và trải nghiệm người dùng. Bạn sẽ học cách nghiên cứu người dùng, tạo wireframe, prototype và thiết kế giao diện hấp dẫn, thân thiện với người dùng.",
+    "whatYouWillLearn": [
+      "Nguyên lý thiết kế UI/UX cơ bản",
+      "User Research và User Persona",
+      "Information Architecture",
+      "Wireframing và Prototyping",
+      "Visual Design và Typography",
+      "Color Theory và Design Systems",
+      "Usability Testing",
+      "Thiết kế responsive cho mobile"
+    ],
+    "requirements": [
+      "Không yêu cầu kiến thức trước",
+      "Cài đặt Figma (miễn phí)",
+      "Tư duy sáng tạo và thẩm mỹ",
+      "Tinh thần học hỏi"
+    ],
+    "curriculum": [
+      {
+        "title": "UI/UX Fundamentals",
+        "lessons": [
+          {
+            "title": "Giới thiệu về UI/UX Design",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Design Thinking Process",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "User Research Methods",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Creating User Personas",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      },
+      {
+        "title": "Wireframing",
+        "lessons": [
+          {
+            "title": "Information Architecture",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Low-fidelity Wireframes",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "High-fidelity Wireframes",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Bài tập wireframe",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Visual Design",
+        "lessons": [
+          {
+            "title": "Color Theory",
+            "type": "video",
+            "duration": "32 phút"
+          },
+          {
+            "title": "Typography",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Layout và Grid System",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Icons và Imagery",
+            "type": "video",
+            "duration": "25 phút"
+          }
+        ]
+      },
+      {
+        "title": "Prototyping với Figma",
+        "lessons": [
+          {
+            "title": "Figma Basics",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Components và Variants",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Auto Layout",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Interactive Prototyping",
+            "type": "video",
+            "duration": "50 phút"
+          }
+        ]
+      },
+      {
+        "title": "Dự án thực hành",
+        "lessons": [
+          {
+            "title": "Yêu cầu dự án",
+            "type": "document"
+          },
+          {
+            "title": "Design Mobile App",
+            "type": "video",
+            "duration": "60 phút"
+          },
+          {
+            "title": "Usability Testing",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Presentation Skills",
+            "type": "video",
+            "duration": "30 phút"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Phạm Thị Hà",
+        "userAvatar": "https://i.pravatar.cc/150?img=22",
+        "rating": 5,
+        "comment": "Khóa học rất bổ ích cho người mới. Giảng viên hướng dẫn chi tiết từng bước, dễ hiểu và thực hành nhiều.",
+        "createdAt": "2025-10-25T11:20:00Z"
+      },
+      {
+        "userName": "Nguyễn Văn Đức",
+        "userAvatar": "https://i.pravatar.cc/150?img=36",
+        "rating": 5,
+        "comment": "Tuyệt vời! Sau khóa học tôi đã tự tin thiết kế được app đầu tiên và nhận được feedback tích cực.",
+        "createdAt": "2025-10-23T16:45:00Z"
+      },
+      {
+        "userName": "Lê Minh Tuấn",
+        "userAvatar": "https://i.pravatar.cc/150?img=49",
+        "rating": 5,
+        "comment": "Nội dung cập nhật, thực tế. Figma tutorials rất chi tiết. Recommend!",
+        "createdAt": "2025-10-20T09:30:00Z"
+      },
+      {
+        "userName": "Trần Thị Ngọc",
+        "userAvatar": "https://i.pravatar.cc/150?img=17",
+        "rating": 4,
+        "comment": "Khóa học tốt cho beginner. Nên có thêm case study thực tế từ các dự án lớn.",
+        "createdAt": "2025-10-17T14:00:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Thiết kế UI/UX",
+      "thumbnail": "https://images.unsplash.com/photo-1561070791-36c11767b26a?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững các nguyên lý thiết kế UI/UX, có khả năng thiết kế giao diện người dùng hấp dẫn và tối ưu trải nghiệm người dùng."
+    }
+  },
+  "5": {
+    "fullDescription": "Khóa học Marketing Digital giúp bạn nắm vững các chiến lược marketing trên nền tảng số. Từ social media marketing, email marketing đến paid advertising, bạn sẽ học cách xây dựng và thực thi các chiến dịch marketing hiệu quả, đo lường ROI và tối ưu hóa conversion.",
+    "whatYouWillLearn": [
+      "Chiến lược Digital Marketing toàn diện",
+      "Social Media Marketing (Facebook, Instagram, TikTok)",
+      "Content Marketing và Storytelling",
+      "Email Marketing và Automation",
+      "Google Ads và Facebook Ads",
+      "Analytics và Data-driven Marketing",
+      "Conversion Rate Optimization",
+      "Marketing Funnel và Customer Journey"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về marketing",
+      "Kỹ năng sử dụng máy tính và internet",
+      "Tư duy sáng tạo",
+      "Sẵn sàng học hỏi và cập nhật xu hướng"
+    ],
+    "curriculum": [
+      {
+        "title": "Digital Marketing Overview",
+        "lessons": [
+          {
+            "title": "Introduction to Digital Marketing",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Marketing Funnel",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Customer Journey Mapping",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Setting Marketing Goals",
+            "type": "video",
+            "duration": "22 phút"
+          }
+        ]
+      },
+      {
+        "title": "Social Media Marketing",
+        "lessons": [
+          {
+            "title": "Facebook Marketing",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Instagram Marketing",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "TikTok Marketing",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Social Media Content Strategy",
+            "type": "video",
+            "duration": "38 phút"
+          }
+        ]
+      },
+      {
+        "title": "Paid Advertising",
+        "lessons": [
+          {
+            "title": "Google Ads Fundamentals",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Facebook Ads Manager",
+            "type": "video",
+            "duration": "50 phút"
+          },
+          {
+            "title": "Ad Copywriting",
+            "type": "video",
+            "duration": "32 phút"
+          },
+          {
+            "title": "Campaign Optimization",
+            "type": "video",
+            "duration": "40 phút"
+          }
+        ]
+      },
+      {
+        "title": "Email Marketing",
+        "lessons": [
+          {
+            "title": "Email Marketing Strategy",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Building Email Lists",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Email Automation",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Email Analytics",
+            "type": "video",
+            "duration": "22 phút"
+          }
+        ]
+      },
+      {
+        "title": "Analytics và Reporting",
+        "lessons": [
+          {
+            "title": "Google Analytics",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Facebook Pixel",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "ROI Calculation",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Dự án Marketing Campaign",
+            "type": "document"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Vũ Thị Mai",
+        "userAvatar": "https://i.pravatar.cc/150?img=23",
+        "rating": 5,
+        "comment": "Khóa học thực chiến cao. Áp dụng được ngay vào công việc, doanh số tăng 150% sau 2 tháng!",
+        "createdAt": "2025-10-24T15:20:00Z"
+      },
+      {
+        "userName": "Hoàng Văn Long",
+        "userAvatar": "https://i.pravatar.cc/150?img=41",
+        "rating": 5,
+        "comment": "Giảng viên có kinh nghiệm thực tế, chia sẻ nhiều case study hay. Rất đáng để học!",
+        "createdAt": "2025-10-22T10:30:00Z"
+      },
+      {
+        "userName": "Nguyễn Thị Hương",
+        "userAvatar": "https://i.pravatar.cc/150?img=27",
+        "rating": 4,
+        "comment": "Nội dung phong phú, cập nhật xu hướng mới. Nên có thêm workshop thực hành.",
+        "createdAt": "2025-10-19T14:15:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Marketing Digital",
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững các chiến lược Digital Marketing, có khả năng xây dựng và thực thi các chiến dịch marketing hiệu quả trên các nền tảng số."
+    }
+  },
+  "6": {
+    "fullDescription": "Khóa học Tiếng Anh giao tiếp giúp bạn phát triển kỹ năng giao tiếp tiếng Anh trong các tình huống thực tế. Từ giao tiếp hàng ngày, công việc đến du lịch, bạn sẽ tự tin sử dụng tiếng Anh một cách tự nhiên và hiệu quả.",
+    "whatYouWillLearn": [
+      "Phát âm chuẩn và ngữ điệu tự nhiên",
+      "Từ vựng và cụm từ thông dụng",
+      "Ngữ pháp giao tiếp cơ bản",
+      "Kỹ năng nghe hiểu và phản xạ",
+      "Giao tiếp trong công việc",
+      "Giao tiếp khi đi du lịch",
+      "Thảo luận và tranh luận",
+      "Thuyết trình bằng tiếng Anh"
+    ],
+    "requirements": [
+      "Kiến thức tiếng Anh cơ bản",
+      "Không ngại giao tiếp",
+      "Microphone và webcam",
+      "Thời gian thực hành mỗi ngày"
+    ],
+    "curriculum": [
+      {
+        "title": "Foundation",
+        "lessons": [
+          {
+            "title": "Pronunciation Practice",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Basic Greetings",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Self Introduction",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Daily Routines",
+            "type": "video",
+            "duration": "30 phút"
+          }
+        ]
+      },
+      {
+        "title": "Everyday Conversations",
+        "lessons": [
+          {
+            "title": "Shopping",
+            "type": "video",
+            "duration": "32 phút"
+          },
+          {
+            "title": "At Restaurant",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Making Appointments",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Asking for Directions",
+            "type": "video",
+            "duration": "30 phút"
+          }
+        ]
+      },
+      {
+        "title": "Business English",
+        "lessons": [
+          {
+            "title": "Job Interviews",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Email Writing",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Meeting Conversations",
+            "type": "video",
+            "duration": "38 phút"
+          },
+          {
+            "title": "Phone Calls",
+            "type": "video",
+            "duration": "30 phút"
+          }
+        ]
+      },
+      {
+        "title": "Travel English",
+        "lessons": [
+          {
+            "title": "At the Airport",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Hotel Check-in",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Emergency Situations",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Practice Dialogues",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Advanced Speaking",
+        "lessons": [
+          {
+            "title": "Debate và Discussion",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Presentation Skills",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Storytelling",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Final Speaking Test",
+            "type": "quiz"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Đặng Thị Lan",
+        "userAvatar": "https://i.pravatar.cc/150?img=18",
+        "rating": 5,
+        "comment": "Khóa học rất thực tế, giúp mình tự tin giao tiếp với khách hàng nước ngoài. Giảng viên nhiệt tình!",
+        "createdAt": "2025-10-25T09:00:00Z"
+      },
+      {
+        "userName": "Nguyễn Văn Hải",
+        "userAvatar": "https://i.pravatar.cc/150?img=39",
+        "rating": 5,
+        "comment": "Phương pháp học hay, nhiều bài tập speaking thực hành. Trình độ tiếng Anh của mình đã tiến bộ rõ rệt.",
+        "createdAt": "2025-10-22T11:30:00Z"
+      },
+      {
+        "userName": "Trần Minh Anh",
+        "userAvatar": "https://i.pravatar.cc/150?img=54",
+        "rating": 5,
+        "comment": "Tuyệt vời! Sau khóa học mình đã đi du lịch Châu Âu và giao tiếp rất tốt.",
+        "createdAt": "2025-10-20T16:20:00Z"
+      },
+      {
+        "userName": "Phạm Thị Hoa",
+        "userAvatar": "https://i.pravatar.cc/150?img=21",
+        "rating": 4,
+        "comment": "Khóa học tốt, giá cả phải chăng. Nên có thêm session 1-1 với native speaker.",
+        "createdAt": "2025-10-18T10:45:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Tiếng Anh giao tiếp",
+      "thumbnail": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã hoàn thành khóa học Tiếng Anh giao tiếp và có khả năng giao tiếp tự tin trong các tình huống hàng ngày, công việc và du lịch."
+    }
+  },
+  "8": {
+    "fullDescription": "Khóa học Quản lý dự án Agile giúp bạn nắm vững phương pháp quản lý dự án linh hoạt, từ Scrum, Kanban đến các framework phổ biến khác. Bạn sẽ học cách lập kế hoạch, thực thi và theo dõi dự án một cách hiệu quả, đồng thời cải thiện sự cộng tác trong team.",
+    "whatYouWillLearn": [
+      "Nguyên lý và giá trị Agile",
+      "Scrum Framework chi tiết",
+      "Kanban Method và WIP Limits",
+      "Sprint Planning và Execution",
+      "Daily Standup và Retrospective",
+      "User Stories và Backlog Management",
+      "Agile Metrics và Reporting",
+      "Scaled Agile Framework (SAFe)"
+    ],
+    "requirements": [
+      "Kinh nghiệm làm việc trong team",
+      "Hiểu biết cơ bản về quy trình dự án",
+      "Tư duy logic và giải quyết vấn đề",
+      "Kỹ năng làm việc nhóm tốt"
+    ],
+    "curriculum": [
+      {
+        "title": "Agile Fundamentals",
+        "lessons": [
+          {
+            "title": "Introduction to Agile",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Agile Manifesto và Principles",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Agile vs Waterfall",
+            "type": "video",
+            "duration": "22 phút"
+          },
+          {
+            "title": "Agile Mindset",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      },
+      {
+        "title": "Scrum Framework",
+        "lessons": [
+          {
+            "title": "Scrum Roles",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Scrum Events",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Scrum Artifacts",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Sprint Planning",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Daily Scrum",
+            "type": "video",
+            "duration": "20 phút"
+          }
+        ]
+      },
+      {
+        "title": "User Stories",
+        "lessons": [
+          {
+            "title": "Writing User Stories",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Story Estimation",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Acceptance Criteria",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Backlog Refinement",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      },
+      {
+        "title": "Kanban Method",
+        "lessons": [
+          {
+            "title": "Kanban Principles",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Kanban Board Setup",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "WIP Limits",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Flow Metrics",
+            "type": "video",
+            "duration": "28 phút"
+          }
+        ]
+      },
+      {
+        "title": "Agile Tools",
+        "lessons": [
+          {
+            "title": "Jira for Agile",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Trello và Kanban",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Agile Metrics",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Dự án mô phỏng",
+            "type": "document"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Lê Văn Thành",
+        "userAvatar": "https://i.pravatar.cc/150?img=40",
+        "rating": 5,
+        "comment": "Khóa học rất bổ ích cho PM và Scrum Master. Nội dung thực chiến cao, áp dụng được ngay.",
+        "createdAt": "2025-10-23T14:00:00Z"
+      },
+      {
+        "userName": "Nguyễn Thị Thu",
+        "userAvatar": "https://i.pravatar.cc/150?img=16",
+        "rating": 5,
+        "comment": "Sau khóa học team làm việc hiệu quả hơn rất nhiều. Giảng viên có kinh nghiệm thực tế.",
+        "createdAt": "2025-10-21T10:30:00Z"
+      },
+      {
+        "userName": "Trần Quốc Tuấn",
+        "userAvatar": "https://i.pravatar.cc/150?img=50",
+        "rating": 4,
+        "comment": "Nội dung hay, giảng dạy dễ hiểu. Nên có thêm case study từ các công ty lớn.",
+        "createdAt": "2025-10-19T15:45:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Quản lý dự án Agile",
+      "thumbnail": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững phương pháp Agile, có khả năng quản lý và điều phối dự án theo Scrum, Kanban và các framework Agile khác."
+    }
+  },
+  "9": {
+    "fullDescription": "Khóa học Photoshop nâng cao giúp bạn làm chủ các kỹ thuật chỉnh sửa ảnh chuyên nghiệp. Từ retouching, color grading đến photo manipulation, bạn sẽ học cách tạo ra những tác phẩm nghệ thuật ấn tượng với Adobe Photoshop.",
+    "whatYouWillLearn": [
+      "Mastering Photoshop Interface",
+      "Advanced Selection Techniques",
+      "Layer Masking và Blending Modes",
+      "Photo Retouching chuyên nghiệp",
+      "Color Grading và Color Theory",
+      "Photo Manipulation",
+      "Text Effects và Typography",
+      "Export và Optimization"
+    ],
+    "requirements": [
+      "Kiến thức Photoshop cơ bản",
+      "Adobe Photoshop CC (bản mới nhất)",
+      "Máy tính cấu hình tốt",
+      "Graphic Tablet (khuyến khích)"
+    ],
+    "curriculum": [
+      {
+        "title": "Advanced Selection",
+        "lessons": [
+          {
+            "title": "Selection Tools Overview",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Pen Tool Mastery",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Select and Mask",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Channel Selection",
+            "type": "video",
+            "duration": "38 phút"
+          }
+        ]
+      },
+      {
+        "title": "Photo Retouching",
+        "lessons": [
+          {
+            "title": "Frequency Separation",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Dodge and Burn",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Skin Retouching",
+            "type": "video",
+            "duration": "50 phút"
+          },
+          {
+            "title": "Beauty Retouching",
+            "type": "video",
+            "duration": "55 phút"
+          },
+          {
+            "title": "Bài tập thực hành",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Color Grading",
+        "lessons": [
+          {
+            "title": "Color Theory in Photoshop",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Curves và Levels",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Color Balance",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "LUT và Presets",
+            "type": "video",
+            "duration": "25 phút"
+          }
+        ]
+      },
+      {
+        "title": "Photo Manipulation",
+        "lessons": [
+          {
+            "title": "Compositing Basics",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Blending Techniques",
+            "type": "video",
+            "duration": "50 phút"
+          },
+          {
+            "title": "Light và Shadow",
+            "type": "video",
+            "duration": "42 phút"
+          },
+          {
+            "title": "Advanced Manipulation",
+            "type": "video",
+            "duration": "60 phút"
+          }
+        ]
+      },
+      {
+        "title": "Dự án sáng tạo",
+        "lessons": [
+          {
+            "title": "Movie Poster Design",
+            "type": "video",
+            "duration": "70 phút"
+          },
+          {
+            "title": "Fantasy Photo Manipulation",
+            "type": "video",
+            "duration": "80 phút"
+          },
+          {
+            "title": "Portfolio Presentation",
+            "type": "document"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Võ Thị Mai",
+        "userAvatar": "https://i.pravatar.cc/150?img=14",
+        "rating": 5,
+        "comment": "Khóa học xuất sắc! Giảng viên là chuyên gia thực thụ, kỹ thuật retouching rất chi tiết và chuyên nghiệp.",
+        "createdAt": "2025-10-24T13:30:00Z"
+      },
+      {
+        "userName": "Nguyễn Văn Hùng",
+        "userAvatar": "https://i.pravatar.cc/150?img=43",
+        "rating": 5,
+        "comment": "Tuyệt vời! Mình đã tạo được portfolio và nhận offer designer tại agency lớn.",
+        "createdAt": "2025-10-22T09:15:00Z"
+      },
+      {
+        "userName": "Lê Thị Ngọc",
+        "userAvatar": "https://i.pravatar.cc/150?img=30",
+        "rating": 5,
+        "comment": "Nội dung rất chất lượng, bài tập thực hành nhiều. Đáng giá từng đồng!",
+        "createdAt": "2025-10-20T16:00:00Z"
+      },
+      {
+        "userName": "Trần Minh Khôi",
+        "userAvatar": "https://i.pravatar.cc/150?img=55",
+        "rating": 4,
+        "comment": "Khóa học tốt cho người đã có nền tảng. Các kỹ thuật nâng cao rất hữu ích.",
+        "createdAt": "2025-10-18T11:20:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Photoshop nâng cao",
+      "thumbnail": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã làm chủ các kỹ thuật Photoshop nâng cao, có khả năng retouching, color grading và photo manipulation chuyên nghiệp."
+    }
+  },
+  "7": {
+    "fullDescription": "Khóa học Python cho Data Science giúp bạn làm chủ Python và các thư viện phân tích dữ liệu phổ biến như NumPy, Pandas, Matplotlib. Bạn sẽ học cách xử lý, phân tích và trực quan hóa dữ liệu, đồng thời được giới thiệu về Machine Learning cơ bản.",
+    "whatYouWillLearn": [
+      "Lập trình Python từ cơ bản đến nâng cao",
+      "Xử lý dữ liệu với NumPy và Pandas",
+      "Trực quan hóa dữ liệu với Matplotlib và Seaborn",
+      "Statistical Analysis cơ bản",
+      "Machine Learning với Scikit-learn",
+      "Deep Learning với TensorFlow",
+      "Xây dựng và deploy ML models",
+      "Làm việc với Big Data"
+    ],
+    "requirements": [
+      "Kiến thức toán học cơ bản",
+      "Tư duy logic tốt",
+      "Máy tính cài đặt Python 3.x",
+      "Đam mê với Data và AI"
+    ],
+    "curriculum": [
+      {
+        "title": "Python Fundamentals",
+        "lessons": [
+          {
+            "title": "Python Syntax và Variables",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Data Types và Operators",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Control Flow",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Functions và Modules",
+            "type": "video",
+            "duration": "40 phút"
+          }
+        ]
+      },
+      {
+        "title": "NumPy và Pandas",
+        "lessons": [
+          {
+            "title": "NumPy Arrays",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Pandas DataFrames",
+            "type": "video",
+            "duration": "50 phút"
+          },
+          {
+            "title": "Data Cleaning",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Data Transformation",
+            "type": "video",
+            "duration": "38 phút"
+          }
+        ]
+      },
+      {
+        "title": "Data Visualization",
+        "lessons": [
+          {
+            "title": "Matplotlib Basics",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Seaborn Advanced",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Interactive Plots",
+            "type": "video",
+            "duration": "32 phút"
+          }
+        ]
+      },
+      {
+        "title": "Machine Learning",
+        "lessons": [
+          {
+            "title": "ML Introduction",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Supervised Learning",
+            "type": "video",
+            "duration": "60 phút"
+          },
+          {
+            "title": "Unsupervised Learning",
+            "type": "video",
+            "duration": "55 phút"
+          },
+          {
+            "title": "Model Evaluation",
+            "type": "video",
+            "duration": "50 phút"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Nguyễn Thị Mai",
+        "userAvatar": "https://i.pravatar.cc/150?img=24",
+        "rating": 5,
+        "comment": "Khóa học tuyệt vời! Nội dung rất phong phú và thực tế. Giảng viên giải thích dễ hiểu, có nhiều ví dụ thực tế.",
+        "createdAt": "2025-10-22T09:00:00Z"
+      },
+      {
+        "userName": "Trần Quốc Huy",
+        "userAvatar": "https://i.pravatar.cc/150?img=51",
+        "rating": 5,
+        "comment": "Sau khóa học tôi đã tự tin apply vào vị trí Data Analyst. Cảm ơn giảng viên rất nhiều!",
+        "createdAt": "2025-10-20T14:30:00Z"
+      },
+      {
+        "userName": "Lê Minh Châu",
+        "userAvatar": "https://i.pravatar.cc/150?img=19",
+        "rating": 4,
+        "comment": "Khóa học rất hay, nhưng hơi nặng về lý thuyết. Nên có thêm nhiều dự án thực tế hơn.",
+        "createdAt": "2025-10-17T10:15:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ Python for Data Science",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã hoàn thành khóa học Python for Data Science và có khả năng phân tích dữ liệu, xây dựng Machine Learning models với Python."
+    }
+  },
+  "10": {
+    "fullDescription": "Khóa học SEO & Content Marketing giúp bạn nắm vững các kỹ thuật tối ưu hóa công cụ tìm kiếm và xây dựng chiến lược nội dung hiệu quả. Bạn sẽ học cách tăng thứ hạng website, thu hút traffic tự nhiên và chuyển đổi khách hàng tiềm năng.",
+    "whatYouWillLearn": [
+      "Hiểu cách Google Search Engine hoạt động",
+      "On-page SEO và Off-page SEO",
+      "Keyword Research và Analysis",
+      "Content Strategy và Planning",
+      "Link Building chiến lược",
+      "Google Analytics và Search Console",
+      "SEO Technical và Core Web Vitals",
+      "Content Marketing và Storytelling"
+    ],
+    "requirements": [
+      "Kiến thức cơ bản về website",
+      "Kỹ năng viết lách tốt",
+      "Tư duy sáng tạo",
+      "Kiên nhẫn và kiên trì"
+    ],
+    "curriculum": [
+      {
+        "title": "SEO Fundamentals",
+        "lessons": [
+          {
+            "title": "Giới thiệu về SEO",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Cách Google hoạt động",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "SEO Keywords Research",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Competitor Analysis",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Bài tập thực hành",
+            "type": "quiz"
+          }
+        ]
+      },
+      {
+        "title": "On-Page SEO",
+        "lessons": [
+          {
+            "title": "Title Tags và Meta Descriptions",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Header Tags và Content Structure",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "Internal Linking",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Image Optimization",
+            "type": "video",
+            "duration": "22 phút"
+          },
+          {
+            "title": "URL Structure",
+            "type": "video",
+            "duration": "20 phút"
+          }
+        ]
+      },
+      {
+        "title": "Content Marketing",
+        "lessons": [
+          {
+            "title": "Content Strategy",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Content Calendar",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Writing SEO-Friendly Content",
+            "type": "video",
+            "duration": "40 phút"
+          },
+          {
+            "title": "Content Distribution",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Dự án viết bài SEO",
+            "type": "document"
+          }
+        ]
+      },
+      {
+        "title": "Off-Page SEO",
+        "lessons": [
+          {
+            "title": "Link Building Strategies",
+            "type": "video",
+            "duration": "45 phút"
+          },
+          {
+            "title": "Guest Posting",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Social Signals",
+            "type": "video",
+            "duration": "25 phút"
+          }
+        ]
+      },
+      {
+        "title": "Technical SEO",
+        "lessons": [
+          {
+            "title": "Site Speed Optimization",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "Mobile Optimization",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Schema Markup",
+            "type": "video",
+            "duration": "28 phút"
+          },
+          {
+            "title": "XML Sitemaps",
+            "type": "video",
+            "duration": "22 phút"
+          }
+        ]
+      },
+      {
+        "title": "Analytics và Reporting",
+        "lessons": [
+          {
+            "title": "Google Analytics Setup",
+            "type": "video",
+            "duration": "30 phút"
+          },
+          {
+            "title": "Google Search Console",
+            "type": "video",
+            "duration": "35 phút"
+          },
+          {
+            "title": "SEO Metrics và KPIs",
+            "type": "video",
+            "duration": "25 phút"
+          },
+          {
+            "title": "Reporting Templates",
+            "type": "document"
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "userName": "Phạm Thị Hoa",
+        "userAvatar": "https://i.pravatar.cc/150?img=29",
+        "rating": 5,
+        "comment": "Khóa học rất thực tế và bổ ích. Áp dụng được ngay vào công việc. Website của công ty tôi đã tăng traffic 200% sau 3 tháng.",
+        "createdAt": "2025-10-23T08:30:00Z"
+      },
+      {
+        "userName": "Nguyễn Văn Long",
+        "userAvatar": "https://i.pravatar.cc/150?img=44",
+        "rating": 5,
+        "comment": "Giảng viên nhiệt tình, giải đáp thắc mắc rất chi tiết. Nội dung cập nhật theo thuật toán mới nhất của Google.",
+        "createdAt": "2025-10-21T16:00:00Z"
+      },
+      {
+        "userName": "Trần Minh Quân",
+        "userAvatar": "https://i.pravatar.cc/150?img=56",
+        "rating": 4,
+        "comment": "Khóa học tốt cho người mới bắt đầu. Giải thích dễ hiểu, có nhiều ví dụ thực tế.",
+        "createdAt": "2025-10-19T11:45:00Z"
+      },
+      {
+        "userName": "Lê Thị Ngọc",
+        "userAvatar": "https://i.pravatar.cc/150?img=31",
+        "rating": 5,
+        "comment": "Tuyệt vời! Mình đã tự tin làm freelance SEO sau khóa học này. Recommend cho mọi người!",
+        "createdAt": "2025-10-18T09:20:00Z"
+      }
+    ],
+    "certificate": {
+      "name": "Chứng chỉ SEO & Content Marketing",
+      "thumbnail": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+      "description": "Chứng chỉ xác nhận bạn đã nắm vững các kỹ thuật SEO và Content Marketing, có khả năng tối ưu hóa website và xây dựng chiến lược nội dung hiệu quả."
+    }
+  }
+}

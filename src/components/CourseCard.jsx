@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./CourseCard.css";
 
 const CourseCard = ({ course }) => {
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const getLevelColor = (level) => {
     switch (level) {
@@ -19,8 +21,12 @@ const CourseCard = ({ course }) => {
 
   const isEnrolled = user?.enrolledCourses?.includes(course.id);
 
+  const handleViewCourse = () => {
+    navigate(`/course/${course.id}`);
+  };
+
   return (
-    <div className="course-card">
+    <div className="course-card" onClick={handleViewCourse}>
       <div className="course-image">
         <img src={course.thumbnail} alt={course.title} />
         {course.featured && <span className="featured-badge">⭐ Nổi bật</span>}

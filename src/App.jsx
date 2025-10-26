@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import CourseDetail from "./pages/CourseDetail";
 import UserManagement from "./pages/Admin/UserManagement";
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/course/:id" element={<CourseDetail />} />
             <Route
               path="/profile"
               element={isAuthenticated ? <Profile /> : <Login />}
