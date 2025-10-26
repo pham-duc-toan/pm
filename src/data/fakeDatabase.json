@@ -8,9 +8,11 @@
       "fullName": "Quản trị viên hệ thống",
       "role": "admin",
       "avatar": "https://i.pravatar.cc/150?img=1",
+      "phone": "0912345678",
       "isActive": true,
       "createdAt": "2024-01-01T00:00:00Z",
-      "lastLogin": "2025-10-15T08:00:00Z"
+      "lastLogin": "2025-10-15T08:00:00Z",
+      "createdBy": null
     },
     {
       "id": 2,
@@ -20,9 +22,11 @@
       "fullName": "Nguyễn Văn Kiểm",
       "role": "moderator",
       "avatar": "https://i.pravatar.cc/150?img=12",
+      "phone": "0923456789",
       "isActive": true,
       "createdAt": "2024-01-02T00:00:00Z",
-      "lastLogin": "2025-10-15T07:30:00Z"
+      "lastLogin": "2025-10-15T07:30:00Z",
+      "createdBy": 1
     },
     {
       "id": 3,
@@ -32,9 +36,53 @@
       "fullName": "Trần Thị Hỗ Trợ",
       "role": "support",
       "avatar": "https://i.pravatar.cc/150?img=32",
+      "phone": "0934567890",
       "isActive": true,
       "createdAt": "2024-01-03T00:00:00Z",
-      "lastLogin": "2025-10-15T07:00:00Z"
+      "lastLogin": "2025-10-15T07:00:00Z",
+      "createdBy": 1
+    },
+    {
+      "id": 7,
+      "username": "moderator002",
+      "email": "moderator2@example.com",
+      "password": "mod123",
+      "fullName": "Lê Thị Duyệt",
+      "role": "moderator",
+      "avatar": "https://i.pravatar.cc/150?img=45",
+      "phone": "0945678901",
+      "isActive": true,
+      "createdAt": "2024-02-10T00:00:00Z",
+      "lastLogin": "2025-10-14T16:00:00Z",
+      "createdBy": 1
+    },
+    {
+      "id": 8,
+      "username": "support002",
+      "email": "support2@example.com",
+      "password": "support123",
+      "fullName": "Phạm Văn Trợ",
+      "role": "support",
+      "avatar": "https://i.pravatar.cc/150?img=52",
+      "phone": "0956789012",
+      "isActive": true,
+      "createdAt": "2024-02-15T00:00:00Z",
+      "lastLogin": "2025-10-14T18:30:00Z",
+      "createdBy": 1
+    },
+    {
+      "id": 9,
+      "username": "moderator003",
+      "email": "moderator3@example.com",
+      "password": "mod123",
+      "fullName": "Hoàng Minh Quản",
+      "role": "moderator",
+      "avatar": "https://i.pravatar.cc/150?img=68",
+      "phone": "0967890123",
+      "isActive": false,
+      "createdAt": "2024-03-05T00:00:00Z",
+      "lastLogin": "2025-09-20T10:00:00Z",
+      "createdBy": 1
     },
     {
       "id": 4,

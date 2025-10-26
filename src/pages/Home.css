@@ -1,17 +1,8 @@
 /* Layout */
-.home-wrapper {
-  display: flex;
-  min-height: calc(100vh - 70px);
-  background: #f9fafb;
-}
-
 .home-content {
-  flex: 1;
-  transition: margin-left 0.3s ease;
-}
-
-.home-content.with-sidebar {
-  margin-left: 260px;
+  width: 100%;
+  background: #f9fafb;
+  min-height: calc(100vh - 70px);
 }
 
 .home-container {
@@ -204,12 +195,6 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .home-content.with-sidebar {
-    margin-left: 0;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 36px;

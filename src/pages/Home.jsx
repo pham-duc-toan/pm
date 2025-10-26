@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setCourses } from "../store/coursesSlice";
 import fakeDatabase from "../data/fakeDatabase.json";
-import Sidebar from "../components/Sidebar";
 import CourseList from "../components/CourseList";
 import "./Home.css";
 
@@ -14,14 +13,9 @@ const Home = () => {
     dispatch(setCourses(fakeDatabase.courses));
   }, [dispatch]);
 
-  const hasSidebar = isAuthenticated && user?.role !== "student";
-
   return (
-    <div className="home-wrapper">
-      {hasSidebar && <Sidebar />}
-      <div className={`home-content ${hasSidebar ? "with-sidebar" : ""}`}>
-        {!isAuthenticated ? <GuestHome /> : <AuthenticatedHome user={user} />}
-      </div>
+    <div className="home-content">
+      {!isAuthenticated ? <GuestHome /> : <AuthenticatedHome user={user} />}
     </div>
   );
 };

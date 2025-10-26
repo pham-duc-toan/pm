@@ -17,8 +17,18 @@ body {
   flex-direction: column;
 }
 
+.app-layout {
+  display: flex;
+  flex: 1;
+}
+
 main {
   flex: 1;
+  transition: margin-left 0.3s ease;
+}
+
+main.with-sidebar {
+  margin-left: 260px;
 }
 
 /* Global button styles */
@@ -114,6 +124,12 @@ textarea {
 }
 
 /* Responsive utilities */
+@media (max-width: 1024px) {
+  main.with-sidebar {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-hidden {
     display: none !important;

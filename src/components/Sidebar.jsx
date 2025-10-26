@@ -11,7 +11,11 @@ const Sidebar = () => {
       case "admin":
         return [
           { icon: "🏠", label: "Trang chủ", path: "/" },
-          { icon: "👥", label: "Quản lý người dùng", path: "/admin/users" },
+          {
+            icon: "👥",
+            label: "Quản lý tài khoản",
+            path: "/admin/user-management",
+          },
           { icon: "📚", label: "Quản lý khóa học", path: "/admin/courses" },
           { icon: "📊", label: "Thống kê", path: "/admin/statistics" },
           { icon: "💬", label: "Quản lý bình luận", path: "/admin/comments" },
