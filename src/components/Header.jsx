@@ -5,7 +5,7 @@ import UserMenu from "./UserMenu";
 import "./Header.css";
 
 const Header = () => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   return (
@@ -15,6 +15,21 @@ const Header = () => {
           <h1 className="logo" onClick={() => navigate("/")}>
             🎓 EduSystem
           </h1>
+          {isAuthenticated && (
+            <nav className="header-nav">
+              <button onClick={() => navigate("/")} className="nav-link">
+                Khóa học
+              </button>
+              {user?.role === "student" && (
+                <button
+                  onClick={() => navigate("/my-courses")}
+                  className="nav-link"
+                >
+                  Khóa học của tôi
+                </button>
+              )}
+            </nav>
+          )}
         </div>
 
         <div className="header-right">

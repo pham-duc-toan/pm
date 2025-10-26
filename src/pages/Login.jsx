@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { loginStart, loginSuccess, loginFailure } from "../store/authSlice";
+import { loadEnrollmentsFromStorage } from "../store/enrollmentSlice";
 import { DEFAULT_AVATAR } from "../utils/constants";
 import fakeDatabase from "../data/fakeDatabase.json";
 import "./Login.css";
@@ -28,6 +29,37 @@ const Login = () => {
       );
 
       if (user && user.isActive) {
+        // Load paid enrollments vào localStorage nếu user có
+        if (user.paidEnrollments && user.paidEnrollments.length > 0) {
+          const existingEnrollments = JSON.parse(
+            localStorage.getItem("enrolledCourses") || "[]"
+          );
+
+          // Thêm các enrollment đã thanh toán vào localStorage
+          user.paidEnrollments.forEach((enrollment) => {
+            const exists = existingEnrollments.find(
+              (e) =>
+                e.id === enrollment.id ||
+                (e.courseId === enrollment.courseId && e.userId === user.id)
+            );
+
+            if (!exists) {
+              existingEnrollments.push({
+                ...enrollment,
+                userId: user.id,
+              });
+            }
+          });
+
+          localStorage.setItem(
+            "enrolledCourses",
+            JSON.stringify(existingEnrollments)
+          );
+
+          // Reload Redux store từ localStorage
+          dispatch(loadEnrollmentsFromStorage());
+        }
+
         dispatch(loginSuccess(user));
         navigate("/");
       } else {

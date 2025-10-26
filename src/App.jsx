@@ -7,6 +7,10 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import CourseDetail from "./pages/CourseDetail";
+import MyCourses from "./pages/MyCourses";
+import CourseLearn from "./pages/CourseLearn";
+import Payment from "./pages/Payment";
+import PaymentGateway from "./pages/PaymentGateway";
 import UserManagement from "./pages/Admin/UserManagement";
 import "./App.css";
 
@@ -28,6 +32,22 @@ function App() {
             <Route
               path="/profile"
               element={isAuthenticated ? <Profile /> : <Login />}
+            />
+            <Route
+              path="/my-courses"
+              element={isAuthenticated ? <MyCourses /> : <Login />}
+            />
+            <Route
+              path="/learn/:id"
+              element={isAuthenticated ? <CourseLearn /> : <Login />}
+            />
+            <Route
+              path="/payment"
+              element={isAuthenticated ? <Payment /> : <Login />}
+            />
+            <Route
+              path="/payment-gateway"
+              element={isAuthenticated ? <PaymentGateway /> : <Login />}
             />
             <Route
               path="/admin/user-management"

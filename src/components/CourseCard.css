@@ -137,7 +137,8 @@
 }
 
 .btn-enroll,
-.btn-continue {
+.btn-continue,
+.btn-view-detail {
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -147,12 +148,14 @@
   transition: all 0.2s ease;
 }
 
-.btn-enroll {
+.btn-enroll,
+.btn-view-detail {
   background: #2563eb;
   color: white;
 }
 
-.btn-enroll:hover {
+.btn-enroll:hover,
+.btn-view-detail:hover {
   background: #1d4ed8;
   transform: scale(1.05);
 }

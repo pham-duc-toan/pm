@@ -65,13 +65,7 @@ const CourseCard = ({ course }) => {
             )}
           </div>
 
-          {isEnrolled ? (
-            <button className="btn-continue">Tiếp tục học</button>
-          ) : (
-            <button className="btn-enroll">
-              {user?.role === "student" ? "Đăng ký ngay" : "Xem chi tiết"}
-            </button>
-          )}
+          <button className="btn-view-detail">Xem chi tiết</button>
         </div>
       </div>
     </div>

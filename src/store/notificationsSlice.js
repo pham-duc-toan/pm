@@ -10,7 +10,13 @@ const notificationsSlice = createSlice({
   initialState,
   reducers: {
     addNotification: (state, action) => {
-      state.notifications.unshift(action.payload);
+      const newNotification = {
+        id: Date.now(),
+        createdAt: new Date().toISOString(),
+        isRead: false,
+        ...action.payload,
+      };
+      state.notifications.unshift(newNotification);
     },
     markAsRead: (state, action) => {
       const notification = state.notifications.find(

@@ -69,11 +69,16 @@
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  color: white;
+  color: white !important;
+}
+
+.meta-item * {
+  color: white !important;
 }
 
 .meta-icon {
   font-size: 18px;
+  color: white;
 }
 
 .level-badge {
@@ -83,6 +88,7 @@
   font-weight: 600;
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.2);
+  color: white !important;
 }
 
 .course-hero-content {
@@ -139,9 +145,34 @@
   margin-bottom: 12px;
 }
 
-.enroll-btn:hover {
+.enroll-btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.enroll-btn.enrolled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.continue-btn:hover {
+  background: #667eea;
+  color: white;
 }
 
 .wishlist-btn {

@@ -111,7 +111,24 @@
       "lastLogin": "2025-10-15T06:00:00Z",
       "studentId": "SV001",
       "class": "IT2024A",
-      "enrolledCourses": [1, 2, 3]
+      "enrolledCourses": [1, 2, 3],
+      "paidEnrollments": [
+        {
+          "id": 1001,
+          "courseId": 7,
+          "enrolledAt": "2025-10-20T10:30:00Z",
+          "progress": 35,
+          "completedLessons": ["7-1-1", "7-1-2", "7-2-1"],
+          "currentModule": 2,
+          "currentLesson": 2,
+          "paymentStatus": "completed",
+          "amount": 3500000,
+          "paymentMethod": "vnpay",
+          "transactionId": "VNPAY1729420200000",
+          "paidAt": "2025-10-20T10:35:00Z",
+          "lastAccessedAt": "2025-10-26T08:00:00Z"
+        }
+      ]
     },
     {
       "id": 6,

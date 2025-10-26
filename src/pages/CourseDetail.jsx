@@ -1,19 +1,31 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import fakeDatabase from "../data/fakeDatabase.json";
 import courseDetailsData from "../data/courseDetails.json";
+import {
+  enrollFreeCourse,
+  createPendingPayment,
+} from "../store/enrollmentSlice";
+import { addNotification } from "../store/notificationsSlice";
 import "./CourseDetail.css";
 
 const CourseDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  const { enrolledCourses } = useSelector((state) => state.enrollment);
   const [activeTab, setActiveTab] = useState("overview");
 
   const course = fakeDatabase.courses.find((c) => c.id === parseInt(id));
   const courseDetails = courseDetailsData[id] || {};
   const teacher = fakeDatabase.users.find((u) => u.id === course?.teacherId);
+
+  // Check if user is already enrolled
+  const isEnrolled = enrolledCourses.some(
+    (e) => e.courseId === parseInt(id) && e.userId === user?.id
+  );
 
   useEffect(() => {
     if (!course) {
@@ -24,6 +36,62 @@ const CourseDetail = () => {
   if (!course) {
     return null;
   }
+
+  const handleEnroll = () => {
+    if (!user) {
+      alert("Vui lòng đăng nhập để đăng ký khóa học!");
+      navigate("/login");
+      return;
+    }
+
+    if (isEnrolled) {
+      alert("Bạn đã đăng ký khóa học này rồi!");
+      navigate("/my-courses");
+      return;
+    }
+
+    if (course.price === 0) {
+      // Free course - enroll immediately
+      dispatch(
+        enrollFreeCourse({
+          courseId: course.id,
+          userId: user.id,
+        })
+      );
+
+      // Add notification
+      dispatch(
+        addNotification({
+          title: "🎉 Đăng ký thành công!",
+          message: `Bạn đã đăng ký thành công khóa học "${course.title}". Chúc bạn học tốt!`,
+          type: "success",
+          userId: user.id,
+        })
+      );
+
+      // Simulate email notification
+      console.log("📧 Email sent to:", user.email);
+      console.log("Course:", course.title);
+
+      setTimeout(() => {
+        navigate("/my-courses");
+      }, 500);
+    } else {
+      // Paid course - go to payment
+      const payment = {
+        id: `PAY-${Date.now()}`,
+        courseId: course.id,
+        userId: user.id,
+        course,
+      };
+
+      dispatch(createPendingPayment(payment));
+
+      navigate("/payment", {
+        state: { payment, course },
+      });
+    }
+  };
 
   const {
     fullDescription = "",
@@ -112,8 +180,28 @@ const CourseDetail = () => {
                   </span>
                 )}
               </div>
-              <button className="enroll-btn">Đăng ký học ngay</button>
-              {user && (
+              <button
+                className={`enroll-btn ${isEnrolled ? "enrolled" : ""}`}
+                onClick={handleEnroll}
+                disabled={isEnrolled}
+              >
+                {isEnrolled ? "✓ Đã đăng ký" : "Đăng ký học ngay"}
+              </button>
+              {isEnrolled && (
+                <button
+                  className="continue-btn"
+                  onClick={() => {
+                    const enrollment = enrolledCourses.find(
+                      (e) =>
+                        e.courseId === parseInt(id) && e.userId === user?.id
+                    );
+                    navigate(`/learn/${id}`);
+                  }}
+                >
+                  ▶ Tiếp tục học
+                </button>
+              )}
+              {user && !isEnrolled && (
                 <button className="wishlist-btn">❤️ Thêm vào yêu thích</button>
               )}
             </div>
