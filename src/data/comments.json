@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "id": "cmt-lesson-1",
+      "type": "lesson",
+      "targetId": "1-1-1",
+      "userId": 5,
+      "userName": "Nguyễn Văn D",
+      "userAvatar": "https://i.pravatar.cc/150?img=15",
+      "content": "Bài giảng rất dễ hiểu, giảng viên giải thích chi tiết từng bước cài đặt. Cảm ơn thầy!",
+      "rating": 5,
+      "createdAt": "2025-10-20T10:30:00Z",
+      "updatedAt": "2025-10-20T10:30:00Z",
+      "likes": 12,
+      "replies": [
+        {
+          "id": "reply-1",
+          "userId": 101,
+          "userName": "Nguyễn Văn A",
+          "userAvatar": "https://i.pravatar.cc/150?img=12",
+          "content": "Cảm ơn bạn! Chúc bạn học tốt nhé 😊",
+          "createdAt": "2025-10-20T14:00:00Z",
+          "likes": 5
+        }
+      ]
+    },
+    {
+      "id": "cmt-lesson-2",
+      "type": "lesson",
+      "targetId": "1-2-2",
+      "userId": 8,
+      "userName": "Trần Thị E",
+      "userAvatar": "https://i.pravatar.cc/150?img=28",
+      "content": "Phần closure hơi khó hiểu, mình đã phải xem lại 2 lần mới nắm được. Có thể giải thích thêm về use case thực tế của closure không ạ?",
+      "rating": 4,
+      "createdAt": "2025-10-21T15:20:00Z",
+      "updatedAt": "2025-10-21T15:20:00Z",
+      "likes": 8,
+      "replies": [
+        {
+          "id": "reply-2",
+          "userId": 101,
+          "userName": "Nguyễn Văn A",
+          "userAvatar": "https://i.pravatar.cc/150?img=12",
+          "content": "Closure rất hữu ích trong React hooks, event handlers và module pattern. Mình sẽ thêm ví dụ thực tế ở bài sau nhé!",
+          "createdAt": "2025-10-21T16:00:00Z",
+          "likes": 15
+        },
+        {
+          "id": "reply-3",
+          "userId": 12,
+          "userName": "Lê Văn F",
+          "userAvatar": "https://i.pravatar.cc/150?img=35",
+          "content": "Mình cũng gặp vấn đề tương tự. Sau khi làm bài tập thì hiểu hơn rồi. Cố gắng nhé!",
+          "createdAt": "2025-10-21T17:30:00Z",
+          "likes": 3
+        }
+      ]
+    },
+    {
+      "id": "cmt-lesson-3",
+      "type": "lesson",
+      "targetId": "1-3-1",
+      "userId": 15,
+      "userName": "Phạm Minh G",
+      "userAvatar": "https://i.pravatar.cc/150?img=42",
+      "content": "JSX thật sự thú vị! Viết HTML trong JS ban đầu thấy kỳ kỳ nhưng rất tiện lợi 😄",
+      "rating": 5,
+      "createdAt": "2025-10-22T09:15:00Z",
+      "updatedAt": "2025-10-22T09:15:00Z",
+      "likes": 20,
+      "replies": []
+    },
+    {
+      "id": "cmt-exercise-1",
+      "type": "exercise",
+      "targetId": "ex-1-1",
+      "userId": 5,
+      "userName": "Nguyễn Văn D",
+      "userAvatar": "https://i.pravatar.cc/150?img=15",
+      "content": "Bài này khá đơn giản, chỉ cần dùng toán tử + là được nhỉ?",
+      "rating": null,
+      "createdAt": "2025-10-20T11:00:00Z",
+      "updatedAt": "2025-10-20T11:00:00Z",
+      "likes": 5,
+      "replies": [
+        {
+          "id": "reply-4",
+          "userId": 8,
+          "userName": "Trần Thị E",
+          "userAvatar": "https://i.pravatar.cc/150?img=28",
+          "content": "Đúng rồi! Nhớ return kết quả nhé",
+          "createdAt": "2025-10-20T11:30:00Z",
+          "likes": 2
+        }
+      ]
+    },
+    {
+      "id": "cmt-exercise-2",
+      "type": "exercise",
+      "targetId": "ex-1-3",
+      "userId": 18,
+      "userName": "Võ Thị H",
+      "userAvatar": "https://i.pravatar.cc/150?img=20",
+      "content": "Mình dùng Math.max(...arr) có được không ạ? Hay phải dùng loop?",
+      "rating": null,
+      "createdAt": "2025-10-22T14:30:00Z",
+      "updatedAt": "2025-10-22T14:30:00Z",
+      "likes": 7,
+      "replies": [
+        {
+          "id": "reply-5",
+          "userId": 101,
+          "userName": "Nguyễn Văn A",
+          "userAvatar": "https://i.pravatar.cc/150?img=12",
+          "content": "Cả 2 cách đều được! Math.max() ngắn gọn hơn nhưng loop giúp bạn hiểu thuật toán hơn. Nên thử cả 2 nhé!",
+          "createdAt": "2025-10-22T15:00:00Z",
+          "likes": 12
+        }
+      ]
+    },
+    {
+      "id": "cmt-exercise-3",
+      "type": "exercise",
+      "targetId": "ex-1-4",
+      "userId": 22,
+      "userName": "Đặng Văn I",
+      "userAvatar": "https://i.pravatar.cc/150?img=38",
+      "content": "Filter() method rất tiện! Code sạch hơn nhiều so với for loop",
+      "rating": null,
+      "createdAt": "2025-10-23T10:00:00Z",
+      "updatedAt": "2025-10-23T10:00:00Z",
+      "likes": 15,
+      "replies": []
+    },
+    {
+      "id": "cmt-exercise-4",
+      "type": "exercise",
+      "targetId": "ex-7-2",
+      "userId": 25,
+      "userName": "Lý Thị K",
+      "userAvatar": "https://i.pravatar.cc/150?img=26",
+      "content": "Bài này khó quá 😭 Mình hiểu thuật toán nhưng implement bị lỗi hoài. Có ai có tips không?",
+      "rating": null,
+      "createdAt": "2025-10-24T16:45:00Z",
+      "updatedAt": "2025-10-24T16:45:00Z",
+      "likes": 3,
+      "replies": [
+        {
+          "id": "reply-6",
+          "userId": 28,
+          "userName": "Hoàng Văn L",
+          "userAvatar": "https://i.pravatar.cc/150?img=47",
+          "content": "Mình khuyên bạn nên vẽ ra giấy từng bước để dễ hình dung. Quan trọng là 3 pointers: prev, current, next",
+          "createdAt": "2025-10-24T17:00:00Z",
+          "likes": 8
+        },
+        {
+          "id": "reply-7",
+          "userId": 103,
+          "userName": "Phạm Văn C",
+          "userAvatar": "https://i.pravatar.cc/150?img=33",
+          "content": "Đây là bài khó! Nếu vẫn chưa hiểu, xem lại video về pointer manipulation nhé. Cố gắng!",
+          "createdAt": "2025-10-24T18:00:00Z",
+          "likes": 10
+        }
+      ]
+    },
+    {
+      "id": "cmt-lesson-4",
+      "type": "lesson",
+      "targetId": "2-2-2",
+      "userId": 30,
+      "userName": "Mai Văn M",
+      "userAvatar": "https://i.pravatar.cc/150?img=13",
+      "content": "Phần JOIN rất hay! Mình đã hiểu tại sao cần normalize database rồi. Cảm ơn thầy!",
+      "rating": 5,
+      "createdAt": "2025-10-25T11:00:00Z",
+      "updatedAt": "2025-10-25T11:00:00Z",
+      "likes": 18,
+      "replies": []
+    },
+    {
+      "id": "cmt-exercise-5",
+      "type": "exercise",
+      "targetId": "ex-2-3",
+      "userId": 33,
+      "userName": "Ngô Thị N",
+      "userAvatar": "https://i.pravatar.cc/150?img=17",
+      "content": "JOIN lúc đầu hơi khó nhưng sau khi làm bài tập này thì clear rồi. LEFT JOIN và INNER JOIN khác nhau thế nào ạ?",
+      "rating": null,
+      "createdAt": "2025-10-25T14:20:00Z",
+      "updatedAt": "2025-10-25T14:20:00Z",
+      "likes": 6,
+      "replies": [
+        {
+          "id": "reply-8",
+          "userId": 102,
+          "userName": "Trần Thị B",
+          "userAvatar": "https://i.pravatar.cc/150?img=25",
+          "content": "INNER JOIN chỉ lấy records có match ở cả 2 bảng. LEFT JOIN lấy tất cả từ bảng bên trái + matching từ bảng phải (null nếu không match). Sẽ có video riêng về topic này!",
+          "createdAt": "2025-10-25T15:00:00Z",
+          "likes": 20
+        }
+      ]
+    },
+    {
+      "id": "cmt-lesson-5",
+      "type": "lesson",
+      "targetId": "7-1-1",
+      "userId": 35,
+      "userName": "Phan Văn O",
+      "userAvatar": "https://i.pravatar.cc/150?img=40",
+      "content": "Python syntax khá dễ đọc so với JavaScript. Rất thích cách Python dùng indentation thay vì {}",
+      "rating": 5,
+      "createdAt": "2025-10-26T09:30:00Z",
+      "updatedAt": "2025-10-26T09:30:00Z",
+      "likes": 25,
+      "replies": []
+    }
+  ]
+}

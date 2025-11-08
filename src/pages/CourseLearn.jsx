@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import fakeDatabase from "../data/fakeDatabase.json";
-import courseDetailsData from "../data/courseDetails.json";
+import coursesData from "../data/courses.json";
+import lessonsData from "../data/lessons.json";
+import exercisesData from "../data/exercises.json";
+import commentsData from "../data/comments.json";
+import CodeEditor from "../components/CodeEditor";
 import {
   updateProgress,
   completeLesson,
@@ -17,9 +21,46 @@ const CourseLearn = () => {
   const { user } = useSelector((state) => state.auth);
   const { enrolledCourses } = useSelector((state) => state.enrollment);
 
-  const course = fakeDatabase.courses.find((c) => c.id === parseInt(id));
-  const courseDetails = courseDetailsData[id] || {};
-  const { curriculum = [] } = courseDetails;
+  // Lấy thông tin course từ JSON mới
+  const course = coursesData.courses.find((c) => c.id === parseInt(id));
+  const courseInfo = course;
+  const courseLessons = lessonsData.lessons.filter(
+    (l) => l.courseId === parseInt(id)
+  );
+  const courseExercises = exercisesData.exercises.filter(
+    (e) => e.courseId === parseInt(id)
+  );
+
+  // Group lessons theo chapter để tạo curriculum
+  const curriculumObj = courseLessons.reduce((acc, lesson) => {
+    const chapterKey = `chapter-${lesson.chapterNumber}`;
+    if (!acc[chapterKey]) {
+      acc[chapterKey] = {
+        id: chapterKey,
+        title: lesson.chapterTitle,
+        lessons: [],
+      };
+    }
+    acc[chapterKey].lessons.push({
+      id: lesson.id,
+      title: lesson.title,
+      type: lesson.type,
+      duration: lesson.duration,
+      videoUrl: lesson.videoUrl,
+      content: lesson.content,
+      objectives: lesson.objectives,
+      resources: lesson.resources,
+      isFree: lesson.isFree,
+    });
+    return acc;
+  }, {});
+
+  const curriculum = Object.values(curriculumObj);
+
+  const courseDetails = {
+    ...courseInfo,
+    curriculum: curriculum,
+  };
 
   // Check if user is enrolled
   const enrollment = enrolledCourses.find(
@@ -101,6 +142,21 @@ const CourseLearn = () => {
   const currentModule = curriculum[currentModuleIndex];
   const currentLesson = currentModule?.lessons[currentLessonIndex];
 
+  // Lấy exercise data nếu lesson type là "exercise"
+  const currentExercise =
+    currentLesson?.type === "exercise"
+      ? courseExercises.find((ex) => ex.lessonId === currentLesson.id)
+      : null;
+
+  // Lấy comments cho lesson hiện tại
+  const lessonComments = commentsData.comments.filter(
+    (c) =>
+      (c.type === "lesson" && c.targetId === currentLesson?.id) ||
+      (c.type === "exercise" &&
+        currentExercise &&
+        c.targetId === currentExercise.id)
+  );
+
   const totalLessons = curriculum.reduce(
     (sum, module) => sum + module.lessons.length,
     0
@@ -134,9 +190,9 @@ const CourseLearn = () => {
   };
 
   const handleLessonComplete = () => {
-    const lessonId = `${currentModuleIndex}-${currentLessonIndex}`;
+    const lessonId = currentLesson?.id;
 
-    if (!completedLessons.includes(lessonId)) {
+    if (lessonId && !completedLessons.includes(lessonId)) {
       dispatch(
         completeLesson({
           enrollmentId: enrollment.id,
@@ -149,42 +205,120 @@ const CourseLearn = () => {
   };
 
   const handleNextLesson = () => {
-    if (currentLessonIndex < currentModule.lessons.length - 1) {
-      setCurrentLessonIndex(currentLessonIndex + 1);
-    } else if (currentModuleIndex < curriculum.length - 1) {
-      setCurrentModuleIndex(currentModuleIndex + 1);
-      setCurrentLessonIndex(0);
-    } else {
-      alert("🎉 Chúc mừng! Bạn đã hoàn thành khóa học!");
+    // Đánh dấu bài hiện tại là hoàn thành trước khi chuyển
+    const currentLessonId = currentLesson?.id;
+    if (currentLessonId && !completedLessons.includes(currentLessonId)) {
+      dispatch(
+        completeLesson({
+          enrollmentId: enrollment.id,
+          lessonId: currentLessonId,
+        })
+      );
     }
 
-    // Save progress
+    let newModuleIndex = currentModuleIndex;
+    let newLessonIndex = currentLessonIndex;
+
+    if (currentLessonIndex < currentModule.lessons.length - 1) {
+      newLessonIndex = currentLessonIndex + 1;
+      setCurrentLessonIndex(newLessonIndex);
+    } else if (currentModuleIndex < curriculum.length - 1) {
+      newModuleIndex = currentModuleIndex + 1;
+      newLessonIndex = 0;
+      setCurrentModuleIndex(newModuleIndex);
+      setCurrentLessonIndex(newLessonIndex);
+    } else {
+      alert("🎉 Chúc mừng! Bạn đã hoàn thành khóa học!");
+      return;
+    }
+
+    // Lưu vị trí học mới
     dispatch(
       updateProgress({
         enrollmentId: enrollment.id,
-        moduleIndex: currentModuleIndex,
-        lessonIndex: currentLessonIndex + 1,
+        moduleIndex: newModuleIndex,
+        lessonIndex: newLessonIndex,
       })
     );
+
+    // Reset video state
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setVideoProgress(0);
+    setQuizAnswers({});
+    setShowQuizResult(false);
   };
 
   const handlePreviousLesson = () => {
+    let newModuleIndex = currentModuleIndex;
+    let newLessonIndex = currentLessonIndex;
+
     if (currentLessonIndex > 0) {
-      setCurrentLessonIndex(currentLessonIndex - 1);
+      newLessonIndex = currentLessonIndex - 1;
+      setCurrentLessonIndex(newLessonIndex);
     } else if (currentModuleIndex > 0) {
       const prevModule = curriculum[currentModuleIndex - 1];
-      setCurrentModuleIndex(currentModuleIndex - 1);
-      setCurrentLessonIndex(prevModule.lessons.length - 1);
+      newModuleIndex = currentModuleIndex - 1;
+      newLessonIndex = prevModule.lessons.length - 1;
+      setCurrentModuleIndex(newModuleIndex);
+      setCurrentLessonIndex(newLessonIndex);
     }
+
+    // Lưu vị trí học mới
+    dispatch(
+      updateProgress({
+        enrollmentId: enrollment.id,
+        moduleIndex: newModuleIndex,
+        lessonIndex: newLessonIndex,
+      })
+    );
+
+    // Reset video state
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setVideoProgress(0);
+    setQuizAnswers({});
+    setShowQuizResult(false);
   };
 
   const goToLesson = (moduleIndex, lessonIndex) => {
+    // Đánh dấu bài hiện tại là hoàn thành trước khi chuyển
+    const currentLessonId = currentLesson?.id;
+    if (
+      currentLessonId &&
+      !completedLessons.includes(currentLessonId) &&
+      currentLesson?.type === "video" &&
+      videoProgress >= 90
+    ) {
+      dispatch(
+        completeLesson({
+          enrollmentId: enrollment.id,
+          lessonId: currentLessonId,
+        })
+      );
+    }
+
     setCurrentModuleIndex(moduleIndex);
     setCurrentLessonIndex(lessonIndex);
+
+    // Lưu vị trí học mới
+    dispatch(
+      updateProgress({
+        enrollmentId: enrollment.id,
+        moduleIndex: moduleIndex,
+        lessonIndex: lessonIndex,
+      })
+    );
+
+    // Reset video state
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setVideoProgress(0);
+    setQuizAnswers({});
+    setShowQuizResult(false);
   };
 
-  const isLessonCompleted = (moduleIndex, lessonIndex) => {
-    const lessonId = `${moduleIndex}-${lessonIndex}`;
+  const isLessonCompleted = (lessonId) => {
     return completedLessons.includes(lessonId);
   };
 
@@ -204,14 +338,13 @@ const CourseLearn = () => {
 
     const percentage = (score / Object.keys(correctAnswers).length) * 100;
     const totalQuestions = Object.keys(correctAnswers).length;
-    const isPassed = percentage >= 70;
+    const isPassed = percentage === 100; // Phải đúng hết 100%
 
     setShowQuizResult({
       score,
       totalQuestions,
       percentage,
       isPassed,
-      correctAnswers,
     });
 
     if (isPassed) {
@@ -269,89 +402,132 @@ const CourseLearn = () => {
           {currentLesson?.type === "video" && (
             <div className="video-container">
               <div className="video-player">
-                {!isPlaying && videoProgress === 0 && (
-                  <div className="video-thumbnail">
-                    <img src={course.thumbnail} alt={currentLesson.title} />
-                    <button
+                <div className="video-demo">
+                  <img
+                    src={course.thumbnail}
+                    alt={currentLesson.title}
+                    className="video-thumbnail-img"
+                  />
+                  {!isPlaying && videoProgress === 0 && (
+                    <div
                       className="play-overlay"
                       onClick={() => setIsPlaying(true)}
                     >
-                      <span className="play-icon">▶</span>
-                    </button>
-                  </div>
-                )}
-                {(isPlaying || videoProgress > 0) && (
-                  <div className="video-playing">
-                    <div className="video-screen">
-                      <img
-                        src={course.thumbnail}
-                        alt={currentLesson.title}
-                        style={{ opacity: 0.7 }}
-                      />
-                      <div className="video-overlay">
-                        <button
-                          className="play-pause-btn"
-                          onClick={() => setIsPlaying(!isPlaying)}
-                        >
-                          {isPlaying ? "⏸" : "▶"}
-                        </button>
-                        <div className="video-time">
-                          {formatTime(currentTime)} / {formatTime(duration)}
-                        </div>
+                      <div className="play-button">▶</div>
+                    </div>
+                  )}
+                  {(isPlaying || videoProgress > 0) && (
+                    <div className="video-overlay">
+                      <div className="video-status">
+                        {isPlaying ? "⏸ Đang phát..." : "⏸ Tạm dừng"}
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-              <div className="video-controls">
-                <div className="progress-bar-video">
+                  )}
+                </div>
+                <div
+                  className={`video-controls ${
+                    !isPlaying && videoProgress === 0 ? "hidden" : ""
+                  }`}
+                >
                   <div
-                    className="progress-fill-video"
-                    style={{ width: `${videoProgress}%` }}
-                  ></div>
-                </div>
-                <div className="controls-bottom">
-                  <button
-                    className="control-btn"
-                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="progress-bar-video"
+                    onClick={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const clickX = e.clientX - rect.left;
+                      const percentage = (clickX / rect.width) * 100;
+                      const newTime = (percentage / 100) * duration;
+                      setCurrentTime(newTime);
+                      setVideoProgress(percentage);
+                    }}
                   >
-                    {isPlaying ? "⏸ Tạm dừng" : "▶ Phát"}
-                  </button>
-                  <div className="time-display">
-                    {formatTime(currentTime)} / {formatTime(duration)}
+                    <div
+                      className="progress-fill-video"
+                      style={{ width: `${videoProgress}%` }}
+                    ></div>
                   </div>
-                  <button
-                    className="control-btn"
-                    onClick={() =>
-                      setCurrentTime(Math.min(currentTime + 10, duration))
-                    }
-                  >
-                    +10s
-                  </button>
+                  <div className="controls-bottom">
+                    <button
+                      className="control-btn"
+                      onClick={() => setIsPlaying(!isPlaying)}
+                    >
+                      {isPlaying ? "⏸" : "▶"}
+                    </button>
+                    <button
+                      className="control-btn"
+                      onClick={() => {
+                        const newTime = Math.max(currentTime - 10, 0);
+                        setCurrentTime(newTime);
+                        setVideoProgress((newTime / duration) * 100);
+                      }}
+                    >
+                      -10s
+                    </button>
+                    <button
+                      className="control-btn"
+                      onClick={() => {
+                        const newTime = Math.min(currentTime + 10, duration);
+                        setCurrentTime(newTime);
+                        setVideoProgress((newTime / duration) * 100);
+                      }}
+                    >
+                      +10s
+                    </button>
+                    <div className="time-display">
+                      {formatTime(currentTime)} / {formatTime(duration)}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Document Content */}
-          {currentLesson?.type === "document" && (
-            <div className="document-container">
-              <div className="document-icon">📄</div>
-              <h2>Tài liệu: {currentLesson.title}</h2>
-              <p>Đây là tài liệu học tập cho bài học này.</p>
-              <div className="document-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+              {/* Navigation Buttons */}
+              <div className="lesson-navigation">
+                <button
+                  className="nav-btn prev"
+                  onClick={handlePreviousLesson}
+                  disabled={
+                    currentModuleIndex === 0 && currentLessonIndex === 0
+                  }
+                >
+                  ← Bài trước
+                </button>
+                <button className="nav-btn next" onClick={handleNextLesson}>
+                  Bài tiếp →
+                </button>
               </div>
-              <button className="btn-complete" onClick={handleLessonComplete}>
-                ✓ Đánh dấu hoàn thành
-              </button>
+
+              <div className="video-info">
+                <h3>{currentLesson.title}</h3>
+                <p>{currentLesson.content}</p>
+                {currentLesson.objectives &&
+                  currentLesson.objectives.length > 0 && (
+                    <div className="lesson-objectives">
+                      <h4>🎯 Mục tiêu bài học:</h4>
+                      <ul>
+                        {currentLesson.objectives.map((obj, idx) => (
+                          <li key={idx}>{obj}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                {currentLesson.resources &&
+                  currentLesson.resources.length > 0 && (
+                    <div className="lesson-resources">
+                      <h4>📚 Tài nguyên tham khảo:</h4>
+                      <ul>
+                        {currentLesson.resources.map((res, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={res.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {res.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+              </div>
             </div>
           )}
 
@@ -525,32 +701,27 @@ const CourseLearn = () => {
                   </div>
                   <h2>
                     {showQuizResult.isPassed
-                      ? "Chúc mừng! Bạn đã vượt qua bài kiểm tra"
-                      : "Bạn chưa đạt yêu cầu"}
+                      ? "Chúc mừng! Bạn đã hoàn thành bài kiểm tra"
+                      : "Chưa đạt yêu cầu"}
                   </h2>
                   <div className="score-display">
                     <div className="score-circle">
                       <div className="score-number">
-                        {showQuizResult.percentage.toFixed(0)}%
+                        {showQuizResult.score}/{showQuizResult.totalQuestions}
                       </div>
-                      <div className="score-text">
-                        {showQuizResult.score}/{showQuizResult.totalQuestions}{" "}
-                        câu đúng
-                      </div>
+                      <div className="score-text">Điểm số</div>
                     </div>
                   </div>
                   <p className="result-message">
                     {showQuizResult.isPassed
-                      ? "Bạn đã trả lời đúng đủ số câu hỏi để hoàn thành bài kiểm tra!"
-                      : `Bạn cần đạt ít nhất 70% để vượt qua. Hãy thử lại!`}
+                      ? "Xuất sắc! Bạn đã trả lời đúng tất cả các câu hỏi!"
+                      : `Bạn cần trả lời đúng tất cả các câu hỏi để hoàn thành. Hãy thử lại!`}
                   </p>
 
                   <div className="quiz-result-actions">
-                    {!showQuizResult.isPassed && (
-                      <button className="btn-retry" onClick={handleRetryQuiz}>
-                        🔄 Làm lại
-                      </button>
-                    )}
+                    <button className="btn-retry" onClick={handleRetryQuiz}>
+                      🔄 Làm lại
+                    </button>
                     {showQuizResult.isPassed && (
                       <button
                         className="btn-next-quiz"
@@ -565,19 +736,138 @@ const CourseLearn = () => {
             </div>
           )}
 
-          {/* Navigation Buttons */}
-          <div className="lesson-navigation">
-            <button
-              className="nav-btn prev"
-              onClick={handlePreviousLesson}
-              disabled={currentModuleIndex === 0 && currentLessonIndex === 0}
-            >
-              ← Bài trước
-            </button>
-            <button className="nav-btn next" onClick={handleNextLesson}>
-              Bài tiếp →
-            </button>
-          </div>
+          {/* Coding Exercise */}
+          {currentLesson?.type === "exercise" && currentExercise && (
+            <div className="coding-exercise-container">
+              <div className="exercise-header">
+                <h2>💻 {currentExercise.title}</h2>
+                <p className="exercise-description">
+                  {currentExercise.description}
+                </p>
+                {currentExercise.difficulty && (
+                  <span
+                    className={`difficulty-badge ${currentExercise.difficulty}`}
+                  >
+                    {currentExercise.difficulty === "easy"
+                      ? "🟢 Dễ"
+                      : currentExercise.difficulty === "medium"
+                      ? "🟡 Trung bình"
+                      : "🔴 Khó"}
+                  </span>
+                )}
+                <div className="exercise-meta">
+                  <span>⭐ {currentExercise.points} điểm</span>
+                  {currentExercise.timeLimit && (
+                    <span>⏱️ {currentExercise.timeLimit} phút</span>
+                  )}
+                </div>
+              </div>
+
+              <CodeEditor
+                language={currentExercise.language || "javascript"}
+                initialCode={currentExercise.initialCode || ""}
+                testCases={currentExercise.testCases || []}
+                submitButtonText="Nộp bài"
+                onSubmit={(result) => {
+                  // Tự động hoàn thành bài tập khi nộp bài
+                  handleLessonComplete();
+                  if (result.passed) {
+                    alert("🎉 Chúc mừng! Bạn đã hoàn thành bài tập!");
+                  } else {
+                    alert("⚠️ Bài làm chưa đạt. Hãy thử lại!");
+                  }
+                }}
+              />
+
+              {currentExercise.hints && currentExercise.hints.length > 0 && (
+                <div className="exercise-hints">
+                  <h4>💡 Gợi ý:</h4>
+                  <ul>
+                    {currentExercise.hints.map((hint, idx) => (
+                      <li key={idx}>{hint}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Nếu lesson type là exercise nhưng chưa có data */}
+          {currentLesson?.type === "exercise" && !currentExercise && (
+            <div className="coding-exercise-container">
+              <div className="exercise-placeholder">
+                <p>⚠️ Bài tập đang được cập nhật...</p>
+              </div>
+            </div>
+          )}
+
+          {/* Comments Section */}
+          {lessonComments.length > 0 && (
+            <div className="lesson-comments">
+              <h3>💬 Thảo luận ({lessonComments.length})</h3>
+              <div className="comments-list">
+                {lessonComments.map((comment) => (
+                  <div key={comment.id} className="comment-item">
+                    <div className="comment-header">
+                      <img
+                        src={comment.userAvatar}
+                        alt={comment.userName}
+                        className="comment-avatar"
+                      />
+                      <div className="comment-meta">
+                        <strong>{comment.userName}</strong>
+                        <span className="comment-date">
+                          {new Date(comment.createdAt).toLocaleDateString(
+                            "vi-VN"
+                          )}
+                        </span>
+                      </div>
+                      {comment.rating && (
+                        <div className="comment-rating">
+                          {"⭐".repeat(comment.rating)}
+                        </div>
+                      )}
+                    </div>
+                    <div className="comment-content">{comment.content}</div>
+                    <div className="comment-actions">
+                      <button className="comment-like">
+                        👍 {comment.likes || 0}
+                      </button>
+                      {comment.replies && comment.replies.length > 0 && (
+                        <span className="comment-replies">
+                          💬 {comment.replies.length} phản hồi
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Replies */}
+                    {comment.replies && comment.replies.length > 0 && (
+                      <div className="comment-replies-list">
+                        {comment.replies.map((reply) => (
+                          <div key={reply.id} className="comment-reply">
+                            <img
+                              src={reply.userAvatar}
+                              alt={reply.userName}
+                              className="reply-avatar"
+                            />
+                            <div className="reply-content">
+                              <strong>{reply.userName}</strong>
+                              <span className="reply-date">
+                                {new Date(reply.createdAt).toLocaleDateString(
+                                  "vi-VN"
+                                )}
+                              </span>
+                              <p>{reply.content}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Sidebar - Curriculum */}
@@ -602,10 +892,7 @@ const CourseLearn = () => {
                       const isActive =
                         moduleIndex === currentModuleIndex &&
                         lessonIndex === currentLessonIndex;
-                      const isCompleted = isLessonCompleted(
-                        moduleIndex,
-                        lessonIndex
-                      );
+                      const isCompleted = isLessonCompleted(lesson.id);
 
                       return (
                         <div
@@ -620,6 +907,8 @@ const CourseLearn = () => {
                               ? "✓"
                               : lesson.type === "video"
                               ? "▶"
+                              : lesson.type === "exercise"
+                              ? "💻"
                               : lesson.type === "quiz"
                               ? "📝"
                               : "📄"}

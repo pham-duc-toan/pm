@@ -154,10 +154,18 @@
   color: white;
 }
 
+.btn-view-detail.enrolled {
+  background: #10b981;
+}
+
 .btn-enroll:hover,
 .btn-view-detail:hover {
   background: #1d4ed8;
   transform: scale(1.05);
+}
+
+.btn-view-detail.enrolled:hover {
+  background: #059669;
 }
 
 .btn-continue {

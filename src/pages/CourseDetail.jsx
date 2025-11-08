@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import fakeDatabase from "../data/fakeDatabase.json";
-import courseDetailsData from "../data/courseDetails.json";
+import coursesData from "../data/courses.json";
+import lessonsData from "../data/lessons.json";
+import reviewsData from "../data/reviews.json";
 import {
   enrollFreeCourse,
   createPendingPayment,
@@ -18,9 +20,20 @@ const CourseDetail = () => {
   const { enrolledCourses } = useSelector((state) => state.enrollment);
   const [activeTab, setActiveTab] = useState("overview");
 
-  const course = fakeDatabase.courses.find((c) => c.id === parseInt(id));
-  const courseDetails = courseDetailsData[id] || {};
-  const teacher = fakeDatabase.users.find((u) => u.id === course?.teacherId);
+  const course = coursesData.courses.find((c) => c.id === parseInt(id));
+
+  // Lấy thông tin từ JSON mới
+  const courseInfo = course;
+  const courseLessons = lessonsData.lessons.filter(
+    (l) => l.courseId === parseInt(id)
+  );
+  const courseReviews = reviewsData.reviews.filter(
+    (r) => r.courseId === parseInt(id)
+  );
+
+  const teacher = fakeDatabase.users.find(
+    (u) => u.id === courseInfo?.instructor?.id
+  );
 
   // Check if user is already enrolled
   const isEnrolled = enrolledCourses.some(
@@ -74,7 +87,7 @@ const CourseDetail = () => {
       console.log("Course:", course.title);
 
       setTimeout(() => {
-        navigate("/my-courses");
+        navigate(`/learn/${course.id}`);
       }, 500);
     } else {
       // Paid course - go to payment
@@ -94,13 +107,39 @@ const CourseDetail = () => {
   };
 
   const {
-    fullDescription = "",
+    fullDescription = courseInfo?.fullDescription || "",
     curriculum = [],
-    reviews = [],
-    certificate = null,
-    requirements = [],
-    whatYouWillLearn = [],
-  } = courseDetails;
+    reviews = courseReviews,
+    certificate = courseInfo?.certificate || null,
+    requirements = courseInfo?.requirements || [],
+    whatYouWillLearn = courseInfo?.whatYouWillLearn || [],
+  } = (() => {
+    // Group lessons theo chapter
+    const grouped = courseLessons.reduce((acc, lesson) => {
+      const chapterTitle = lesson.chapterTitle;
+      if (!acc[chapterTitle]) {
+        acc[chapterTitle] = {
+          title: chapterTitle,
+          lessons: [],
+        };
+      }
+      acc[chapterTitle].lessons.push({
+        title: lesson.title,
+        type: lesson.type,
+        duration: lesson.duration,
+      });
+      return acc;
+    }, {});
+
+    return {
+      fullDescription: courseInfo?.fullDescription || "",
+      curriculum: Object.values(grouped),
+      reviews: courseReviews,
+      certificate: courseInfo?.certificate || null,
+      requirements: courseInfo?.requirements || [],
+      whatYouWillLearn: courseInfo?.whatYouWillLearn || [],
+    };
+  })();
 
   const tabs = [
     { id: "overview", label: "📖 Giới thiệu", icon: "📖" },
@@ -180,21 +219,15 @@ const CourseDetail = () => {
                   </span>
                 )}
               </div>
-              <button
-                className={`enroll-btn ${isEnrolled ? "enrolled" : ""}`}
-                onClick={handleEnroll}
-                disabled={isEnrolled}
-              >
-                {isEnrolled ? "✓ Đã đăng ký" : "Đăng ký học ngay"}
-              </button>
+              {!isEnrolled && (
+                <button className="enroll-btn" onClick={handleEnroll}>
+                  Đăng ký học ngay
+                </button>
+              )}
               {isEnrolled && (
                 <button
                   className="continue-btn"
                   onClick={() => {
-                    const enrollment = enrolledCourses.find(
-                      (e) =>
-                        e.courseId === parseInt(id) && e.userId === user?.id
-                    );
                     navigate(`/learn/${id}`);
                   }}
                 >

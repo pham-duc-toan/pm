@@ -4,6 +4,7 @@ import "./CourseCard.css";
 
 const CourseCard = ({ course }) => {
   const { user } = useSelector((state) => state.auth);
+  const { enrolledCourses } = useSelector((state) => state.enrollment);
   const navigate = useNavigate();
 
   const getLevelColor = (level) => {
@@ -19,10 +20,21 @@ const CourseCard = ({ course }) => {
     }
   };
 
-  const isEnrolled = user?.enrolledCourses?.includes(course.id);
+  const isEnrolled = enrolledCourses.some(
+    (e) => e.courseId === course.id && e.userId === user?.id
+  );
 
   const handleViewCourse = () => {
     navigate(`/course/${course.id}`);
+  };
+
+  const handleAction = (e) => {
+    e.stopPropagation();
+    if (isEnrolled) {
+      navigate(`/learn/${course.id}`);
+    } else {
+      navigate(`/course/${course.id}`);
+    }
   };
 
   return (
@@ -65,7 +77,12 @@ const CourseCard = ({ course }) => {
             )}
           </div>
 
-          <button className="btn-view-detail">Xem chi tiết</button>
+          <button
+            className={`btn-view-detail ${isEnrolled ? "enrolled" : ""}`}
+            onClick={handleAction}
+          >
+            {isEnrolled ? "▶ Tiếp tục học" : "Xem chi tiết"}
+          </button>
         </div>
       </div>
     </div>

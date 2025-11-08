@@ -101,7 +101,7 @@ const PaymentGateway = () => {
           if (prev <= 1) {
             clearInterval(timer);
             if (result.status === "success") {
-              navigate("/my-courses");
+              navigate(`/learn/${course.id}`);
             } else {
               navigate(`/course/${course.id}`);
             }
@@ -117,7 +117,7 @@ const PaymentGateway = () => {
 
   const handleManualRedirect = () => {
     if (result?.status === "success") {
-      navigate("/my-courses");
+      navigate(`/learn/${course?.id}`);
     } else {
       navigate(`/course/${course?.id}`);
     }

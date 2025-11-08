@@ -1,0 +1,306 @@
+{
+  "exercises": [
+    {
+      "id": "ex-1-1",
+      "courseId": 1,
+      "lessonId": "1-2-6",
+      "title": "Bài 1: Tính tổng hai số",
+      "slug": "tinh-tong-hai-so",
+      "description": "Viết hàm JavaScript nhận vào hai số và trả về tổng của chúng",
+      "difficulty": "easy",
+      "points": 10,
+      "timeLimit": 300,
+      "initialCode": "// Viết hàm add nhận vào 2 tham số a và b\nfunction add(a, b) {\n  // Code của bạn ở đây\n  \n}\n\n// Test cases\nconsole.log(add(5, 3)); // Output: 8\nconsole.log(add(-2, 7)); // Output: 5\nconsole.log(add(0, 0)); // Output: 0",
+      "solution": "function add(a, b) {\n  return a + b;\n}\n\nconsole.log(add(5, 3)); // Output: 8\nconsole.log(add(-2, 7)); // Output: 5\nconsole.log(add(0, 0)); // Output: 0",
+      "testCases": [
+        { "input": "add(5, 3)", "expected": "8", "hidden": false },
+        { "input": "add(-2, 7)", "expected": "5", "hidden": false },
+        { "input": "add(0, 0)", "expected": "0", "hidden": false },
+        { "input": "add(100, 200)", "expected": "300", "hidden": true },
+        { "input": "add(-10, -20)", "expected": "-30", "hidden": true }
+      ],
+      "hints": [
+        "Sử dụng toán tử + để cộng hai số",
+        "Nhớ return kết quả từ function",
+        "Hàm nên hoạt động với cả số âm"
+      ],
+      "tags": ["basic", "arithmetic", "functions"],
+      "order": 1
+    },
+    {
+      "id": "ex-1-2",
+      "courseId": 1,
+      "lessonId": "1-2-6",
+      "title": "Bài 2: Kiểm tra số chẵn",
+      "slug": "kiem-tra-so-chan",
+      "description": "Viết hàm kiểm tra một số có phải số chẵn hay không",
+      "difficulty": "easy",
+      "points": 10,
+      "timeLimit": 300,
+      "initialCode": "// Viết hàm isEven nhận vào 1 số và trả về true nếu số chẵn, false nếu số lẻ\nfunction isEven(num) {\n  // Code của bạn ở đây\n  \n}\n\n// Test cases\nconsole.log(isEven(4));  // true\nconsole.log(isEven(7));  // false\nconsole.log(isEven(0));  // true",
+      "solution": "function isEven(num) {\n  return num % 2 === 0;\n}\n\nconsole.log(isEven(4));  // true\nconsole.log(isEven(7));  // false\nconsole.log(isEven(0));  // true",
+      "testCases": [
+        { "input": "isEven(4)", "expected": "true", "hidden": false },
+        { "input": "isEven(7)", "expected": "false", "hidden": false },
+        { "input": "isEven(0)", "expected": "true", "hidden": false },
+        { "input": "isEven(-6)", "expected": "true", "hidden": true },
+        { "input": "isEven(1001)", "expected": "false", "hidden": true }
+      ],
+      "hints": [
+        "Sử dụng toán tử % (modulo) để lấy số dư",
+        "Số chẵn chia hết cho 2 (số dư = 0)",
+        "Dùng === để so sánh"
+      ],
+      "tags": ["basic", "conditional", "modulo"],
+      "order": 2
+    },
+    {
+      "id": "ex-1-3",
+      "courseId": 1,
+      "lessonId": "1-2-6",
+      "title": "Bài 3: Tìm số lớn nhất trong mảng",
+      "slug": "tim-so-lon-nhat-mang",
+      "description": "Viết hàm tìm số lớn nhất trong một mảng số",
+      "difficulty": "medium",
+      "points": 15,
+      "timeLimit": 600,
+      "initialCode": "// Viết hàm findMax tìm số lớn nhất trong mảng\nfunction findMax(arr) {\n  // Code của bạn ở đây\n  \n}\n\n// Test cases\nconsole.log(findMax([1, 5, 3, 9, 2]));  // 9\nconsole.log(findMax([-1, -5, -2]));     // -1\nconsole.log(findMax([42]));             // 42",
+      "solution": "function findMax(arr) {\n  let max = arr[0];\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i] > max) {\n      max = arr[i];\n    }\n  }\n  return max;\n}\n\n// Hoặc dùng Math.max\n// function findMax(arr) {\n//   return Math.max(...arr);\n// }\n\nconsole.log(findMax([1, 5, 3, 9, 2]));  // 9\nconsole.log(findMax([-1, -5, -2]));     // -1\nconsole.log(findMax([42]));             // 42",
+      "testCases": [
+        {
+          "input": "findMax([1, 5, 3, 9, 2])",
+          "expected": "9",
+          "hidden": false
+        },
+        { "input": "findMax([-1, -5, -2])", "expected": "-1", "hidden": false },
+        { "input": "findMax([42])", "expected": "42", "hidden": false },
+        {
+          "input": "findMax([0, 0, 0, 1, 0])",
+          "expected": "1",
+          "hidden": true
+        },
+        {
+          "input": "findMax([100, 99, 101, 50])",
+          "expected": "101",
+          "hidden": true
+        }
+      ],
+      "hints": [
+        "Khởi tạo max = phần tử đầu tiên",
+        "Duyệt qua mảng và so sánh",
+        "Hoặc dùng Math.max(...arr) với spread operator"
+      ],
+      "tags": ["array", "loop", "algorithm"],
+      "order": 3
+    },
+    {
+      "id": "ex-1-4",
+      "courseId": 1,
+      "lessonId": "1-3-5",
+      "title": "Bài 4: Filter mảng theo điều kiện",
+      "slug": "filter-mang-theo-dieu-kien",
+      "description": "Viết hàm lọc ra các số chẵn từ mảng",
+      "difficulty": "medium",
+      "points": 15,
+      "timeLimit": 600,
+      "initialCode": "// Viết hàm filterEven trả về mảng chỉ chứa các số chẵn\nfunction filterEven(arr) {\n  // Code của bạn ở đây\n  \n}\n\n// Test cases\nconsole.log(filterEven([1, 2, 3, 4, 5, 6]));  // [2, 4, 6]\nconsole.log(filterEven([1, 3, 5]));           // []\nconsole.log(filterEven([0, 2, 4]));           // [0, 2, 4]",
+      "solution": "function filterEven(arr) {\n  return arr.filter(num => num % 2 === 0);\n}\n\nconsole.log(filterEven([1, 2, 3, 4, 5, 6]));  // [2, 4, 6]\nconsole.log(filterEven([1, 3, 5]));           // []\nconsole.log(filterEven([0, 2, 4]));           // [0, 2, 4]",
+      "testCases": [
+        {
+          "input": "filterEven([1, 2, 3, 4, 5, 6])",
+          "expected": "[2, 4, 6]",
+          "hidden": false
+        },
+        { "input": "filterEven([1, 3, 5])", "expected": "[]", "hidden": false },
+        {
+          "input": "filterEven([0, 2, 4])",
+          "expected": "[0, 2, 4]",
+          "hidden": false
+        },
+        {
+          "input": "filterEven([-2, -1, 0, 1, 2])",
+          "expected": "[-2, 0, 2]",
+          "hidden": true
+        }
+      ],
+      "hints": [
+        "Sử dụng array method filter()",
+        "Điều kiện: num % 2 === 0",
+        "Filter trả về mảng mới"
+      ],
+      "tags": ["array", "filter", "functional"],
+      "order": 4
+    },
+    {
+      "id": "ex-1-5",
+      "courseId": 1,
+      "lessonId": "1-3-5",
+      "title": "Bài 5: Map - Nhân đôi giá trị mảng",
+      "slug": "map-nhan-doi-gia-tri-mang",
+      "description": "Viết hàm nhân đôi tất cả các phần tử trong mảng",
+      "difficulty": "easy",
+      "points": 10,
+      "timeLimit": 300,
+      "initialCode": "// Viết hàm double trả về mảng mới với các giá trị gấp đôi\nfunction double(arr) {\n  // Code của bạn ở đây\n  \n}\n\n// Test cases\nconsole.log(double([1, 2, 3]));     // [2, 4, 6]\nconsole.log(double([5, 10, 15]));   // [10, 20, 30]\nconsole.log(double([0, -1, 2]));    // [0, -2, 4]",
+      "solution": "function double(arr) {\n  return arr.map(num => num * 2);\n}\n\nconsole.log(double([1, 2, 3]));     // [2, 4, 6]\nconsole.log(double([5, 10, 15]));   // [10, 20, 30]\nconsole.log(double([0, -1, 2]));    // [0, -2, 4]",
+      "testCases": [
+        {
+          "input": "double([1, 2, 3])",
+          "expected": "[2, 4, 6]",
+          "hidden": false
+        },
+        {
+          "input": "double([5, 10, 15])",
+          "expected": "[10, 20, 30]",
+          "hidden": false
+        },
+        {
+          "input": "double([0, -1, 2])",
+          "expected": "[0, -2, 4]",
+          "hidden": false
+        },
+        { "input": "double([100])", "expected": "[200]", "hidden": true }
+      ],
+      "hints": [
+        "Sử dụng array method map()",
+        "Nhân mỗi phần tử với 2",
+        "Map trả về mảng mới"
+      ],
+      "tags": ["array", "map", "functional"],
+      "order": 5
+    },
+    {
+      "id": "ex-2-1",
+      "courseId": 2,
+      "lessonId": "2-2-6",
+      "title": "SQL Bài 1: SELECT cơ bản",
+      "slug": "sql-select-co-ban",
+      "description": "Viết câu truy vấn SELECT lấy tất cả thông tin từ bảng users",
+      "difficulty": "easy",
+      "points": 10,
+      "timeLimit": 300,
+      "initialCode": "-- Viết câu lệnh SQL lấy tất cả users\n-- Bảng: users (id, name, email, age)\n\n",
+      "solution": "SELECT * FROM users;",
+      "testCases": [
+        {
+          "input": "users table",
+          "expected": "All columns and rows",
+          "hidden": false
+        }
+      ],
+      "hints": ["Sử dụng SELECT *", "FROM users", "Kết thúc bằng dấu ;"],
+      "tags": ["sql", "select", "basic"],
+      "order": 1
+    },
+    {
+      "id": "ex-2-2",
+      "courseId": 2,
+      "lessonId": "2-2-6",
+      "title": "SQL Bài 2: WHERE clause",
+      "slug": "sql-where-clause",
+      "description": "Lấy danh sách users có tuổi lớn hơn 18",
+      "difficulty": "easy",
+      "points": 10,
+      "timeLimit": 300,
+      "initialCode": "-- Viết câu lệnh SQL lấy users có age > 18\n-- Bảng: users (id, name, email, age)\n\n",
+      "solution": "SELECT * FROM users WHERE age > 18;",
+      "testCases": [
+        {
+          "input": "users with age > 18",
+          "expected": "Filtered results",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Dùng WHERE để filter",
+        "Điều kiện: age > 18",
+        "So sánh số không cần dấu ngoặc kép"
+      ],
+      "tags": ["sql", "where", "filter"],
+      "order": 2
+    },
+    {
+      "id": "ex-2-3",
+      "courseId": 2,
+      "lessonId": "2-2-6",
+      "title": "SQL Bài 3: JOIN hai bảng",
+      "slug": "sql-join-hai-bang",
+      "description": "JOIN bảng users và orders để lấy thông tin đơn hàng kèm tên khách hàng",
+      "difficulty": "medium",
+      "points": 15,
+      "timeLimit": 600,
+      "initialCode": "-- Viết câu lệnh SQL JOIN users và orders\n-- Bảng users: (id, name, email)\n-- Bảng orders: (id, user_id, product, amount)\n-- Lấy: order.id, user.name, order.product, order.amount\n\n",
+      "solution": "SELECT orders.id, users.name, orders.product, orders.amount\nFROM orders\nINNER JOIN users ON orders.user_id = users.id;",
+      "testCases": [
+        {
+          "input": "JOIN users and orders",
+          "expected": "Combined results",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Dùng INNER JOIN",
+        "ON orders.user_id = users.id",
+        "SELECT các cột cần thiết"
+      ],
+      "tags": ["sql", "join", "intermediate"],
+      "order": 3
+    },
+    {
+      "id": "ex-7-1",
+      "courseId": 7,
+      "lessonId": "7-2-4",
+      "title": "Python Bài 1: Xử lý missing values",
+      "slug": "python-xu-ly-missing-values",
+      "description": "Sử dụng Pandas để xử lý missing values trong DataFrame",
+      "difficulty": "medium",
+      "points": 15,
+      "timeLimit": 600,
+      "initialCode": "import pandas as pd\nimport numpy as np\n\n# Tạo DataFrame mẫu với missing values\ndata = {\n    'Name': ['An', 'Binh', np.nan, 'Dung'],\n    'Age': [25, np.nan, 30, 22],\n    'Salary': [1000, 1500, np.nan, 1200]\n}\ndf = pd.DataFrame(data)\n\n# TODO: Xử lý missing values\n# 1. Điền giá trị trung bình cho cột Age\n# 2. Điền giá trị 'Unknown' cho cột Name\n# 3. Xóa rows có Salary = NaN\n\nprint(df)",
+      "solution": "import pandas as pd\nimport numpy as np\n\ndata = {\n    'Name': ['An', 'Binh', np.nan, 'Dung'],\n    'Age': [25, np.nan, 30, 22],\n    'Salary': [1000, 1500, np.nan, 1200]\n}\ndf = pd.DataFrame(data)\n\n# Xử lý missing values\ndf['Age'].fillna(df['Age'].mean(), inplace=True)\ndf['Name'].fillna('Unknown', inplace=True)\ndf = df.dropna(subset=['Salary'])\n\nprint(df)",
+      "testCases": [
+        {
+          "input": "df with NaN",
+          "expected": "Cleaned DataFrame",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Dùng fillna() để điền giá trị",
+        "mean() để tính trung bình",
+        "dropna(subset=['col']) để xóa rows"
+      ],
+      "tags": ["python", "pandas", "data-cleaning"],
+      "order": 1
+    },
+    {
+      "id": "ex-7-2",
+      "courseId": 7,
+      "lessonId": "7-3-2",
+      "title": "Python Bài 2: Reverse Linked List",
+      "slug": "python-reverse-linked-list",
+      "description": "Implement thuật toán đảo ngược linked list",
+      "difficulty": "hard",
+      "points": 20,
+      "timeLimit": 900,
+      "initialCode": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef reverse_linked_list(head):\n    # TODO: Implement reverse linked list\n    # Input: head của linked list\n    # Output: head của linked list đã đảo ngược\n    pass\n\n# Test\n# 1 -> 2 -> 3 -> None\n# Sau khi reverse: 3 -> 2 -> 1 -> None\nnode1 = Node(1)\nnode2 = Node(2)\nnode3 = Node(3)\nnode1.next = node2\nnode2.next = node3\n\nnew_head = reverse_linked_list(node1)\nprint(new_head.data)  # Output: 3",
+      "solution": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef reverse_linked_list(head):\n    prev = None\n    current = head\n    \n    while current:\n        next_node = current.next  # Lưu next node\n        current.next = prev        # Đảo chiều pointer\n        prev = current             # Di chuyển prev\n        current = next_node        # Di chuyển current\n    \n    return prev  # prev là head mới\n\nnode1 = Node(1)\nnode2 = Node(2)\nnode3 = Node(3)\nnode1.next = node2\nnode2.next = node3\n\nnew_head = reverse_linked_list(node1)\nprint(new_head.data)  # Output: 3",
+      "testCases": [
+        {
+          "input": "1->2->3->None",
+          "expected": "3->2->1->None",
+          "hidden": false
+        },
+        { "input": "1->None", "expected": "1->None", "hidden": false },
+        { "input": "1->2->None", "expected": "2->1->None", "hidden": true }
+      ],
+      "hints": [
+        "Dùng 3 pointers: prev, current, next",
+        "Đảo chiều mỗi node.next",
+        "Time: O(n), Space: O(1)"
+      ],
+      "tags": ["python", "linked-list", "algorithm", "hard"],
+      "order": 2
+    }
+  ]
+}

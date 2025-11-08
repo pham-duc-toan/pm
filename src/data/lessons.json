@@ -1,0 +1,580 @@
+{
+  "lessons": [
+    {
+      "id": "1-1-1",
+      "courseId": 1,
+      "chapterNumber": 1,
+      "chapterTitle": "Getting Started",
+      "lessonNumber": 1,
+      "title": "Giới thiệu khóa học & setup môi trường",
+      "slug": "gioi-thieu-khoa-hoc-setup-moi-truong",
+      "type": "video",
+      "duration": "15:30",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Trong bài học này, bạn sẽ được giới thiệu tổng quan về khóa học, lộ trình học tập và cách setup môi trường phát triển với Node.js, NPM và VS Code.",
+      "objectives": [
+        "Hiểu được lộ trình học JavaScript & React",
+        "Cài đặt Node.js và NPM",
+        "Setup VS Code và extensions cần thiết"
+      ],
+      "resources": [
+        { "title": "Node.js Download", "url": "https://nodejs.org" },
+        { "title": "VS Code Download", "url": "https://code.visualstudio.com" }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "1-1-2",
+      "courseId": 1,
+      "chapterNumber": 1,
+      "chapterTitle": "Getting Started",
+      "lessonNumber": 2,
+      "title": "Node.js, NPM và Vite quickstart",
+      "slug": "nodejs-npm-vite-quickstart",
+      "type": "video",
+      "duration": "12:45",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Học cách sử dụng NPM để quản lý packages và tạo dự án React nhanh chóng với Vite.",
+      "objectives": [
+        "Hiểu về NPM và package.json",
+        "Tạo dự án React với Vite",
+        "Chạy dev server đầu tiên"
+      ],
+      "resources": [
+        { "title": "Vite Documentation", "url": "https://vitejs.dev" }
+      ],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "1-2-1",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 1,
+      "title": "Syntax và Data Types",
+      "slug": "syntax-data-types",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Tìm hiểu cú pháp JavaScript cơ bản, các kiểu dữ liệu nguyên thủy (string, number, boolean, null, undefined) và cách khai báo biến với var, let, const.",
+      "objectives": [
+        "Nắm vững cú pháp JavaScript",
+        "Phân biệt var, let, const",
+        "Hiểu các kiểu dữ liệu cơ bản"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "1-2-2",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 2,
+      "title": "Functions, Scope và Closure",
+      "slug": "functions-scope-closure",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Học về hàm trong JavaScript: function declaration, function expression, arrow function. Hiểu về scope (global, local, block) và closure - một khái niệm quan trọng trong JS.",
+      "objectives": [
+        "Tạo và sử dụng functions",
+        "Hiểu về scope và hoisting",
+        "Nắm vững khái niệm closure"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "1-2-3",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 3,
+      "title": "Array methods (map/filter/reduce)",
+      "slug": "array-methods",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Khám phá các phương thức mảng quan trọng: map() để biến đổi, filter() để lọc, reduce() để tính toán tích lũy. Những phương thức này rất quan trọng trong React.",
+      "objectives": [
+        "Sử dụng map, filter, reduce thành thạo",
+        "Hiểu functional programming trong JS",
+        "Áp dụng vào các bài toán thực tế"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "1-2-4",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 4,
+      "title": "Asynchronous JS: Callbacks & Promises",
+      "slug": "async-callbacks-promises",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Lập trình bất đồng bộ là trọng tâm của JavaScript hiện đại. Học về callback, callback hell, và cách Promise giải quyết vấn đề này.",
+      "objectives": [
+        "Hiểu event loop và asynchronous",
+        "Sử dụng callbacks",
+        "Làm việc với Promises"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "1-2-5",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 5,
+      "title": "Async/Await và Error Handling",
+      "slug": "async-await-error-handling",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Async/await giúp code bất đồng bộ trông như code đồng bộ, dễ đọc hơn. Học cách xử lý lỗi với try/catch.",
+      "objectives": [
+        "Sử dụng async/await",
+        "Xử lý lỗi với try/catch",
+        "So sánh Promise vs async/await"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "1-2-6",
+      "courseId": 1,
+      "chapterNumber": 2,
+      "chapterTitle": "JavaScript Essentials",
+      "lessonNumber": 6,
+      "title": "Bài tập code: hàm cơ bản (Code Editor)",
+      "slug": "bai-tap-ham-co-ban",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành các kiến thức đã học về functions, array methods thông qua các bài tập code trực tiếp trên trình duyệt.",
+      "objectives": [
+        "Củng cố kiến thức về functions",
+        "Thực hành array methods",
+        "Debug và test code"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "1-3-1",
+      "courseId": 1,
+      "chapterNumber": 3,
+      "chapterTitle": "React Basics",
+      "lessonNumber": 1,
+      "title": "JSX & Components",
+      "slug": "jsx-components",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "JSX là cú pháp mở rộng cho JavaScript, cho phép viết HTML trong JS. Học cách tạo components - building blocks của React app.",
+      "objectives": [
+        "Hiểu JSX và cách nó hoạt động",
+        "Tạo functional components",
+        "Component composition"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "1-3-2",
+      "courseId": 1,
+      "chapterNumber": 3,
+      "chapterTitle": "React Basics",
+      "lessonNumber": 2,
+      "title": "Props & State",
+      "slug": "props-state",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Props để truyền dữ liệu giữa components, State để quản lý dữ liệu nội bộ của component. Hai khái niệm cốt lõi của React.",
+      "objectives": [
+        "Truyền và nhận props",
+        "Quản lý state với useState",
+        "Phân biệt props vs state"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
+    },
+    {
+      "id": "1-3-3",
+      "courseId": 1,
+      "chapterNumber": 3,
+      "chapterTitle": "React Basics",
+      "lessonNumber": 3,
+      "title": "Event handling và Forms",
+      "slug": "event-handling-forms",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Xử lý sự kiện người dùng (click, submit, change) và làm việc với forms trong React. Controlled vs Uncontrolled components.",
+      "objectives": [
+        "Handle events trong React",
+        "Làm việc với forms",
+        "Controlled components"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 11
+    },
+    {
+      "id": "1-3-4",
+      "courseId": 1,
+      "chapterNumber": 3,
+      "chapterTitle": "React Basics",
+      "lessonNumber": 4,
+      "title": "Lists & Keys",
+      "slug": "lists-keys",
+      "type": "video",
+      "duration": "18:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Render danh sách dữ liệu với map() và tầm quan trọng của keys để React optimize re-rendering.",
+      "objectives": [
+        "Render lists trong React",
+        "Hiểu tầm quan trọng của keys",
+        "List performance optimization"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 12
+    },
+    {
+      "id": "1-3-5",
+      "courseId": 1,
+      "chapterNumber": 3,
+      "chapterTitle": "React Basics",
+      "lessonNumber": 5,
+      "title": "Bài tập code: xử lý mảng và DOM (Code Editor)",
+      "slug": "bai-tap-mang-dom",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành render lists, handle events và form validation trong React.",
+      "objectives": [
+        "Thực hành React basics",
+        "Xử lý form và validation",
+        "Build mini todo list"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 13
+    },
+    {
+      "id": "1-4-1",
+      "courseId": 1,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced React",
+      "lessonNumber": 1,
+      "title": "Hooks: useState, useEffect",
+      "slug": "hooks-usestate-useeffect",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "React Hooks là tính năng quan trọng cho phép sử dụng state và lifecycle trong functional components. Học useState và useEffect - 2 hooks cơ bản nhất.",
+      "objectives": [
+        "Sử dụng useState thành thạo",
+        "Hiểu useEffect và dependencies",
+        "Cleanup functions"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 14
+    },
+    {
+      "id": "1-4-2",
+      "courseId": 1,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced React",
+      "lessonNumber": 2,
+      "title": "Context & Custom Hooks",
+      "slug": "context-custom-hooks",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Context API giúp truyền data mà không cần props drilling. Custom hooks giúp tái sử dụng logic giữa components.",
+      "objectives": [
+        "Sử dụng Context API",
+        "Tạo custom hooks",
+        "Reusable logic patterns"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 15
+    },
+    {
+      "id": "1-4-3",
+      "courseId": 1,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced React",
+      "lessonNumber": 3,
+      "title": "Testing & Debugging React",
+      "slug": "testing-debugging-react",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Unit testing với Jest và React Testing Library. Debug với React DevTools.",
+      "objectives": [
+        "Viết unit tests cho React components",
+        "Debug với React DevTools",
+        "Best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 16
+    },
+    {
+      "id": "1-4-4",
+      "courseId": 1,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced React",
+      "lessonNumber": 4,
+      "title": "Kiểm tra cuối khóa: JavaScript & React",
+      "slug": "kiem-tra-cuoi-khoa-javascript-react",
+      "type": "quiz",
+      "duration": "30:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp toàn bộ kiến thức từ JavaScript cơ bản đến React nâng cao. Bạn cần trả lời đúng tất cả các câu hỏi để hoàn thành khóa học.",
+      "objectives": [
+        "Kiểm tra kiến thức JavaScript",
+        "Đánh giá hiểu biết về React",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 17
+    },
+    {
+      "id": "2-1-1",
+      "courseId": 2,
+      "chapterNumber": 1,
+      "chapterTitle": "Getting Started",
+      "lessonNumber": 1,
+      "title": "Giới thiệu MySQL & cài đặt",
+      "slug": "gioi-thieu-mysql-cai-dat",
+      "type": "video",
+      "duration": "15:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Giới thiệu về MySQL, RDBMS và cách cài đặt MySQL Server, MySQL Workbench.",
+      "objectives": [
+        "Hiểu về relational database",
+        "Cài đặt MySQL Server",
+        "Setup MySQL Workbench"
+      ],
+      "resources": [
+        { "title": "MySQL Download", "url": "https://dev.mysql.com/downloads/" }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "2-2-1",
+      "courseId": 2,
+      "chapterNumber": 2,
+      "chapterTitle": "SQL Basics",
+      "lessonNumber": 1,
+      "title": "SELECT, WHERE, ORDER BY",
+      "slug": "select-where-order-by",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Học các câu lệnh SQL cơ bản để truy vấn dữ liệu: SELECT, WHERE, ORDER BY, LIMIT.",
+      "objectives": [
+        "Viết câu lệnh SELECT",
+        "Filter với WHERE",
+        "Sắp xếp với ORDER BY"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 2
+    },
+    {
+      "id": "2-2-2",
+      "courseId": 2,
+      "chapterNumber": 2,
+      "chapterTitle": "SQL Basics",
+      "lessonNumber": 2,
+      "title": "JOINs và Aggregation",
+      "slug": "joins-aggregation",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "JOIN để kết hợp dữ liệu từ nhiều bảng. Aggregate functions (COUNT, SUM, AVG, MAX, MIN) và GROUP BY.",
+      "objectives": [
+        "Sử dụng INNER JOIN, LEFT JOIN",
+        "Aggregate functions",
+        "GROUP BY và HAVING"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "2-2-6",
+      "courseId": 2,
+      "chapterNumber": 2,
+      "chapterTitle": "SQL Basics",
+      "lessonNumber": 6,
+      "title": "Bài tập SQL: Truy vấn cơ bản (Code Editor)",
+      "slug": "bai-tap-sql-truy-van",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành viết các câu truy vấn SQL cơ bản và nâng cao.",
+      "objectives": [
+        "Thực hành SELECT, JOIN",
+        "Viết queries phức tạp",
+        "Optimize queries"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "2-3-1",
+      "courseId": 2,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced Topics",
+      "lessonNumber": 1,
+      "title": "Indexing & Performance",
+      "slug": "indexing-performance",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Tối ưu hóa database với indexes. EXPLAIN để phân tích query performance.",
+      "objectives": [
+        "Tạo và quản lý indexes",
+        "Phân tích query với EXPLAIN",
+        "Query optimization techniques"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "2-3-5",
+      "courseId": 2,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced Topics",
+      "lessonNumber": 5,
+      "title": "Bài tập: Fetch/Async integration (exercise)",
+      "slug": "bai-tap-fetch-async",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Kết nối database với backend API, thực hành fetch data từ MySQL.",
+      "objectives": [
+        "Kết nối MySQL với Node.js",
+        "CRUD operations qua API",
+        "Error handling"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "7-1-1",
+      "courseId": 7,
+      "chapterNumber": 1,
+      "chapterTitle": "Python Basics",
+      "lessonNumber": 1,
+      "title": "Syntax & Variables",
+      "slug": "python-syntax-variables",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Cú pháp Python cơ bản, khai báo biến, data types (int, float, str, bool, list, dict, tuple).",
+      "objectives": [
+        "Nắm vững cú pháp Python",
+        "Hiểu data types",
+        "Variables và naming conventions"
+      ],
+      "resources": [
+        { "title": "Python Documentation", "url": "https://docs.python.org" }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "7-2-4",
+      "courseId": 7,
+      "chapterNumber": 2,
+      "chapterTitle": "Data Processing",
+      "lessonNumber": 4,
+      "title": "Bài tập Data Cleaning với Pandas (Code Editor)",
+      "slug": "bai-tap-data-cleaning-pandas",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành data cleaning: xử lý missing values, outliers, data transformation với Pandas.",
+      "objectives": [
+        "Làm sạch dữ liệu",
+        "Handle missing data",
+        "Data transformation"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 2
+    },
+    {
+      "id": "7-3-1",
+      "courseId": 7,
+      "chapterNumber": 3,
+      "chapterTitle": "Algorithms & Data Structures",
+      "lessonNumber": 1,
+      "title": "Array & LinkedList",
+      "slug": "array-linkedlist",
+      "type": "video",
+      "duration": "35:00",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content": "Cấu trúc dữ liệu cơ bản: Array/List và Linked List. Ưu nhược điểm và use cases.",
+      "objectives": [
+        "Hiểu Array và LinkedList",
+        "Time complexity analysis",
+        "Implement basic operations"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "7-3-2",
+      "courseId": 7,
+      "chapterNumber": 3,
+      "chapterTitle": "Algorithms & Data Structures",
+      "lessonNumber": 2,
+      "title": "Bài tập: Reverse Linked List (exercise)",
+      "slug": "bai-tap-reverse-linked-list",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành thuật toán reverse linked list - một bài toán phỏng vấn phổ biến.",
+      "objectives": [
+        "Implement reverse linked list",
+        "Practice pointer manipulation",
+        "Analyze time/space complexity"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    }
+  ]
+}

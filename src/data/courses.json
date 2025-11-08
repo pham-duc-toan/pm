@@ -1,0 +1,158 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "JavaScript & React - From Zero to Hero",
+      "slug": "javascript-react-zero-to-hero",
+      "shortDescription": "Học JavaScript và React từ cơ bản đến nâng cao với nhiều bài tập thực hành",
+      "fullDescription": "Khóa học JavaScript + React tập trung vào lập trình front-end hiện đại: nền tảng JavaScript, ES6+, DOM, React cơ bản và nâng cao. Kèm theo nhiều bài tập code thực hành dùng Code Editor trên FE.",
+      "thumbnail": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
+      "level": "beginner",
+      "category": "Web Development",
+      "instructor": {
+        "id": 101,
+        "name": "Nguyễn Văn A",
+        "avatar": "https://i.pravatar.cc/150?img=12",
+        "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1999000,
+      "discount": 100,
+      "rating": 4.8,
+      "totalStudents": 1245,
+      "totalLessons": 48,
+      "totalDuration": "12 giờ 30 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "JavaScript cơ bản và nâng cao (ES6+)",
+        "Cấu trúc dữ liệu, hàm, closure và async patterns",
+        "DOM manipulation và event handling",
+        "React: components, hooks, routing và state management",
+        "Unit testing & debugging cơ bản",
+        "Thực hành dự án nhỏ: Todo App / Quiz App"
+      ],
+      "requirements": [
+        "HTML/CSS cơ bản",
+        "Máy tính có trình duyệt",
+        "Code editor (VS Code)"
+      ],
+      "targetAudience": [
+        "Người mới bắt đầu học lập trình web",
+        "Sinh viên IT muốn học React",
+        "Developer muốn chuyển sang React"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ JavaScript & React",
+        "thumbnail": "https://images.unsplash.com/photo-1589330273594-faddc8d7fd67?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học JavaScript & React"
+      },
+      "isPublished": true,
+      "isFeatured": true,
+      "createdAt": "2025-01-15T08:00:00Z",
+      "updatedAt": "2025-11-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "title": "MySQL & Database Fundamentals",
+      "slug": "mysql-database-fundamentals",
+      "shortDescription": "Làm chủ MySQL và thiết kế cơ sở dữ liệu chuyên nghiệp",
+      "fullDescription": "Khóa học về cơ sở dữ liệu quan hệ: SQL, schema design, queries, indexing và tối ưu. Có bài tập SQL và bài tập backend nhỏ liên quan tới DB.",
+      "thumbnail": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Database",
+      "instructor": {
+        "id": 102,
+        "name": "Trần Thị B",
+        "avatar": "https://i.pravatar.cc/150?img=25",
+        "bio": "Database Administrator với 10 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1499000,
+      "discount": 100,
+      "rating": 4.7,
+      "totalStudents": 892,
+      "totalLessons": 35,
+      "totalDuration": "9 giờ 45 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt"],
+      "whatYouWillLearn": [
+        "SQL cơ bản & nâng cao",
+        "Thiết kế schema chuẩn hóa",
+        "Joins, Subqueries, Views",
+        "Indexing và tối ưu hóa",
+        "Stored Procedures và Triggers",
+        "Backup và Recovery"
+      ],
+      "requirements": ["Hiểu biết cơ bản về máy tính", "Tư duy logic tốt"],
+      "targetAudience": [
+        "Backend developers",
+        "Data analysts mới bắt đầu",
+        "Người muốn làm DBA"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ MySQL",
+        "thumbnail": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học MySQL"
+      },
+      "isPublished": true,
+      "isFeatured": false,
+      "createdAt": "2025-02-10T08:00:00Z",
+      "updatedAt": "2025-10-28T14:20:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Python for Data & Algorithms",
+      "slug": "python-data-algorithms",
+      "shortDescription": "Python từ cơ bản đến nâng cao với Data Science và thuật toán",
+      "fullDescription": "Khóa học Python tập trung vào lập trình, xử lý dữ liệu, cấu trúc dữ liệu và thuật toán. Có nhiều bài tập code (algorithms, data cleaning) chạy thử trên FE code editor.",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Programming",
+      "instructor": {
+        "id": 103,
+        "name": "Phạm Văn C",
+        "avatar": "https://i.pravatar.cc/150?img=33",
+        "bio": "Data Scientist & AI Engineer với 7 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 2499000,
+      "discount": 100,
+      "rating": 4.9,
+      "totalStudents": 1567,
+      "totalLessons": 52,
+      "totalDuration": "15 giờ 20 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "Python fundamentals",
+        "NumPy & Pandas",
+        "Thuật toán cơ bản (sorting, searching)",
+        "Data structures (array, linked list, tree)",
+        "Data cleaning & visualization",
+        "Big O notation"
+      ],
+      "requirements": [
+        "Máy tính có Python 3.x (nếu muốn chạy local)",
+        "Tư duy logic và toán học cơ bản"
+      ],
+      "targetAudience": [
+        "Người mới học Python",
+        "Developer muốn chuyển sang Data Science",
+        "Sinh viên chuẩn bị phỏng vấn thuật toán"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Python",
+        "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Python"
+      },
+      "isPublished": true,
+      "isFeatured": true,
+      "createdAt": "2025-03-05T08:00:00Z",
+      "updatedAt": "2025-11-05T09:15:00Z"
+    }
+  ]
+}
