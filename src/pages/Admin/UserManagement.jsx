@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import fakeDatabase from "../../data/fakeDatabase.json";
+import usersData from "../../data/users.json";
 import "./UserManagement.css";
 
 const UserManagement = () => {
@@ -14,7 +14,7 @@ const UserManagement = () => {
     return null;
   }
 
-  const [users, setUsers] = useState(fakeDatabase.users);
+  const [users, setUsers] = useState(usersData.users);
   const [activityLogs, setActivityLogs] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMode, setModalMode] = useState("create"); // create, edit, view

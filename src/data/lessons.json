@@ -575,6 +575,1324 @@
       "resources": [],
       "isFree": false,
       "order": 4
+    },
+    {
+      "id": 30,
+      "courseId": 10,
+      "chapterNumber": 1,
+      "chapterTitle": "Git Basics",
+      "title": "Introduction to Version Control",
+      "type": "video",
+      "duration": "18:30",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Git là công cụ quản lý phiên bản phân tán (distributed version control system) giúp theo dõi thay đổi trong source code.",
+      "objectives": [
+        "Hiểu khái niệm version control",
+        "Cài đặt Git trên máy",
+        "Cấu hình Git cơ bản"
+      ],
+      "resources": [
+        {
+          "title": "Git Official Documentation",
+          "url": "https://git-scm.com/doc"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": 31,
+      "courseId": 10,
+      "chapterNumber": 1,
+      "chapterTitle": "Git Basics",
+      "title": "Git Commands - Init, Add, Commit",
+      "type": "video",
+      "duration": "22:15",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Các lệnh Git cơ bản để khởi tạo repository, staging changes và commit.",
+      "objectives": [
+        "Sử dụng git init",
+        "Hiểu staging area",
+        "Commit changes với message"
+      ],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": 32,
+      "courseId": 10,
+      "chapterNumber": 1,
+      "chapterTitle": "Git Basics",
+      "title": "Working with Remote Repositories",
+      "type": "video",
+      "duration": "20:45",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Làm việc với remote repositories trên GitHub: clone, pull, push.",
+      "objectives": [
+        "Clone repository từ GitHub",
+        "Push changes lên remote",
+        "Pull changes từ remote"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": 33,
+      "courseId": 10,
+      "chapterNumber": 2,
+      "chapterTitle": "Branching & Merging",
+      "title": "Git Branching Strategies",
+      "type": "video",
+      "duration": "25:30",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo và quản lý branches trong Git, branching strategies như Git Flow.",
+      "objectives": [
+        "Tạo và switch branches",
+        "Hiểu Git Flow workflow",
+        "Đặt tên branch theo convention"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 1
+    },
+    {
+      "id": 34,
+      "courseId": 10,
+      "chapterNumber": 2,
+      "chapterTitle": "Branching & Merging",
+      "title": "Merging and Resolving Conflicts",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Merge branches và giải quyết conflicts khi có xung đột code.",
+      "objectives": [
+        "Merge branches",
+        "Giải quyết merge conflicts",
+        "Sử dụng merge tools"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 2
+    },
+    {
+      "id": 35,
+      "courseId": 10,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced Git",
+      "title": "Git Rebase and Cherry-pick",
+      "type": "video",
+      "duration": "24:20",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Các kỹ thuật nâng cao: rebase để làm sạch history, cherry-pick để chọn commits.",
+      "objectives": [
+        "Sử dụng git rebase",
+        "Cherry-pick specific commits",
+        "So sánh rebase vs merge"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 1
+    },
+    {
+      "id": 36,
+      "courseId": 10,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced Git",
+      "title": "Git Stash and Tags",
+      "type": "video",
+      "duration": "19:45",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Lưu tạm thời changes với stash, đánh dấu versions với tags.",
+      "objectives": [
+        "Sử dụng git stash",
+        "Tạo và quản lý tags",
+        "Tag semantic versioning"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 2
+    },
+    {
+      "id": 37,
+      "courseId": 10,
+      "chapterNumber": 4,
+      "chapterTitle": "GitHub Collaboration",
+      "title": "Pull Requests and Code Review",
+      "type": "video",
+      "duration": "26:15",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo pull requests, review code và merge vào main branch trên GitHub.",
+      "objectives": [
+        "Tạo Pull Request",
+        "Review code changes",
+        "Approve và merge PR"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 1
+    },
+    {
+      "id": 38,
+      "courseId": 10,
+      "chapterNumber": 4,
+      "chapterTitle": "GitHub Collaboration",
+      "title": "GitHub Actions CI/CD",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tự động hóa testing và deployment với GitHub Actions workflows.",
+      "objectives": [
+        "Tạo GitHub Actions workflow",
+        "Setup CI pipeline",
+        "Deploy tự động"
+      ],
+      "resources": [
+        {
+          "title": "GitHub Actions Documentation",
+          "url": "https://docs.github.com/en/actions"
+        }
+      ],
+      "isFree": false,
+      "order": 2
+    },
+    {
+      "id": 39,
+      "courseId": 10,
+      "chapterNumber": 4,
+      "chapterTitle": "GitHub Collaboration",
+      "title": "Kiểm tra cuối khóa: Git & GitHub",
+      "type": "quiz",
+      "duration": "25:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp toàn bộ kiến thức Git và GitHub. Hoàn thành để nhận chứng chỉ.",
+      "objectives": [
+        "Kiểm tra kiến thức Git",
+        "Đánh giá hiểu biết về GitHub",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "3-1-1",
+      "courseId": 3,
+      "chapterNumber": 1,
+      "chapterTitle": "Node.js Fundamentals",
+      "title": "Introduction to Node.js",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Giới thiệu Node.js, event loop, non-blocking I/O và cách Node.js khác với JavaScript trong browser.",
+      "objectives": [
+        "Hiểu Node.js architecture",
+        "Event loop và asynchronous",
+        "NPM và package management"
+      ],
+      "resources": [
+        {
+          "title": "Node.js Documentation",
+          "url": "https://nodejs.org/docs"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "3-1-2",
+      "courseId": 3,
+      "chapterNumber": 1,
+      "chapterTitle": "Node.js Fundamentals",
+      "title": "Node.js Modules & File System",
+      "type": "video",
+      "duration": "25:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "CommonJS modules, require/export, và làm việc với file system (fs module).",
+      "objectives": [
+        "Sử dụng modules",
+        "File system operations",
+        "Path module"
+      ],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "3-2-1",
+      "courseId": 3,
+      "chapterNumber": 2,
+      "chapterTitle": "Express Framework",
+      "title": "Express Setup & Routing",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Cài đặt Express, tạo server đầu tiên, routing và middleware basics.",
+      "objectives": [
+        "Setup Express app",
+        "Create routes",
+        "Middleware fundamentals"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "3-2-2",
+      "courseId": 3,
+      "chapterNumber": 2,
+      "chapterTitle": "Express Framework",
+      "title": "RESTful API Design",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "REST principles, HTTP methods (GET, POST, PUT, DELETE), status codes và API best practices.",
+      "objectives": [
+        "Hiểu REST architecture",
+        "Design RESTful endpoints",
+        "HTTP status codes"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "3-3-1",
+      "courseId": 3,
+      "chapterNumber": 3,
+      "chapterTitle": "Authentication & Security",
+      "title": "JWT Authentication",
+      "type": "video",
+      "duration": "35:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "JSON Web Tokens (JWT) để authentication, bcrypt để hash passwords, protect routes.",
+      "objectives": [
+        "Implement JWT authentication",
+        "Password hashing với bcrypt",
+        "Protected routes"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "3-3-2",
+      "courseId": 3,
+      "chapterNumber": 3,
+      "chapterTitle": "Authentication & Security",
+      "title": "Error Handling & Validation",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Error handling middleware, input validation với express-validator, sanitization.",
+      "objectives": [
+        "Error handling patterns",
+        "Input validation",
+        "Security best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "3-4-1",
+      "courseId": 3,
+      "chapterNumber": 4,
+      "chapterTitle": "Database Integration",
+      "title": "MongoDB với Mongoose",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Kết nối MongoDB với Mongoose ODM, schemas, models và CRUD operations.",
+      "objectives": [
+        "Connect MongoDB",
+        "Define schemas và models",
+        "CRUD with Mongoose"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "3-4-2",
+      "courseId": 3,
+      "chapterNumber": 4,
+      "chapterTitle": "Database Integration",
+      "title": "Bài tập: Build Complete API",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành xây dựng một REST API hoàn chỉnh với authentication, CRUD và validation.",
+      "objectives": [
+        "Build full-stack API",
+        "Implement all features",
+        "Test API endpoints"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "3-4-3",
+      "courseId": 3,
+      "chapterNumber": 4,
+      "chapterTitle": "Database Integration",
+      "title": "Kiểm tra cuối khóa: Node.js & Express",
+      "type": "quiz",
+      "duration": "30:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp kiến thức Node.js, Express, REST API và MongoDB.",
+      "objectives": [
+        "Kiểm tra Node.js fundamentals",
+        "Đánh giá Express & REST API",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "4-1-1",
+      "courseId": 4,
+      "chapterNumber": 1,
+      "chapterTitle": "TypeScript Basics",
+      "title": "Why TypeScript?",
+      "type": "video",
+      "duration": "18:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tại sao cần TypeScript, lợi ích của static typing, setup TypeScript project.",
+      "objectives": [
+        "Hiểu lợi ích TypeScript",
+        "Setup TypeScript",
+        "TypeScript compiler (tsc)"
+      ],
+      "resources": [
+        {
+          "title": "TypeScript Official Docs",
+          "url": "https://www.typescriptlang.org/docs/"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "4-1-2",
+      "courseId": 4,
+      "chapterNumber": 1,
+      "chapterTitle": "TypeScript Basics",
+      "title": "Basic Types & Type Annotations",
+      "type": "video",
+      "duration": "24:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Các types cơ bản: string, number, boolean, array, tuple, enum, any, unknown, void.",
+      "objectives": ["Type annotations", "Primitive types", "Arrays và tuples"],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "4-2-1",
+      "courseId": 4,
+      "chapterNumber": 2,
+      "chapterTitle": "Interfaces & Types",
+      "title": "Interfaces & Type Aliases",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Định nghĩa interfaces và type aliases, sự khác biệt và khi nào dùng cái nào.",
+      "objectives": ["Create interfaces", "Type aliases", "Interface vs Type"],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "4-2-2",
+      "courseId": 4,
+      "chapterNumber": 2,
+      "chapterTitle": "Interfaces & Types",
+      "title": "Union, Intersection & Literal Types",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Union types (|), intersection types (&), literal types và type narrowing.",
+      "objectives": ["Union và intersection", "Literal types", "Type guards"],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "4-3-1",
+      "courseId": 4,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced TypeScript",
+      "title": "Generics",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Generics để tạo reusable components, generic functions, classes và constraints.",
+      "objectives": ["Generic functions", "Generic interfaces", "Constraints"],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "4-3-2",
+      "courseId": 4,
+      "chapterNumber": 3,
+      "chapterTitle": "Advanced TypeScript",
+      "title": "Utility Types & Mapped Types",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Utility types (Partial, Required, Pick, Omit, Record) và tạo mapped types.",
+      "objectives": [
+        "Sử dụng utility types",
+        "Create mapped types",
+        "Advanced type manipulation"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "4-4-1",
+      "courseId": 4,
+      "chapterNumber": 4,
+      "chapterTitle": "TypeScript in Practice",
+      "title": "TypeScript với React",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Sử dụng TypeScript trong React: typing props, state, events, hooks.",
+      "objectives": [
+        "Type React components",
+        "Props và state typing",
+        "Custom hooks với TypeScript"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "4-4-2",
+      "courseId": 4,
+      "chapterNumber": 4,
+      "chapterTitle": "TypeScript in Practice",
+      "title": "TypeScript với Node.js",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Setup TypeScript cho Node.js projects, typing Express apps, async/await.",
+      "objectives": [
+        "TypeScript Node.js setup",
+        "Type Express routes",
+        "Async typing"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "4-4-3",
+      "courseId": 4,
+      "chapterNumber": 4,
+      "chapterTitle": "TypeScript in Practice",
+      "title": "Bài tập: Refactor to TypeScript",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành chuyển đổi JavaScript project sang TypeScript, thêm types và fix errors.",
+      "objectives": ["Migrate JS to TS", "Add proper types", "Fix type errors"],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "4-4-4",
+      "courseId": 4,
+      "chapterNumber": 4,
+      "chapterTitle": "TypeScript in Practice",
+      "title": "Kiểm tra cuối khóa: TypeScript",
+      "type": "quiz",
+      "duration": "28:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp kiến thức TypeScript từ cơ bản đến nâng cao.",
+      "objectives": [
+        "Kiểm tra TypeScript basics",
+        "Advanced types",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
+    },
+    {
+      "id": "5-1-1",
+      "courseId": 5,
+      "chapterNumber": 1,
+      "chapterTitle": "Docker Fundamentals",
+      "title": "Introduction to Docker",
+      "type": "video",
+      "duration": "22:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Docker là gì, containers vs VMs, Docker architecture và cài đặt Docker Desktop.",
+      "objectives": [
+        "Hiểu containers",
+        "Docker architecture",
+        "Cài đặt Docker"
+      ],
+      "resources": [
+        {
+          "title": "Docker Documentation",
+          "url": "https://docs.docker.com"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "5-1-2",
+      "courseId": 5,
+      "chapterNumber": 1,
+      "chapterTitle": "Docker Fundamentals",
+      "title": "Docker Images & Containers",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Docker images, pulling images từ Docker Hub, running containers, basic commands.",
+      "objectives": [
+        "Pull và run images",
+        "Container lifecycle",
+        "Docker CLI commands"
+      ],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "5-2-1",
+      "courseId": 5,
+      "chapterNumber": 2,
+      "chapterTitle": "Dockerfile & Images",
+      "title": "Writing Dockerfiles",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo Dockerfile, các instructions (FROM, COPY, RUN, CMD, ENTRYPOINT), build images.",
+      "objectives": [
+        "Write Dockerfile",
+        "Build custom images",
+        "Dockerfile best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "5-2-2",
+      "courseId": 5,
+      "chapterNumber": 2,
+      "chapterTitle": "Dockerfile & Images",
+      "title": "Docker Compose",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Multi-container apps với Docker Compose, docker-compose.yml, services, networks, volumes.",
+      "objectives": [
+        "Docker Compose basics",
+        "Define multi-container apps",
+        "Services communication"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "5-3-1",
+      "courseId": 5,
+      "chapterNumber": 3,
+      "chapterTitle": "Kubernetes Basics",
+      "title": "Kubernetes Architecture",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "K8s architecture: master node, worker nodes, pods, control plane, kubectl.",
+      "objectives": [
+        "Hiểu K8s architecture",
+        "Setup minikube/kind",
+        "kubectl basics"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "5-3-2",
+      "courseId": 5,
+      "chapterNumber": 3,
+      "chapterTitle": "Kubernetes Basics",
+      "title": "Pods, Deployments & Services",
+      "type": "video",
+      "duration": "35:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo Pods, Deployments để manage replicas, Services để expose apps.",
+      "objectives": [
+        "Create Pods",
+        "Deployments và replicas",
+        "Services và networking"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "5-4-1",
+      "courseId": 5,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced K8s & CI/CD",
+      "title": "ConfigMaps, Secrets & Volumes",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Quản lý configuration với ConfigMaps, sensitive data với Secrets, persistent storage với Volumes.",
+      "objectives": [
+        "ConfigMaps và Secrets",
+        "Persistent Volumes",
+        "Volume types"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "5-4-2",
+      "courseId": 5,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced K8s & CI/CD",
+      "title": "CI/CD với GitHub Actions",
+      "type": "video",
+      "duration": "34:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Setup CI/CD pipeline: build Docker images, push to registry, deploy to Kubernetes.",
+      "objectives": [
+        "GitHub Actions workflows",
+        "Automated builds",
+        "Deploy to K8s cluster"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "5-4-3",
+      "courseId": 5,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced K8s & CI/CD",
+      "title": "Bài tập: Deploy Full-Stack App",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành containerize và deploy một full-stack application lên Kubernetes.",
+      "objectives": ["Dockerize app", "Write K8s manifests", "Deploy và test"],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "5-4-4",
+      "courseId": 5,
+      "chapterNumber": 4,
+      "chapterTitle": "Advanced K8s & CI/CD",
+      "title": "Kiểm tra cuối khóa: Docker & Kubernetes",
+      "type": "quiz",
+      "duration": "32:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp Docker, Kubernetes và DevOps practices.",
+      "objectives": [
+        "Kiểm tra Docker knowledge",
+        "K8s concepts",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
+    },
+    {
+      "id": "6-1-1",
+      "courseId": 6,
+      "chapterNumber": 1,
+      "chapterTitle": "Next.js Fundamentals",
+      "title": "Introduction to Next.js 14",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Next.js là gì, lợi ích của SSR/SSG, setup Next.js 14 project với App Router.",
+      "objectives": [
+        "Hiểu Next.js benefits",
+        "Setup Next.js project",
+        "App Router overview"
+      ],
+      "resources": [
+        {
+          "title": "Next.js Documentation",
+          "url": "https://nextjs.org/docs"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "6-1-2",
+      "courseId": 6,
+      "chapterNumber": 1,
+      "chapterTitle": "Next.js Fundamentals",
+      "title": "App Router & File-based Routing",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "File-based routing với App Router, layouts, pages, dynamic routes, route groups.",
+      "objectives": [
+        "App Router structure",
+        "Create routes",
+        "Dynamic routing"
+      ],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "6-2-1",
+      "courseId": 6,
+      "chapterNumber": 2,
+      "chapterTitle": "Server & Client Components",
+      "title": "Server Components",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "React Server Components trong Next.js, data fetching, async components.",
+      "objectives": [
+        "Server Components basics",
+        "Data fetching patterns",
+        "Async components"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "6-2-2",
+      "courseId": 6,
+      "chapterNumber": 2,
+      "chapterTitle": "Server & Client Components",
+      "title": "Client Components & Interactivity",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Client Components với 'use client', hooks, event handlers, when to use Client vs Server.",
+      "objectives": [
+        "Client Components",
+        "Use client directive",
+        "Server vs Client strategy"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "6-3-1",
+      "courseId": 6,
+      "chapterNumber": 3,
+      "chapterTitle": "Data & Authentication",
+      "title": "Server Actions & Mutations",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Server Actions để handle form submissions và data mutations, revalidation.",
+      "objectives": [
+        "Server Actions basics",
+        "Form handling",
+        "Revalidate data"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "6-3-2",
+      "courseId": 6,
+      "chapterNumber": 3,
+      "chapterTitle": "Data & Authentication",
+      "title": "API Routes & Middleware",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo API routes trong Next.js, middleware cho authentication và redirects.",
+      "objectives": [
+        "Create API routes",
+        "Middleware patterns",
+        "Request/Response handling"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "6-3-3",
+      "courseId": 6,
+      "chapterNumber": 3,
+      "chapterTitle": "Data & Authentication",
+      "title": "Authentication với NextAuth",
+      "type": "video",
+      "duration": "35:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Setup NextAuth.js, providers (credentials, OAuth), session management, protected routes.",
+      "objectives": [
+        "Setup NextAuth",
+        "Configure providers",
+        "Protected routes"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "6-4-1",
+      "courseId": 6,
+      "chapterNumber": 4,
+      "chapterTitle": "Optimization & Deployment",
+      "title": "Image & Font Optimization",
+      "type": "video",
+      "duration": "24:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Next.js Image component, automatic optimization, font optimization với next/font.",
+      "objectives": [
+        "Image optimization",
+        "Font loading strategies",
+        "Performance best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "6-4-2",
+      "courseId": 6,
+      "chapterNumber": 4,
+      "chapterTitle": "Optimization & Deployment",
+      "title": "Deploy to Vercel",
+      "type": "video",
+      "duration": "22:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Deploy Next.js app lên Vercel, environment variables, custom domains, CI/CD.",
+      "objectives": [
+        "Deploy to Vercel",
+        "Environment setup",
+        "Production best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "6-4-3",
+      "courseId": 6,
+      "chapterNumber": 4,
+      "chapterTitle": "Optimization & Deployment",
+      "title": "Bài tập: Build Blog Platform",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành xây dựng blog platform với Next.js 14, authentication và CMS integration.",
+      "objectives": [
+        "Build full-stack app",
+        "Implement features",
+        "Deploy to production"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
+    },
+    {
+      "id": "6-4-4",
+      "courseId": 6,
+      "chapterNumber": 4,
+      "chapterTitle": "Optimization & Deployment",
+      "title": "Kiểm tra cuối khóa: Next.js",
+      "type": "quiz",
+      "duration": "30:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp kiến thức Next.js 14 và full-stack development.",
+      "objectives": [
+        "Kiểm tra Next.js concepts",
+        "Server/Client components",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 11
+    },
+    {
+      "id": "8-1-1",
+      "courseId": 8,
+      "chapterNumber": 1,
+      "chapterTitle": "MongoDB Basics",
+      "title": "Introduction to MongoDB",
+      "type": "video",
+      "duration": "20:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "MongoDB là gì, NoSQL vs SQL, document model, cài đặt MongoDB và MongoDB Compass.",
+      "objectives": [
+        "Hiểu NoSQL concepts",
+        "MongoDB architecture",
+        "Setup MongoDB"
+      ],
+      "resources": [
+        {
+          "title": "MongoDB Documentation",
+          "url": "https://www.mongodb.com/docs/"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "8-1-2",
+      "courseId": 8,
+      "chapterNumber": 1,
+      "chapterTitle": "MongoDB Basics",
+      "title": "CRUD Operations",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Insert, find, update, delete documents. Query operators và basic filters.",
+      "objectives": [
+        "insertOne/insertMany",
+        "find và query operators",
+        "updateOne/deleteOne"
+      ],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "8-2-1",
+      "courseId": 8,
+      "chapterNumber": 2,
+      "chapterTitle": "Advanced Queries",
+      "title": "Aggregation Framework",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Aggregation pipeline, stages ($match, $group, $project, $sort), aggregate queries.",
+      "objectives": [
+        "Aggregation basics",
+        "Pipeline stages",
+        "Complex aggregations"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "8-2-2",
+      "courseId": 8,
+      "chapterNumber": 2,
+      "chapterTitle": "Advanced Queries",
+      "title": "Indexing & Performance",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Tạo indexes, compound indexes, explain() để analyze performance, index strategies.",
+      "objectives": [
+        "Create indexes",
+        "Query optimization",
+        "Performance analysis"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "8-3-1",
+      "courseId": 8,
+      "chapterNumber": 3,
+      "chapterTitle": "Schema Design",
+      "title": "Data Modeling Patterns",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Schema design patterns: embedding vs referencing, one-to-many, many-to-many relationships.",
+      "objectives": [
+        "Embedding vs referencing",
+        "Relationship patterns",
+        "Schema best practices"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "8-3-2",
+      "courseId": 8,
+      "chapterNumber": 3,
+      "chapterTitle": "Schema Design",
+      "title": "Schema Validation",
+      "type": "video",
+      "duration": "24:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "JSON Schema validation, document validation rules, enforce data integrity.",
+      "objectives": ["Schema validation", "Validation rules", "Data integrity"],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "8-4-1",
+      "courseId": 8,
+      "chapterNumber": 4,
+      "chapterTitle": "Production & Scaling",
+      "title": "Replication & High Availability",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Replica sets, primary/secondary nodes, automatic failover, read preferences.",
+      "objectives": [
+        "Replica sets basics",
+        "High availability",
+        "Failover mechanisms"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "8-4-2",
+      "courseId": 8,
+      "chapterNumber": 4,
+      "chapterTitle": "Production & Scaling",
+      "title": "Sharding & Horizontal Scaling",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Sharding để scale horizontally, shard keys, chunk distribution, when to shard.",
+      "objectives": [
+        "Sharding concepts",
+        "Shard key selection",
+        "Scaling strategies"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "8-4-3",
+      "courseId": 8,
+      "chapterNumber": 4,
+      "chapterTitle": "Production & Scaling",
+      "title": "Bài tập: Design Database Schema",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành thiết kế schema cho e-commerce app với MongoDB, optimize queries.",
+      "objectives": [
+        "Design optimal schema",
+        "Create indexes",
+        "Performance testing"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "8-4-4",
+      "courseId": 8,
+      "chapterNumber": 4,
+      "chapterTitle": "Production & Scaling",
+      "title": "Kiểm tra cuối khóa: MongoDB",
+      "type": "quiz",
+      "duration": "28:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp MongoDB và NoSQL database design.",
+      "objectives": [
+        "Kiểm tra MongoDB CRUD",
+        "Schema design",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
+    },
+    {
+      "id": "9-1-1",
+      "courseId": 9,
+      "chapterNumber": 1,
+      "chapterTitle": "Vue.js Basics",
+      "title": "Introduction to Vue.js 3",
+      "type": "video",
+      "duration": "22:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Vue.js là gì, Options API vs Composition API, setup Vue project với Vite.",
+      "objectives": [
+        "Hiểu Vue.js philosophy",
+        "Setup Vue project",
+        "First Vue component"
+      ],
+      "resources": [
+        {
+          "title": "Vue.js Documentation",
+          "url": "https://vuejs.org/guide/"
+        }
+      ],
+      "isFree": true,
+      "order": 1
+    },
+    {
+      "id": "9-1-2",
+      "courseId": 9,
+      "chapterNumber": 1,
+      "chapterTitle": "Vue.js Basics",
+      "title": "Template Syntax & Directives",
+      "type": "video",
+      "duration": "26:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Template syntax, interpolation, v-bind, v-if/v-else, v-for, v-on, v-model.",
+      "objectives": ["Template syntax", "Directives usage", "Event handling"],
+      "resources": [],
+      "isFree": true,
+      "order": 2
+    },
+    {
+      "id": "9-2-1",
+      "courseId": 9,
+      "chapterNumber": 2,
+      "chapterTitle": "Composition API",
+      "title": "Reactive Data với ref & reactive",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Composition API basics, ref() vs reactive(), computed properties, watchers.",
+      "objectives": ["ref và reactive", "Computed properties", "Watchers"],
+      "resources": [],
+      "isFree": false,
+      "order": 3
+    },
+    {
+      "id": "9-2-2",
+      "courseId": 9,
+      "chapterNumber": 2,
+      "chapterTitle": "Composition API",
+      "title": "Lifecycle Hooks & Composables",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Lifecycle hooks (onMounted, onUpdated, onUnmounted), tạo composables để reuse logic.",
+      "objectives": ["Lifecycle hooks", "Create composables", "Reusable logic"],
+      "resources": [],
+      "isFree": false,
+      "order": 4
+    },
+    {
+      "id": "9-3-1",
+      "courseId": 9,
+      "chapterNumber": 3,
+      "chapterTitle": "Components & Routing",
+      "title": "Component Communication",
+      "type": "video",
+      "duration": "28:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Props, emit events, provide/inject, slots để truyền dữ liệu giữa components.",
+      "objectives": ["Props và events", "Provide/inject", "Slots usage"],
+      "resources": [],
+      "isFree": false,
+      "order": 5
+    },
+    {
+      "id": "9-3-2",
+      "courseId": 9,
+      "chapterNumber": 3,
+      "chapterTitle": "Components & Routing",
+      "title": "Vue Router",
+      "type": "video",
+      "duration": "32:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Setup Vue Router, routes configuration, navigation, route params, nested routes.",
+      "objectives": [
+        "Setup routing",
+        "Navigate between pages",
+        "Dynamic routes"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 6
+    },
+    {
+      "id": "9-4-1",
+      "courseId": 9,
+      "chapterNumber": 4,
+      "chapterTitle": "State Management & Build",
+      "title": "Pinia State Management",
+      "type": "video",
+      "duration": "30:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Pinia để quản lý global state, stores, actions, getters, state persistence.",
+      "objectives": [
+        "Setup Pinia",
+        "Create stores",
+        "State management patterns"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 7
+    },
+    {
+      "id": "9-4-2",
+      "courseId": 9,
+      "chapterNumber": 4,
+      "chapterTitle": "State Management & Build",
+      "title": "Build & Deploy Vue App",
+      "type": "video",
+      "duration": "24:00",
+      "videoUrl": "https://www.youtube.com/embed/HVsySz-h9r4",
+      "content": "Build production app, optimize bundle size, deploy to Netlify/Vercel.",
+      "objectives": ["Production build", "Optimization", "Deploy to hosting"],
+      "resources": [],
+      "isFree": false,
+      "order": 8
+    },
+    {
+      "id": "9-4-3",
+      "courseId": 9,
+      "chapterNumber": 4,
+      "chapterTitle": "State Management & Build",
+      "title": "Bài tập: Build Task Manager",
+      "type": "exercise",
+      "duration": null,
+      "videoUrl": null,
+      "content": "Thực hành xây dựng task manager app với Vue 3, Router và Pinia.",
+      "objectives": ["Full Vue app", "Routing và state", "CRUD operations"],
+      "resources": [],
+      "isFree": false,
+      "order": 9
+    },
+    {
+      "id": "9-4-4",
+      "courseId": 9,
+      "chapterNumber": 4,
+      "chapterTitle": "State Management & Build",
+      "title": "Kiểm tra cuối khóa: Vue.js",
+      "type": "quiz",
+      "duration": "28:00",
+      "videoUrl": null,
+      "content": "Bài kiểm tra tổng hợp Vue.js 3 và Composition API.",
+      "objectives": [
+        "Kiểm tra Vue basics",
+        "Composition API",
+        "Hoàn thành khóa học"
+      ],
+      "resources": [],
+      "isFree": false,
+      "order": 10
     }
   ]
 }

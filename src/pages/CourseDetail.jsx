@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import fakeDatabase from "../data/fakeDatabase.json";
+import usersData from "../data/users.json";
 import coursesData from "../data/courses.json";
 import lessonsData from "../data/lessons.json";
 import reviewsData from "../data/reviews.json";
@@ -31,7 +31,7 @@ const CourseDetail = () => {
     (r) => r.courseId === parseInt(id)
   );
 
-  const teacher = fakeDatabase.users.find(
+  const teacher = usersData.users.find(
     (u) => u.id === courseInfo?.instructor?.id
   );
 
@@ -178,13 +178,13 @@ const CourseDetail = () => {
               <div className="meta-item">
                 <span className="meta-icon">👤</span>
                 <span>
-                  {teacher?.fullName || "Giảng viên"} • {course.students} học
-                  viên
+                  {teacher?.fullName || "Giảng viên"} •{" "}
+                  {course.totalStudents || course.students || 0} học viên
                 </span>
               </div>
               <div className="meta-item">
                 <span className="meta-icon">⏱️</span>
-                <span>{course.duration}</span>
+                <span>{course.totalDuration || course.duration}</span>
               </div>
               <div className="meta-item">
                 <span className="meta-icon">📊</span>

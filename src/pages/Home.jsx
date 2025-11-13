@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setCourses } from "../store/coursesSlice";
-import fakeDatabase from "../data/fakeDatabase.json";
+import coursesData from "../data/courses.json";
 import CourseList from "../components/CourseList";
 import "./Home.css";
 
@@ -10,7 +10,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCourses(fakeDatabase.courses));
+    dispatch(setCourses(coursesData.courses));
   }, [dispatch]);
 
   return (

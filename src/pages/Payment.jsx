@@ -93,7 +93,9 @@ const Payment = () => {
                 <div className="course-info-list">
                   <div className="info-item">
                     <span className="info-icon">⏱️</span>
-                    <span>Thời lượng: {course.duration}</span>
+                    <span>
+                      Thời lượng: {course.totalDuration || course.duration}
+                    </span>
                   </div>
                   <div className="info-item">
                     <span className="info-icon">📊</span>
@@ -101,7 +103,7 @@ const Payment = () => {
                   </div>
                   <div className="info-item">
                     <span className="info-icon">👥</span>
-                    <span>{course.students} học viên</span>
+                    <span>{course.totalStudents || 0} học viên</span>
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ const CourseList = ({ featured = false, limit = null }) => {
   const [filterCategory, setFilterCategory] = useState("all");
   const [sortBy, setSortBy] = useState("newest");
 
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   // Filter and search logic
   const filteredCourses = useMemo(() => {

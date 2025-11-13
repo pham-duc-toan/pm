@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import fakeDatabase from "../data/fakeDatabase.json";
 
 const initialState = {
-  notifications: fakeDatabase.notifications || [],
+  notifications: [],
 };
 
 const notificationsSlice = createSlice({

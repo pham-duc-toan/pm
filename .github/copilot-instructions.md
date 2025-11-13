@@ -7,3 +7,4 @@ Luôn tuân thủ các quy tắc sau khi sinh code trong repo này:
 3. **Phong cách**: Thiết kế giống giao diện [CodeLearn.io](https://codelearn.io).
 4. **Code sạch**: Tách riêng component nếu có thể reuse.
 5. **Xử lý logic**: Fix cứng dữ liệu, không được dùng database, không được dùng backend, logic luồng state đơn giản vì chỉ cần demo giao diện.
+6. **Viết docs**: Không cần viết tài liệu hướng dẫn sử dụng.

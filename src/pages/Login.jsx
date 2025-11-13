@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { loginStart, loginSuccess, loginFailure } from "../store/authSlice";
 import { loadEnrollmentsFromStorage } from "../store/enrollmentSlice";
 import { DEFAULT_AVATAR } from "../utils/constants";
-import fakeDatabase from "../data/fakeDatabase.json";
+import usersData from "../data/users.json";
 import "./Login.css";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
 
     // Simulate API delay
     setTimeout(() => {
-      const user = fakeDatabase.users.find(
+      const user = usersData.users.find(
         (u) =>
           u.username === formData.username && u.password === formData.password
       );

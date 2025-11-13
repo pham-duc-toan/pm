@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import fakeDatabase from "../data/fakeDatabase.json";
 import coursesData from "../data/courses.json";
 import lessonsData from "../data/lessons.json";
 import exercisesData from "../data/exercises.json";
@@ -57,15 +56,25 @@ const CourseLearn = () => {
 
   const curriculum = Object.values(curriculumObj);
 
-  const courseDetails = {
-    ...courseInfo,
-    curriculum: curriculum,
-  };
-
   // Check if user is enrolled
   const enrollment = enrolledCourses.find(
     (e) => e.courseId === parseInt(id) && e.userId === user?.id
   );
+
+  console.log("🔍 CourseLearn Debug:", {
+    courseId: id,
+    hasUser: !!user,
+    hasCourse: !!course,
+    courseLessonsCount: courseLessons.length,
+    curriculumLength: curriculum.length,
+    hasEnrollment: !!enrollment,
+    enrollmentId: enrollment?.id,
+  });
+
+  const courseDetails = {
+    ...courseInfo,
+    curriculum: curriculum,
+  };
 
   const [currentModuleIndex, setCurrentModuleIndex] = useState(0);
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -802,9 +811,9 @@ const CourseLearn = () => {
           )}
 
           {/* Comments Section */}
-          {lessonComments.length > 0 && (
-            <div className="lesson-comments">
-              <h3>💬 Thảo luận ({lessonComments.length})</h3>
+          <div className="lesson-comments">
+            <h3>💬 Thảo luận ({lessonComments.length})</h3>
+            {lessonComments.length > 0 ? (
               <div className="comments-list">
                 {lessonComments.map((comment) => (
                   <div key={comment.id} className="comment-item">
@@ -866,8 +875,20 @@ const CourseLearn = () => {
                   </div>
                 ))}
               </div>
+            ) : (
+              <div className="no-comments">
+                <p>
+                  Chưa có bình luận nào. Hãy là người đầu tiên thảo luận về bài
+                  học này! 💬
+                </p>
+              </div>
+            )}
+
+            <div className="add-comment-box">
+              <textarea placeholder="Viết bình luận của bạn..." rows="3" />
+              <button className="btn-submit-comment">Gửi bình luận</button>
             </div>
-          )}
+          </div>
         </div>
 
         {/* Sidebar - Curriculum */}

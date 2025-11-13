@@ -301,6 +301,199 @@
       ],
       "tags": ["python", "linked-list", "algorithm", "hard"],
       "order": 2
+    },
+    {
+      "id": "ex-3-1",
+      "courseId": 3,
+      "lessonId": "3-4-2",
+      "title": "Node.js Bài 1: Build REST API",
+      "slug": "nodejs-build-rest-api",
+      "description": "Xây dựng một REST API endpoint với Express",
+      "difficulty": "medium",
+      "points": 20,
+      "timeLimit": 900,
+      "language": "javascript",
+      "initialCode": "const express = require('express');\nconst app = express();\n\napp.use(express.json());\n\n// TODO: Tạo endpoint GET /api/users trả về danh sách users\nconst users = [\n  { id: 1, name: 'An', email: 'an@example.com' },\n  { id: 2, name: 'Binh', email: 'binh@example.com' }\n];\n\n// TODO: Tạo endpoint POST /api/users để thêm user mới\n\n// TODO: Tạo endpoint GET /api/users/:id để lấy user theo id\n\nconst PORT = 3000;\napp.listen(PORT, () => {\n  console.log(`Server running on port ${PORT}`);\n});",
+      "solution": "const express = require('express');\nconst app = express();\n\napp.use(express.json());\n\nconst users = [\n  { id: 1, name: 'An', email: 'an@example.com' },\n  { id: 2, name: 'Binh', email: 'binh@example.com' }\n];\n\napp.get('/api/users', (req, res) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req, res) => {\n  const newUser = {\n    id: users.length + 1,\n    name: req.body.name,\n    email: req.body.email\n  };\n  users.push(newUser);\n  res.status(201).json(newUser);\n});\n\napp.get('/api/users/:id', (req, res) => {\n  const user = users.find(u => u.id === parseInt(req.params.id));\n  if (!user) return res.status(404).json({ error: 'User not found' });\n  res.json(user);\n});\n\nconst PORT = 3000;\napp.listen(PORT, () => {\n  console.log(`Server running on port ${PORT}`);\n});",
+      "testCases": [
+        {
+          "input": "GET /api/users",
+          "expected": "Array of users",
+          "hidden": false
+        },
+        {
+          "input": "POST /api/users",
+          "expected": "Created user",
+          "hidden": false
+        },
+        {
+          "input": "GET /api/users/1",
+          "expected": "User with id 1",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Dùng app.get() cho GET request",
+        "Dùng app.post() cho POST request",
+        "req.params.id để lấy URL parameter"
+      ],
+      "tags": ["nodejs", "express", "rest-api"],
+      "order": 1
+    },
+    {
+      "id": "ex-4-1",
+      "courseId": 4,
+      "lessonId": "4-4-3",
+      "title": "TypeScript Bài 1: Type Annotations",
+      "slug": "typescript-type-annotations",
+      "description": "Thêm types vào JavaScript code",
+      "difficulty": "medium",
+      "points": 15,
+      "timeLimit": 600,
+      "language": "typescript",
+      "initialCode": "// TODO: Thêm type annotations cho hàm và biến\n\nfunction calculateTotal(price, quantity, tax) {\n  return price * quantity * (1 + tax);\n}\n\nfunction getUserInfo(user) {\n  return `${user.name} - ${user.email}`;\n}\n\nconst result = calculateTotal(100, 2, 0.1);\nconsole.log(result);\n\nconst user = { name: 'An', email: 'an@test.com', age: 25 };\nconsole.log(getUserInfo(user));",
+      "solution": "// Thêm type annotations\n\nfunction calculateTotal(price: number, quantity: number, tax: number): number {\n  return price * quantity * (1 + tax);\n}\n\ninterface User {\n  name: string;\n  email: string;\n  age: number;\n}\n\nfunction getUserInfo(user: User): string {\n  return `${user.name} - ${user.email}`;\n}\n\nconst result: number = calculateTotal(100, 2, 0.1);\nconsole.log(result);\n\nconst user: User = { name: 'An', email: 'an@test.com', age: 25 };\nconsole.log(getUserInfo(user));",
+      "testCases": [
+        {
+          "input": "calculateTotal(100, 2, 0.1)",
+          "expected": "220",
+          "hidden": false
+        },
+        {
+          "input": "getUserInfo(user)",
+          "expected": "An - an@test.com",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Thêm : type sau parameter",
+        "Tạo interface cho object structure",
+        "Function return type sau ()"
+      ],
+      "tags": ["typescript", "types", "interface"],
+      "order": 1
+    },
+    {
+      "id": "ex-5-1",
+      "courseId": 5,
+      "lessonId": "5-4-3",
+      "title": "Docker Bài 1: Write Dockerfile",
+      "slug": "docker-write-dockerfile",
+      "description": "Viết Dockerfile cho Node.js app",
+      "difficulty": "medium",
+      "points": 20,
+      "timeLimit": 900,
+      "language": "dockerfile",
+      "initialCode": "# TODO: Viết Dockerfile cho Node.js app\n# Base image: node:18-alpine\n# Working directory: /app\n# Copy package files và install dependencies\n# Copy source code\n# Expose port 3000\n# Command: npm start\n\n",
+      "solution": "# Base image\nFROM node:18-alpine\n\n# Set working directory\nWORKDIR /app\n\n# Copy package files\nCOPY package*.json ./\n\n# Install dependencies\nRUN npm install\n\n# Copy source code\nCOPY . .\n\n# Expose port\nEXPOSE 3000\n\n# Start command\nCMD [\"npm\", \"start\"]",
+      "testCases": [
+        { "input": "docker build", "expected": "Success", "hidden": false },
+        { "input": "docker run", "expected": "App running", "hidden": false }
+      ],
+      "hints": [
+        "FROM để chọn base image",
+        "WORKDIR để set working directory",
+        "COPY và RUN để build",
+        "CMD để define start command"
+      ],
+      "tags": ["docker", "dockerfile", "devops"],
+      "order": 1
+    },
+    {
+      "id": "ex-6-1",
+      "courseId": 6,
+      "lessonId": "6-4-3",
+      "title": "Next.js Bài 1: Server Component",
+      "slug": "nextjs-server-component",
+      "description": "Tạo Server Component fetch data",
+      "difficulty": "medium",
+      "points": 20,
+      "timeLimit": 900,
+      "language": "typescript",
+      "initialCode": "// app/posts/page.tsx\n// TODO: Tạo Server Component fetch posts từ API\n\ninterface Post {\n  id: number;\n  title: string;\n  body: string;\n}\n\nexport default async function PostsPage() {\n  // TODO: Fetch data từ https://jsonplaceholder.typicode.com/posts\n  \n  return (\n    <div>\n      <h1>Posts</h1>\n      {/* TODO: Render danh sách posts */}\n    </div>\n  );\n}",
+      "solution": "// app/posts/page.tsx\ninterface Post {\n  id: number;\n  title: string;\n  body: string;\n}\n\nasync function getPosts(): Promise<Post[]> {\n  const res = await fetch('https://jsonplaceholder.typicode.com/posts');\n  if (!res.ok) throw new Error('Failed to fetch');\n  return res.json();\n}\n\nexport default async function PostsPage() {\n  const posts = await getPosts();\n  \n  return (\n    <div>\n      <h1>Posts</h1>\n      <ul>\n        {posts.map(post => (\n          <li key={post.id}>\n            <h2>{post.title}</h2>\n            <p>{post.body}</p>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}",
+      "testCases": [
+        {
+          "input": "Fetch posts",
+          "expected": "List of posts",
+          "hidden": false
+        },
+        {
+          "input": "Render posts",
+          "expected": "UI with posts",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "Async component với await",
+        "fetch() để lấy data",
+        "map() để render list"
+      ],
+      "tags": ["nextjs", "server-component", "react"],
+      "order": 1
+    },
+    {
+      "id": "ex-8-1",
+      "courseId": 8,
+      "lessonId": "8-4-3",
+      "title": "MongoDB Bài 1: Aggregation Pipeline",
+      "slug": "mongodb-aggregation-pipeline",
+      "description": "Viết aggregation query với MongoDB",
+      "difficulty": "medium",
+      "points": 20,
+      "timeLimit": 900,
+      "language": "javascript",
+      "initialCode": "// TODO: Viết aggregation pipeline\n// Collection: orders\n// Tính tổng doanh thu theo từng user\n// Sort theo tổng amount giảm dần\n// Limit 10 users\n\ndb.orders.aggregate([\n  // TODO: $group để tính tổng amount theo userId\n  \n  // TODO: $sort theo totalAmount giảm dần\n  \n  // TODO: $limit 10\n  \n]);",
+      "solution": "db.orders.aggregate([\n  {\n    $group: {\n      _id: '$userId',\n      totalAmount: { $sum: '$amount' },\n      orderCount: { $sum: 1 }\n    }\n  },\n  {\n    $sort: { totalAmount: -1 }\n  },\n  {\n    $limit: 10\n  },\n  {\n    $lookup: {\n      from: 'users',\n      localField: '_id',\n      foreignField: '_id',\n      as: 'userInfo'\n    }\n  }\n]);",
+      "testCases": [
+        {
+          "input": "orders collection",
+          "expected": "Top 10 users by revenue",
+          "hidden": false
+        },
+        {
+          "input": "Aggregation stages",
+          "expected": "Correct pipeline",
+          "hidden": false
+        }
+      ],
+      "hints": [
+        "$group để nhóm theo field",
+        "$sum để tính tổng",
+        "$sort: -1 để giảm dần"
+      ],
+      "tags": ["mongodb", "aggregation", "nosql"],
+      "order": 1
+    },
+    {
+      "id": "ex-9-1",
+      "courseId": 9,
+      "lessonId": "9-4-3",
+      "title": "Vue.js Bài 1: Build Todo App",
+      "slug": "vuejs-build-todo-app",
+      "description": "Xây dựng Todo app với Vue 3 Composition API",
+      "difficulty": "medium",
+      "points": 20,
+      "timeLimit": 900,
+      "language": "javascript",
+      "initialCode": "<script setup>\nimport { ref } from 'vue';\n\n// TODO: Tạo reactive state cho todos\nconst todos = ref([]);\nconst newTodo = ref('');\n\n// TODO: Hàm thêm todo\nfunction addTodo() {\n  \n}\n\n// TODO: Hàm xóa todo\nfunction removeTodo(id) {\n  \n}\n\n// TODO: Hàm toggle complete\nfunction toggleTodo(id) {\n  \n}\n</script>\n\n<template>\n  <div>\n    <h1>Todo App</h1>\n    <!-- TODO: Form thêm todo -->\n    \n    <!-- TODO: List todos -->\n    \n  </div>\n</template>",
+      "solution": "<script setup>\nimport { ref } from 'vue';\n\nconst todos = ref([]);\nconst newTodo = ref('');\n\nfunction addTodo() {\n  if (newTodo.value.trim()) {\n    todos.value.push({\n      id: Date.now(),\n      text: newTodo.value,\n      completed: false\n    });\n    newTodo.value = '';\n  }\n}\n\nfunction removeTodo(id) {\n  todos.value = todos.value.filter(t => t.id !== id);\n}\n\nfunction toggleTodo(id) {\n  const todo = todos.value.find(t => t.id === id);\n  if (todo) todo.completed = !todo.completed;\n}\n</script>\n\n<template>\n  <div>\n    <h1>Todo App</h1>\n    <form @submit.prevent=\"addTodo\">\n      <input v-model=\"newTodo\" placeholder=\"Add todo\" />\n      <button type=\"submit\">Add</button>\n    </form>\n    <ul>\n      <li v-for=\"todo in todos\" :key=\"todo.id\">\n        <input type=\"checkbox\" :checked=\"todo.completed\" @change=\"toggleTodo(todo.id)\" />\n        <span :class=\"{ completed: todo.completed }\">{{ todo.text }}</span>\n        <button @click=\"removeTodo(todo.id)\">Delete</button>\n      </li>\n    </ul>\n  </div>\n</template>",
+      "testCases": [
+        { "input": "Add todo", "expected": "Todo added", "hidden": false },
+        {
+          "input": "Toggle todo",
+          "expected": "Completed state changed",
+          "hidden": false
+        },
+        { "input": "Delete todo", "expected": "Todo removed", "hidden": false }
+      ],
+      "hints": [
+        "ref() cho reactive data",
+        "v-model cho two-way binding",
+        "v-for để render list"
+      ],
+      "tags": ["vuejs", "composition-api", "reactive"],
+      "order": 1
     }
   ]
 }

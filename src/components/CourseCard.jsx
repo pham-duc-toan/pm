@@ -58,11 +58,11 @@ const CourseCard = ({ course }) => {
         <div className="course-meta">
           <div className="meta-item">
             <span className="meta-icon">⏱️</span>
-            <span>{course.duration}</span>
+            <span>{course.totalDuration || course.duration}</span>
           </div>
           <div className="meta-item">
             <span className="meta-icon">👥</span>
-            <span>{course.students || 0} học viên</span>
+            <span>{course.totalStudents || 0} học viên</span>
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import fakeDatabase from "../data/fakeDatabase.json";
 import coursesData from "../data/courses.json";
 import lessonsData from "../data/lessons.json";
 import "./MyCourses.css";
@@ -80,7 +79,7 @@ const MyCourses = () => {
                   <div className="course-meta">
                     <span className="meta-item">
                       <span className="meta-icon">⏱️</span>
-                      {course.duration}
+                      {course.totalDuration || course.duration}
                     </span>
                     <span className="meta-item">
                       <span className="meta-icon">📊</span>

@@ -4,6 +4,7 @@
       "id": 1,
       "title": "JavaScript & React - From Zero to Hero",
       "slug": "javascript-react-zero-to-hero",
+      "description": "Học JavaScript và React từ cơ bản đến nâng cao với nhiều bài tập thực hành",
       "shortDescription": "Học JavaScript và React từ cơ bản đến nâng cao với nhiều bài tập thực hành",
       "fullDescription": "Khóa học JavaScript + React tập trung vào lập trình front-end hiện đại: nền tảng JavaScript, ES6+, DOM, React cơ bản và nâng cao. Kèm theo nhiều bài tập code thực hành dùng Code Editor trên FE.",
       "thumbnail": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
@@ -11,8 +12,8 @@
       "category": "Web Development",
       "instructor": {
         "id": 101,
-        "name": "Nguyễn Văn A",
-        "avatar": "https://i.pravatar.cc/150?img=12",
+        "fullName": "Nguyễn Văn A",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
         "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
       },
       "price": 0,
@@ -57,6 +58,7 @@
       "id": 2,
       "title": "MySQL & Database Fundamentals",
       "slug": "mysql-database-fundamentals",
+      "description": "Làm chủ MySQL và thiết kế cơ sở dữ liệu chuyên nghiệp",
       "shortDescription": "Làm chủ MySQL và thiết kế cơ sở dữ liệu chuyên nghiệp",
       "fullDescription": "Khóa học về cơ sở dữ liệu quan hệ: SQL, schema design, queries, indexing và tối ưu. Có bài tập SQL và bài tập backend nhỏ liên quan tới DB.",
       "thumbnail": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop",
@@ -64,8 +66,8 @@
       "category": "Database",
       "instructor": {
         "id": 102,
-        "name": "Trần Thị B",
-        "avatar": "https://i.pravatar.cc/150?img=25",
+        "fullName": "Trần Thị B",
+        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
         "bio": "Database Administrator với 10 năm kinh nghiệm"
       },
       "price": 0,
@@ -106,6 +108,7 @@
       "id": 7,
       "title": "Python for Data & Algorithms",
       "slug": "python-data-algorithms",
+      "description": "Python từ cơ bản đến nâng cao với Data Science và thuật toán",
       "shortDescription": "Python từ cơ bản đến nâng cao với Data Science và thuật toán",
       "fullDescription": "Khóa học Python tập trung vào lập trình, xử lý dữ liệu, cấu trúc dữ liệu và thuật toán. Có nhiều bài tập code (algorithms, data cleaning) chạy thử trên FE code editor.",
       "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
@@ -113,8 +116,8 @@
       "category": "Programming",
       "instructor": {
         "id": 103,
-        "name": "Phạm Văn C",
-        "avatar": "https://i.pravatar.cc/150?img=33",
+        "fullName": "Phạm Văn C",
+        "avatar": "https://randomuser.me/api/portraits/men/52.jpg",
         "bio": "Data Scientist & AI Engineer với 7 năm kinh nghiệm"
       },
       "price": 0,
@@ -153,6 +156,356 @@
       "isFeatured": true,
       "createdAt": "2025-03-05T08:00:00Z",
       "updatedAt": "2025-11-05T09:15:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Node.js & Express Backend Development",
+      "slug": "nodejs-express-backend",
+      "description": "Xây dựng RESTful API và backend với Node.js & Express",
+      "shortDescription": "Xây dựng RESTful API và backend với Node.js & Express",
+      "fullDescription": "Khóa học backend development với Node.js và Express framework. Tạo REST API, authentication, database integration và deploy.",
+      "thumbnail": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Backend Development",
+      "instructor": {
+        "id": 101,
+        "fullName": "Nguyễn Văn A",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1799000,
+      "discount": 100,
+      "rating": 4.8,
+      "totalStudents": 1156,
+      "totalLessons": 42,
+      "totalDuration": "11 giờ 15 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt"],
+      "whatYouWillLearn": [
+        "Node.js fundamentals và npm",
+        "Express framework và routing",
+        "RESTful API design",
+        "Authentication với JWT",
+        "MongoDB integration",
+        "Error handling và validation"
+      ],
+      "requirements": ["JavaScript cơ bản", "Hiểu về HTTP và APIs"],
+      "targetAudience": [
+        "Frontend developers muốn học backend",
+        "Fullstack developers",
+        "Người muốn xây dựng API"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Node.js & Express",
+        "thumbnail": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Node.js"
+      },
+      "isPublished": true,
+      "isFeatured": true,
+      "createdAt": "2025-01-20T08:00:00Z",
+      "updatedAt": "2025-11-03T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "TypeScript - From Basic to Advanced",
+      "slug": "typescript-basic-to-advanced",
+      "description": "Học TypeScript từ cơ bản đến nâng cao",
+      "shortDescription": "Học TypeScript từ cơ bản đến nâng cao",
+      "fullDescription": "Khóa học TypeScript chi tiết: types, interfaces, generics, decorators. Áp dụng TypeScript vào React và Node.js projects.",
+      "thumbnail": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Programming",
+      "instructor": {
+        "id": 102,
+        "fullName": "Trần Thị B",
+        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+        "bio": "Database Administrator với 10 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1599000,
+      "discount": 100,
+      "rating": 4.7,
+      "totalStudents": 987,
+      "totalLessons": 38,
+      "totalDuration": "10 giờ 30 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "TypeScript basics và syntax",
+        "Types, Interfaces và Type aliases",
+        "Generics và Advanced types",
+        "Decorators và Metadata",
+        "TypeScript với React",
+        "TypeScript với Node.js"
+      ],
+      "requirements": ["JavaScript ES6+", "Kinh nghiệm lập trình cơ bản"],
+      "targetAudience": [
+        "JavaScript developers",
+        "Developers muốn code an toàn hơn",
+        "Team leaders"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ TypeScript",
+        "thumbnail": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học TypeScript"
+      },
+      "isPublished": true,
+      "isFeatured": false,
+      "createdAt": "2025-02-15T08:00:00Z",
+      "updatedAt": "2025-10-30T15:30:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Docker & Kubernetes Deployment",
+      "slug": "docker-kubernetes-deployment",
+      "description": "Container hóa ứng dụng với Docker và deploy với Kubernetes",
+      "shortDescription": "Container hóa ứng dụng với Docker và deploy với Kubernetes",
+      "fullDescription": "Khóa học DevOps: Docker containers, Docker Compose, Kubernetes orchestration, CI/CD pipelines.",
+      "thumbnail": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop",
+      "level": "advanced",
+      "category": "DevOps",
+      "instructor": {
+        "id": 103,
+        "fullName": "Phạm Văn C",
+        "avatar": "https://randomuser.me/api/portraits/men/52.jpg",
+        "bio": "Data Scientist & AI Engineer với 7 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 2999000,
+      "discount": 100,
+      "rating": 4.9,
+      "totalStudents": 743,
+      "totalLessons": 45,
+      "totalDuration": "13 giờ 20 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "Docker basics và Dockerfile",
+        "Docker Compose multi-container",
+        "Kubernetes fundamentals",
+        "Pods, Services, Deployments",
+        "Helm charts",
+        "CI/CD với GitLab/GitHub Actions"
+      ],
+      "requirements": ["Linux command line cơ bản", "Hiểu về web servers"],
+      "targetAudience": [
+        "Backend developers",
+        "DevOps engineers",
+        "System administrators"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Docker & Kubernetes",
+        "thumbnail": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Docker & K8s"
+      },
+      "isPublished": true,
+      "isFeatured": true,
+      "createdAt": "2025-03-01T08:00:00Z",
+      "updatedAt": "2025-11-04T16:45:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Next.js Full-Stack Development",
+      "slug": "nextjs-fullstack-development",
+      "description": "Xây dựng ứng dụng full-stack với Next.js 14",
+      "shortDescription": "Xây dựng ứng dụng full-stack với Next.js 14",
+      "fullDescription": "Khóa học Next.js 14: App Router, Server Components, Server Actions, API Routes, Authentication và Deploy.",
+      "thumbnail": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&h=600&fit=crop",
+      "level": "advanced",
+      "category": "Web Development",
+      "instructor": {
+        "id": 101,
+        "fullName": "Nguyễn Văn A",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 2499000,
+      "discount": 100,
+      "rating": 4.9,
+      "totalStudents": 892,
+      "totalLessons": 48,
+      "totalDuration": "14 giờ 45 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "Next.js 14 App Router",
+        "Server Components vs Client Components",
+        "Server Actions và Mutations",
+        "API Routes và Middleware",
+        "Authentication với NextAuth",
+        "Deploy lên Vercel"
+      ],
+      "requirements": ["React cơ bản", "JavaScript ES6+"],
+      "targetAudience": [
+        "React developers",
+        "Full-stack developers",
+        "Người muốn build production apps"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Next.js",
+        "thumbnail": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Next.js"
+      },
+      "isPublished": true,
+      "isFeatured": true,
+      "createdAt": "2025-02-20T08:00:00Z",
+      "updatedAt": "2025-11-06T10:20:00Z"
+    },
+    {
+      "id": 8,
+      "title": "MongoDB & NoSQL Database",
+      "slug": "mongodb-nosql-database",
+      "description": "Làm chủ MongoDB và NoSQL database design",
+      "shortDescription": "Làm chủ MongoDB và NoSQL database design",
+      "fullDescription": "Khóa học MongoDB: CRUD operations, aggregation, indexing, replication, sharding và best practices.",
+      "thumbnail": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Database",
+      "instructor": {
+        "id": 102,
+        "fullName": "Trần Thị B",
+        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+        "bio": "Database Administrator với 10 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1699000,
+      "discount": 100,
+      "rating": 4.7,
+      "totalStudents": 654,
+      "totalLessons": 36,
+      "totalDuration": "9 giờ 30 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt"],
+      "whatYouWillLearn": [
+        "MongoDB fundamentals",
+        "CRUD operations",
+        "Aggregation framework",
+        "Indexing strategies",
+        "Schema design patterns",
+        "Replication và Sharding"
+      ],
+      "requirements": ["Database concepts cơ bản", "JSON format"],
+      "targetAudience": [
+        "Backend developers",
+        "Full-stack developers",
+        "Database administrators"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ MongoDB",
+        "thumbnail": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học MongoDB"
+      },
+      "isPublished": true,
+      "isFeatured": false,
+      "createdAt": "2025-02-25T08:00:00Z",
+      "updatedAt": "2025-11-02T14:10:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Vue.js 3 - Progressive Framework",
+      "slug": "vuejs-3-progressive-framework",
+      "description": "Học Vue.js 3 Composition API và build SPA hiện đại",
+      "shortDescription": "Học Vue.js 3 Composition API và build SPA hiện đại",
+      "fullDescription": "Khóa học Vue.js 3: Composition API, Reactivity, Components, Routing, State Management với Pinia.",
+      "thumbnail": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&h=600&fit=crop",
+      "level": "intermediate",
+      "category": "Web Development",
+      "instructor": {
+        "id": 103,
+        "fullName": "Phạm Văn C",
+        "avatar": "https://randomuser.me/api/portraits/men/52.jpg",
+        "bio": "Data Scientist & AI Engineer với 7 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 1899000,
+      "discount": 100,
+      "rating": 4.8,
+      "totalStudents": 876,
+      "totalLessons": 40,
+      "totalDuration": "12 giờ 0 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt", "English"],
+      "whatYouWillLearn": [
+        "Vue.js 3 fundamentals",
+        "Composition API",
+        "Reactive data và computed",
+        "Vue Router",
+        "Pinia state management",
+        "Build và deploy Vue app"
+      ],
+      "requirements": ["HTML/CSS/JavaScript cơ bản", "ES6+ syntax"],
+      "targetAudience": [
+        "Frontend developers",
+        "Người muốn học alternative của React",
+        "Web developers"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Vue.js",
+        "thumbnail": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Vue.js"
+      },
+      "isPublished": true,
+      "isFeatured": false,
+      "createdAt": "2025-03-10T08:00:00Z",
+      "updatedAt": "2025-11-01T13:25:00Z"
+    },
+    {
+      "id": 10,
+      "title": "Git & GitHub for Developers",
+      "slug": "git-github-developers",
+      "description": "Version control với Git và collaboration với GitHub",
+      "shortDescription": "Version control với Git và collaboration với GitHub",
+      "fullDescription": "Khóa học Git và GitHub: basic commands, branching, merging, pull requests, GitHub Actions và best practices.",
+      "thumbnail": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=600&fit=crop",
+      "level": "beginner",
+      "category": "Tools & Productivity",
+      "instructor": {
+        "id": 101,
+        "fullName": "Nguyễn Văn A",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
+      },
+      "price": 0,
+      "originalPrice": 999000,
+      "discount": 100,
+      "rating": 4.6,
+      "totalStudents": 1823,
+      "totalLessons": 28,
+      "totalDuration": "6 giờ 45 phút",
+      "language": "Tiếng Việt",
+      "subtitles": ["Tiếng Việt"],
+      "whatYouWillLearn": [
+        "Git fundamentals",
+        "Branching và merging strategies",
+        "Rebase, cherry-pick, stash",
+        "GitHub workflows",
+        "Pull requests và code review",
+        "GitHub Actions CI/CD"
+      ],
+      "requirements": ["Máy tính có Git", "Command line cơ bản"],
+      "targetAudience": [
+        "Developers mới bắt đầu",
+        "Sinh viên IT",
+        "Người muốn làm việc nhóm hiệu quả"
+      ],
+      "certificate": {
+        "available": true,
+        "name": "Chứng chỉ Git & GitHub",
+        "thumbnail": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=600&fit=crop",
+        "description": "Chứng chỉ hoàn thành khóa học Git"
+      },
+      "isPublished": true,
+      "isFeatured": false,
+      "createdAt": "2025-01-25T08:00:00Z",
+      "updatedAt": "2025-10-29T12:40:00Z"
     }
   ]
 }

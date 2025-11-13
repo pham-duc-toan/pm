@@ -39,11 +39,12 @@ const SearchFilter = ({
             className="filter-select"
           >
             <option value="all">Tất cả</option>
-            <option value="Lập trình">Lập trình</option>
-            <option value="Thiết kế">Thiết kế</option>
-            <option value="Kinh doanh">Kinh doanh</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Ngoại ngữ">Ngoại ngữ</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Backend Development">Backend Development</option>
+            <option value="Database">Database</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Programming">Programming</option>
+            <option value="Tools & Productivity">Tools & Productivity</option>
           </select>
         </div>
 
@@ -56,9 +57,9 @@ const SearchFilter = ({
             className="filter-select"
           >
             <option value="all">Tất cả</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
           </select>
         </div>
 
