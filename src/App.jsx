@@ -14,6 +14,11 @@ import PaymentGateway from "./pages/PaymentGateway";
 import SearchResults from "./pages/SearchResults";
 import UserManagement from "./pages/Admin/UserManagement";
 import FAQ from "./pages/FAQ";
+import CourseManagement from "./pages/Instructor/CourseManagement";
+import CourseStudents from "./pages/Instructor/CourseStudents";
+import LessonManagement from "./pages/Instructor/LessonManagement";
+import ExerciseManagement from "./pages/Instructor/ExerciseManagement";
+import Statistics from "./pages/Instructor/Statistics";
 import "./App.css";
 
 function App() {
@@ -57,6 +62,56 @@ function App() {
             <Route
               path="/admin/user-management"
               element={isAuthenticated ? <UserManagement /> : <Login />}
+            />
+            <Route
+              path="/instructor/courses"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <CourseManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/instructor/course/:courseId/students"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <CourseStudents />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/instructor/course/:courseId/lessons"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <LessonManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/instructor/exercises"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <ExerciseManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/instructor/statistics"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <Statistics />
+                ) : (
+                  <Login />
+                )
+              }
             />
           </Routes>
         </main>

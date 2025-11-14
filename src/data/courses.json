@@ -168,10 +168,10 @@
       "level": "intermediate",
       "category": "Backend Development",
       "instructor": {
-        "id": 101,
-        "fullName": "Nguyễn Văn A",
-        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-        "bio": "Senior Full-stack Developer với 8 năm kinh nghiệm"
+        "id": 4,
+        "fullName": "Phạm Văn Giảng",
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "bio": "Giảng viên Khoa Công nghệ thông tin, chuyên gia về lập trình web và database"
       },
       "price": 0,
       "originalPrice": 1799000,
@@ -218,14 +218,14 @@
       "level": "intermediate",
       "category": "Programming",
       "instructor": {
-        "id": 102,
-        "fullName": "Trần Thị B",
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-        "bio": "Database Administrator với 10 năm kinh nghiệm"
+        "id": 4,
+        "fullName": "Phạm Văn Giảng",
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "bio": "Giảng viên Khoa Công nghệ thông tin, chuyên gia về lập trình web và database"
       },
-      "price": 0,
+      "price": 1299000,
       "originalPrice": 1599000,
-      "discount": 100,
+      "discount": 19,
       "rating": 4.7,
       "totalStudents": 987,
       "totalLessons": 38,
@@ -368,14 +368,14 @@
       "level": "intermediate",
       "category": "Database",
       "instructor": {
-        "id": 102,
-        "fullName": "Trần Thị B",
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-        "bio": "Database Administrator với 10 năm kinh nghiệm"
+        "id": 4,
+        "fullName": "Phạm Văn Giảng",
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "bio": "Giảng viên Khoa Công nghệ thông tin, chuyên gia về lập trình web và database"
       },
-      "price": 0,
+      "price": 999000,
       "originalPrice": 1699000,
-      "discount": 100,
+      "discount": 41,
       "rating": 4.7,
       "totalStudents": 654,
       "totalLessons": 36,
@@ -418,14 +418,14 @@
       "level": "intermediate",
       "category": "Web Development",
       "instructor": {
-        "id": 103,
-        "fullName": "Phạm Văn C",
-        "avatar": "https://randomuser.me/api/portraits/men/52.jpg",
-        "bio": "Data Scientist & AI Engineer với 7 năm kinh nghiệm"
+        "id": 4,
+        "fullName": "Phạm Văn Giảng",
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "bio": "Giảng viên Khoa Công nghệ thông tin, chuyên gia về lập trình web và database"
       },
-      "price": 0,
+      "price": 1199000,
       "originalPrice": 1899000,
-      "discount": 100,
+      "discount": 37,
       "rating": 4.8,
       "totalStudents": 876,
       "totalLessons": 40,

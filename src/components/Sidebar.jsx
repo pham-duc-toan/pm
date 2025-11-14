@@ -44,15 +44,17 @@ const Sidebar = () => {
       case "teacher":
         return [
           { icon: "🏠", label: "Trang chủ", path: "/" },
-          { icon: "📚", label: "Khóa học của tôi", path: "/teacher/courses" },
           {
-            icon: "➕",
-            label: "Tạo khóa học mới",
-            path: "/teacher/create-course",
+            icon: "📚",
+            label: "Quản lý khóa học",
+            path: "/instructor/courses",
           },
-          { icon: "👥", label: "Học viên của tôi", path: "/teacher/students" },
-          { icon: "📝", label: "Bài tập", path: "/teacher/assignments" },
-          { icon: "📊", label: "Thống kê", path: "/teacher/statistics" },
+          {
+            icon: "💻",
+            label: "Quản lý bài tập",
+            path: "/instructor/exercises",
+          },
+          { icon: "📊", label: "Thống kê", path: "/instructor/statistics" },
         ];
       default:
         return [];
@@ -72,16 +74,17 @@ const Sidebar = () => {
       </div>
       <nav className="sidebar-menu">
         {menuItems.map((item, index) => (
-          <Link
+          <div
             key={index}
-            to={item.path}
+            onClick={() => (window.location.href = item.path)}
             className={`sidebar-item ${
               location.pathname === item.path ? "active" : ""
             }`}
+            style={{ cursor: "pointer" }}
           >
             <span className="sidebar-icon">{item.icon}</span>
             <span className="sidebar-label">{item.label}</span>
-          </Link>
+          </div>
         ))}
       </nav>
     </aside>

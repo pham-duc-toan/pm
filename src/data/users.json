@@ -257,10 +257,13 @@
       "role": "teacher",
       "fullName": "Phạm Văn Giảng",
       "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
-      "bio": "Giảng viên Khoa Công nghệ thông tin",
+      "bio": "Giảng viên Khoa Công nghệ thông tin, chuyên gia về lập trình web và database",
       "joinedDate": "2024-01-04T00:00:00Z",
       "department": "Khoa Công nghệ thông tin",
       "subjects": ["Lập trình Web", "Cơ sở dữ liệu"],
+      "coursesTeaching": [3, 4, 8, 9],
+      "totalStudents": 2845,
+      "averageRating": 4.7,
       "isActive": true
     },
     {
