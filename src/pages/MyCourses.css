@@ -136,6 +136,10 @@
 
 .course-info {
   padding: 20px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .course-category {

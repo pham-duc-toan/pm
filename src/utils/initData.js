@@ -4,6 +4,7 @@
 import reportsDataFile from "../data/reports.json";
 import lessonsDataFile from "../data/lessons.json";
 import exercisesDataFile from "../data/exercises.json";
+import emailTemplatesData from "../data/emailTemplates.json";
 
 const initData = () => {
   // 1. Enrollments - Danh sách ghi danh khóa học
@@ -44,15 +45,159 @@ const initData = () => {
       lastAccessedLesson: 2,
       completedLessons: [1],
     },
+    {
+      id: 5,
+      userId: 6,
+      courseId: 3,
+      enrolledAt: "2025-06-15T08:00:00Z",
+      progress: 50,
+      lastAccessedLesson: 5,
+      completedLessons: [1, 2, 3, 4],
+    },
+    {
+      id: 6,
+      userId: 7,
+      courseId: 1,
+      enrolledAt: "2025-07-20T09:30:00Z",
+      progress: 70,
+      lastAccessedLesson: 7,
+      completedLessons: [1, 2, 3, 4, 5, 6],
+    },
+    {
+      id: 7,
+      userId: 9,
+      courseId: 2,
+      enrolledAt: "2025-08-10T14:00:00Z",
+      progress: 40,
+      lastAccessedLesson: 3,
+      completedLessons: [1, 2],
+    },
+    {
+      id: 8,
+      userId: 10,
+      courseId: 7,
+      enrolledAt: "2025-09-05T10:00:00Z",
+      progress: 60,
+      lastAccessedLesson: 6,
+      completedLessons: [1, 2, 3, 4, 5],
+    },
+    {
+      id: 9,
+      userId: 6,
+      courseId: 4,
+      enrolledAt: "2025-09-12T10:00:00Z",
+      progress: 80,
+      lastAccessedLesson: 8,
+      completedLessons: [1, 2, 3, 4, 5, 6, 7],
+    },
+    {
+      id: 10,
+      userId: 7,
+      courseId: 4,
+      enrolledAt: "2025-09-15T11:30:00Z",
+      progress: 45,
+      lastAccessedLesson: 4,
+      completedLessons: [1, 2, 3],
+    },
+    {
+      id: 11,
+      userId: 8,
+      courseId: 5,
+      enrolledAt: "2025-09-18T14:00:00Z",
+      progress: 90,
+      lastAccessedLesson: 9,
+      completedLessons: [1, 2, 3, 4, 5, 6, 7, 8],
+    },
+    {
+      id: 12,
+      userId: 9,
+      courseId: 5,
+      enrolledAt: "2025-09-20T09:00:00Z",
+      progress: 30,
+      lastAccessedLesson: 3,
+      completedLessons: [1, 2],
+    },
+    {
+      id: 13,
+      userId: 10,
+      courseId: 6,
+      enrolledAt: "2025-09-25T10:30:00Z",
+      progress: 55,
+      lastAccessedLesson: 5,
+      completedLessons: [1, 2, 3, 4],
+    },
+    {
+      id: 14,
+      userId: 5,
+      courseId: 6,
+      enrolledAt: "2025-10-01T08:00:00Z",
+      progress: 25,
+      lastAccessedLesson: 2,
+      completedLessons: [1],
+    },
+    {
+      id: 15,
+      userId: 6,
+      courseId: 8,
+      enrolledAt: "2025-10-05T11:00:00Z",
+      progress: 70,
+      lastAccessedLesson: 7,
+      completedLessons: [1, 2, 3, 4, 5, 6],
+    },
+    {
+      id: 16,
+      userId: 7,
+      courseId: 8,
+      enrolledAt: "2025-10-08T13:30:00Z",
+      progress: 40,
+      lastAccessedLesson: 4,
+      completedLessons: [1, 2, 3],
+    },
+    {
+      id: 17,
+      userId: 8,
+      courseId: 9,
+      enrolledAt: "2025-10-12T10:00:00Z",
+      progress: 85,
+      lastAccessedLesson: 8,
+      completedLessons: [1, 2, 3, 4, 5, 6, 7],
+    },
+    {
+      id: 18,
+      userId: 9,
+      courseId: 9,
+      enrolledAt: "2025-10-15T09:30:00Z",
+      progress: 60,
+      lastAccessedLesson: 6,
+      completedLessons: [1, 2, 3, 4, 5],
+    },
+    {
+      id: 19,
+      userId: 10,
+      courseId: 10,
+      enrolledAt: "2025-10-20T14:00:00Z",
+      progress: 50,
+      lastAccessedLesson: 5,
+      completedLessons: [1, 2, 3, 4],
+    },
+    {
+      id: 20,
+      userId: 5,
+      courseId: 10,
+      enrolledAt: "2025-10-25T11:30:00Z",
+      progress: 35,
+      lastAccessedLesson: 3,
+      completedLessons: [1, 2],
+    },
   ];
 
-  // 2. Payments - Lịch sử thanh toán
+  // 2. Payments - Lịch sử thanh toán (dùng giá thực từ courses.json)
   const payments = [
     {
       id: "PAY-001",
       userId: 5,
       courseId: 1,
-      amount: 799000,
+      amount: 1999000, // JavaScript & React
       method: "vnpay",
       status: "completed",
       createdAt: "2025-03-20T10:00:00Z",
@@ -61,7 +206,7 @@ const initData = () => {
       id: "PAY-002",
       userId: 5,
       courseId: 2,
-      amount: 1299000,
+      amount: 1499000, // MySQL & Database
       method: "momo",
       status: "completed",
       createdAt: "2025-04-01T14:00:00Z",
@@ -70,7 +215,7 @@ const initData = () => {
       id: "PAY-003",
       userId: 8,
       courseId: 1,
-      amount: 799000,
+      amount: 1999000, // JavaScript & React
       method: "banking",
       status: "completed",
       createdAt: "2025-04-25T09:00:00Z",
@@ -79,10 +224,154 @@ const initData = () => {
       id: "PAY-004",
       userId: 8,
       courseId: 7,
-      amount: 899000,
+      amount: 2199000, // Python for Data
       method: "vnpay",
       status: "completed",
       createdAt: "2025-05-10T11:00:00Z",
+    },
+    {
+      id: "PAY-005",
+      userId: 6,
+      courseId: 3,
+      amount: 1599000, // Node.js & Express
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-06-15T08:00:00Z",
+    },
+    {
+      id: "PAY-006",
+      userId: 7,
+      courseId: 1,
+      amount: 1999000, // JavaScript & React
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-07-20T09:30:00Z",
+    },
+    {
+      id: "PAY-007",
+      userId: 9,
+      courseId: 2,
+      amount: 1499000, // MySQL & Database
+      method: "banking",
+      status: "completed",
+      createdAt: "2025-08-10T14:00:00Z",
+    },
+    {
+      id: "PAY-008",
+      userId: 10,
+      courseId: 7,
+      amount: 2199000, // Python for Data
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-09-05T10:00:00Z",
+    },
+    {
+      id: "PAY-009",
+      userId: 6,
+      courseId: 4,
+      amount: 1799000, // Docker & Kubernetes
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-09-12T10:00:00Z",
+    },
+    {
+      id: "PAY-010",
+      userId: 7,
+      courseId: 4,
+      amount: 1799000, // Docker & Kubernetes
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-09-15T11:30:00Z",
+    },
+    {
+      id: "PAY-011",
+      userId: 8,
+      courseId: 5,
+      amount: 2499000, // AWS Cloud Architect
+      method: "banking",
+      status: "completed",
+      createdAt: "2025-09-18T14:00:00Z",
+    },
+    {
+      id: "PAY-012",
+      userId: 9,
+      courseId: 5,
+      amount: 2499000, // AWS Cloud Architect
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-09-20T09:00:00Z",
+    },
+    {
+      id: "PAY-013",
+      userId: 10,
+      courseId: 6,
+      amount: 1899000, // Machine Learning Basics
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-09-25T10:30:00Z",
+    },
+    {
+      id: "PAY-014",
+      userId: 5,
+      courseId: 6,
+      amount: 1899000, // Machine Learning Basics
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-10-01T08:00:00Z",
+    },
+    {
+      id: "PAY-015",
+      userId: 6,
+      courseId: 8,
+      amount: 1699000, // Git & GitHub Mastery
+      method: "banking",
+      status: "completed",
+      createdAt: "2025-10-05T11:00:00Z",
+    },
+    {
+      id: "PAY-016",
+      userId: 7,
+      courseId: 8,
+      amount: 1699000, // Git & GitHub Mastery
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-10-08T13:30:00Z",
+    },
+    {
+      id: "PAY-017",
+      userId: 8,
+      courseId: 9,
+      amount: 2299000, // UI/UX Design Pro
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-10-12T10:00:00Z",
+    },
+    {
+      id: "PAY-018",
+      userId: 9,
+      courseId: 9,
+      amount: 2299000, // UI/UX Design Pro
+      method: "banking",
+      status: "completed",
+      createdAt: "2025-10-15T09:30:00Z",
+    },
+    {
+      id: "PAY-019",
+      userId: 10,
+      courseId: 10,
+      amount: 1999000, // Cyber Security Fundamentals
+      method: "momo",
+      status: "completed",
+      createdAt: "2025-10-20T14:00:00Z",
+    },
+    {
+      id: "PAY-020",
+      userId: 5,
+      courseId: 10,
+      amount: 1999000, // Cyber Security Fundamentals
+      method: "vnpay",
+      status: "completed",
+      createdAt: "2025-10-25T11:30:00Z",
     },
   ];
 
@@ -178,6 +467,7 @@ const initData = () => {
   // Load lessons và exercises từ JSON files
   const lessons = lessonsDataFile?.lessons || [];
   const exercises = exercisesDataFile?.exercises || [];
+  const emailTemplates = emailTemplatesData?.templates || [];
 
   // Save to localStorage
   localStorage.setItem("enrollments", JSON.stringify(enrollments));
@@ -187,6 +477,7 @@ const initData = () => {
   localStorage.setItem("activityLogs", JSON.stringify(activityLogs));
   localStorage.setItem("lessons", JSON.stringify(lessons));
   localStorage.setItem("exercises", JSON.stringify(exercises));
+  localStorage.setItem("emailTemplates", JSON.stringify(emailTemplates));
 
   console.log("✅ Đã init dữ liệu localStorage thành công!");
   console.log("📦 Enrollments:", enrollments.length);
@@ -196,6 +487,7 @@ const initData = () => {
   console.log("📝 Activity Logs:", activityLogs.length);
   console.log("📚 Lessons:", lessons.length);
   console.log("💻 Exercises:", exercises.length);
+  console.log("📧 Email Templates:", emailTemplates.length);
   if (reportsDataFile) {
     console.log("🚨 Reports:", reportsDataFile.reports?.length || 0);
     console.log("💬 Chat Sessions:", reportsDataFile.chatSessions?.length || 0);

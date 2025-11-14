@@ -33,6 +33,7 @@ import ReportsManagement from "./pages/Moderator/ReportsManagement";
 import SupportChat from "./pages/Support/SupportChat";
 import TicketManagement from "./pages/Support/TicketManagement";
 import EmailSupport from "./pages/Support/EmailSupport";
+import Settings from "./pages/Settings";
 import "./App.css";
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route
+              path="/settings"
+              element={isAuthenticated ? <Settings /> : <Login />}
+            />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/courses/:id" element={<CourseDetail />} />
             <Route
