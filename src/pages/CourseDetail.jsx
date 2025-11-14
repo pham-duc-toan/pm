@@ -5,6 +5,8 @@ import usersData from "../data/users.json";
 import coursesData from "../data/courses.json";
 import lessonsData from "../data/lessons.json";
 import reviewsData from "../data/reviews.json";
+import ReviewForm from "../components/ReviewForm";
+import ReviewList from "../components/ReviewList";
 import {
   enrollFreeCourse,
   createPendingPayment,
@@ -19,6 +21,9 @@ const CourseDetail = () => {
   const { user } = useSelector((state) => state.auth);
   const { enrolledCourses } = useSelector((state) => state.enrollment);
   const [activeTab, setActiveTab] = useState("overview");
+  const [reviews, setReviews] = useState([]);
+  const [userReview, setUserReview] = useState(null);
+  const [canReview, setCanReview] = useState(false);
 
   const course = coursesData.courses.find((c) => c.id === parseInt(id));
 
@@ -39,6 +44,71 @@ const CourseDetail = () => {
   const isEnrolled = enrolledCourses.some(
     (e) => e.courseId === parseInt(id) && e.userId === user?.id
   );
+
+  // Kiểm tra xem học viên đã hoàn thành bài kiểm tra cuối khóa chưa
+  useEffect(() => {
+    if (!user || !isEnrolled) {
+      setCanReview(false);
+      return;
+    }
+
+    // Tìm enrollment của user cho khóa học này
+    const enrollment = enrolledCourses.find(
+      (e) => e.courseId === parseInt(id) && e.userId === user.id
+    );
+
+    if (!enrollment) {
+      setCanReview(false);
+      return;
+    }
+
+    // Tìm bài kiểm tra cuối khóa (quiz có title chứa "Kiểm tra cuối khóa")
+    const finalQuiz = courseLessons.find(
+      (lesson) =>
+        lesson.type === "quiz" && lesson.title.includes("Kiểm tra cuối khóa")
+    );
+
+    if (!finalQuiz) {
+      // Nếu không có quiz cuối, cho phép đánh giá khi hoàn thành > 80% khóa học
+      const completionRate =
+        enrollment.completedLessons.length / courseLessons.length;
+      setCanReview(completionRate > 0.8);
+    } else {
+      // Kiểm tra xem đã hoàn thành quiz cuối chưa
+      const hasCompletedFinalQuiz = enrollment.completedLessons.includes(
+        finalQuiz.id
+      );
+      setCanReview(hasCompletedFinalQuiz);
+    }
+  }, [user, isEnrolled, enrolledCourses, id, courseLessons]);
+
+  // Load reviews từ localStorage hoặc data
+  useEffect(() => {
+    const storedReviews =
+      JSON.parse(localStorage.getItem("courseReviews")) || [];
+    const courseReviewsFromStorage = storedReviews.filter(
+      (r) => r.courseId === parseInt(id)
+    );
+
+    // Merge với reviews từ JSON
+    const allReviews = [...courseReviews, ...courseReviewsFromStorage];
+
+    // Remove duplicates by id
+    const uniqueReviews = allReviews.reduce((acc, review) => {
+      if (!acc.find((r) => r.id === review.id)) {
+        acc.push(review);
+      }
+      return acc;
+    }, []);
+
+    setReviews(uniqueReviews);
+
+    // Tìm review của user hiện tại
+    if (user) {
+      const existingReview = uniqueReviews.find((r) => r.userId === user.id);
+      setUserReview(existingReview || null);
+    }
+  }, [id, user, courseReviews]);
 
   useEffect(() => {
     if (!course) {
@@ -106,10 +176,88 @@ const CourseDetail = () => {
     }
   };
 
+  // Xử lý submit review
+  const handleReviewSubmit = (reviewData) => {
+    if (!user) {
+      alert("Vui lòng đăng nhập để đánh giá!");
+      return;
+    }
+
+    const newReview = {
+      id: `review-${Date.now()}`,
+      courseId: parseInt(id),
+      userId: user.id,
+      userName: user.fullName,
+      userAvatar: user.avatar || "https://via.placeholder.com/48",
+      rating: reviewData.rating,
+      comment: reviewData.comment,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    // Lưu vào localStorage
+    const storedReviews =
+      JSON.parse(localStorage.getItem("courseReviews")) || [];
+    storedReviews.push(newReview);
+    localStorage.setItem("courseReviews", JSON.stringify(storedReviews));
+
+    // Cập nhật state
+    setReviews([...reviews, newReview]);
+    setUserReview(newReview);
+
+    alert("✅ Đánh giá của bạn đã được gửi thành công!");
+  };
+
+  // Xử lý edit review
+  const handleReviewEdit = (reviewId, updatedData) => {
+    const storedReviews =
+      JSON.parse(localStorage.getItem("courseReviews")) || [];
+    const reviewIndex = storedReviews.findIndex((r) => r.id === reviewId);
+
+    if (reviewIndex !== -1) {
+      storedReviews[reviewIndex] = {
+        ...storedReviews[reviewIndex],
+        rating: updatedData.rating,
+        comment: updatedData.comment,
+        updatedAt: new Date().toISOString(),
+      };
+      localStorage.setItem("courseReviews", JSON.stringify(storedReviews));
+
+      // Cập nhật state
+      const updatedReviews = reviews.map((r) =>
+        r.id === reviewId
+          ? {
+              ...r,
+              rating: updatedData.rating,
+              comment: updatedData.comment,
+              updatedAt: new Date().toISOString(),
+            }
+          : r
+      );
+      setReviews(updatedReviews);
+      setUserReview(updatedReviews.find((r) => r.id === reviewId));
+
+      alert("✅ Đánh giá đã được cập nhật!");
+    }
+  };
+
+  // Xử lý delete review
+  const handleReviewDelete = (reviewId) => {
+    const storedReviews =
+      JSON.parse(localStorage.getItem("courseReviews")) || [];
+    const filteredReviews = storedReviews.filter((r) => r.id !== reviewId);
+    localStorage.setItem("courseReviews", JSON.stringify(filteredReviews));
+
+    // Cập nhật state
+    setReviews(reviews.filter((r) => r.id !== reviewId));
+    setUserReview(null);
+
+    alert("🗑️ Đánh giá đã được xóa!");
+  };
+
   const {
     fullDescription = courseInfo?.fullDescription || "",
     curriculum = [],
-    reviews = courseReviews,
     certificate = courseInfo?.certificate || null,
     requirements = courseInfo?.requirements || [],
     whatYouWillLearn = courseInfo?.whatYouWillLearn || [],
@@ -134,7 +282,6 @@ const CourseDetail = () => {
     return {
       fullDescription: courseInfo?.fullDescription || "",
       curriculum: Object.values(grouped),
-      reviews: courseReviews,
       certificate: courseInfo?.certificate || null,
       requirements: courseInfo?.requirements || [],
       whatYouWillLearn: courseInfo?.whatYouWillLearn || [],
@@ -162,7 +309,14 @@ const CourseDetail = () => {
         <div className="hero-container">
           <div className="course-hero-content">
             <div className="breadcrumb">
-              <span onClick={() => navigate("/")} className="breadcrumb-link">
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  navigate("/");
+                }}
+                className="breadcrumb-link"
+              >
                 Trang chủ
               </span>
               <span className="breadcrumb-separator">/</span>
@@ -377,54 +531,49 @@ const CourseDetail = () => {
           {activeTab === "reviews" && (
             <div className="tab-content">
               <section className="content-section">
-                <div className="reviews-header">
-                  <h2>⭐ Đánh giá từ học viên</h2>
-                  {reviews.length > 0 && (
-                    <div className="rating-summary">
-                      <div className="rating-score">{averageRating}</div>
-                      <div className="rating-stars">
-                        {"⭐".repeat(Math.round(averageRating))}
-                      </div>
-                      <div className="rating-count">
-                        {reviews.length} đánh giá
-                      </div>
-                    </div>
-                  )}
-                </div>
+                {/* Form đánh giá - chỉ hiển thị khi đã hoàn thành quiz cuối */}
+                {user && isEnrolled && canReview && !userReview && (
+                  <ReviewForm onSubmit={handleReviewSubmit} />
+                )}
 
-                {reviews.length === 0 ? (
-                  <p className="empty-message">
-                    Chưa có đánh giá nào cho khóa học này.
-                  </p>
-                ) : (
-                  <div className="reviews-list">
-                    {reviews.map((review, index) => (
-                      <div key={index} className="review-item">
-                        <div className="review-header">
-                          <img
-                            src={review.userAvatar}
-                            alt={review.userName}
-                            className="review-avatar"
-                          />
-                          <div className="review-user-info">
-                            <h4>{review.userName}</h4>
-                            <div className="review-meta">
-                              <span className="review-stars">
-                                {"⭐".repeat(review.rating)}
-                              </span>
-                              <span className="review-date">
-                                {new Date(review.createdAt).toLocaleDateString(
-                                  "vi-VN"
-                                )}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <p className="review-comment">{review.comment}</p>
-                      </div>
-                    ))}
+                {/* Thông báo chưa thể đánh giá */}
+                {user && isEnrolled && !canReview && (
+                  <div className="review-locked-notice">
+                    <span className="lock-icon">🔒</span>
+                    <h3>Chưa thể đánh giá khóa học</h3>
+                    <p>
+                      Bạn cần hoàn thành bài kiểm tra cuối khóa để có thể đánh
+                      giá và bình luận về khóa học này.
+                    </p>
                   </div>
                 )}
+
+                {/* Thông báo chưa đăng ký */}
+                {!user && (
+                  <div className="review-locked-notice">
+                    <span className="lock-icon">👤</span>
+                    <h3>Vui lòng đăng nhập</h3>
+                    <p>Bạn cần đăng nhập và hoàn thành khóa học để đánh giá.</p>
+                  </div>
+                )}
+
+                {!isEnrolled && user && (
+                  <div className="review-locked-notice">
+                    <span className="lock-icon">📚</span>
+                    <h3>Chưa đăng ký khóa học</h3>
+                    <p>
+                      Bạn cần đăng ký và hoàn thành khóa học để có thể đánh giá.
+                    </p>
+                  </div>
+                )}
+
+                {/* Danh sách đánh giá */}
+                <ReviewList
+                  reviews={reviews}
+                  currentUserId={user?.id}
+                  onEdit={handleReviewEdit}
+                  onDelete={handleReviewDelete}
+                />
               </section>
             </div>
           )}

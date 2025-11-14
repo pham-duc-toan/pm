@@ -80,6 +80,26 @@
   object-fit: cover;
 }
 
+.completed-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+}
+
+.completed-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .course-progress-overlay {
   position: absolute;
   top: 0;
@@ -134,6 +154,12 @@
   color: #1a1a2e;
   margin-bottom: 10px;
   line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.course-title:hover {
+  color: #667eea;
+  text-decoration: underline;
 }
 
 .course-description {

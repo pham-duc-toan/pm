@@ -55,6 +55,11 @@ const MyCourses = () => {
               <div key={course.id} className="my-course-card">
                 <div className="course-thumbnail">
                   <img src={course.thumbnail} alt={course.title} />
+                  {course.enrollment.progress === 100 && (
+                    <div className="completed-overlay">
+                      <span className="completed-badge">✓ Đã hoàn thành</span>
+                    </div>
+                  )}
                   <div className="course-progress-overlay">
                     <div className="progress-circle">
                       <span className="progress-text">
@@ -66,7 +71,13 @@ const MyCourses = () => {
 
                 <div className="course-info">
                   <div className="course-category">{course.category}</div>
-                  <h3 className="course-title">{course.title}</h3>
+                  <h3
+                    className="course-title"
+                    onClick={() => navigate(`/course/${course.id}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {course.title}
+                  </h3>
                   <p className="course-description">{course.description}</p>
 
                   <div className="course-progress-bar">

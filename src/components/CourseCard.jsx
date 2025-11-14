@@ -24,6 +24,12 @@ const CourseCard = ({ course }) => {
     (e) => e.courseId === course.id && e.userId === user?.id
   );
 
+  const enrollment = enrolledCourses.find(
+    (e) => e.courseId === course.id && e.userId === user?.id
+  );
+
+  const isCompleted = enrollment?.progress === 100;
+
   const handleViewCourse = () => {
     navigate(`/course/${course.id}`);
   };
@@ -42,6 +48,9 @@ const CourseCard = ({ course }) => {
       <div className="course-image">
         <img src={course.thumbnail} alt={course.title} />
         {course.featured && <span className="featured-badge">⭐ Nổi bật</span>}
+        {isCompleted && (
+          <span className="completed-badge">✓ Đã hoàn thành</span>
+        )}
         <span
           className="level-badge"
           style={{ backgroundColor: getLevelColor(course.level) }}
@@ -52,7 +61,16 @@ const CourseCard = ({ course }) => {
 
       <div className="course-content">
         <div className="course-category">{course.category}</div>
-        <h3 className="course-title">{course.title}</h3>
+        <h3
+          className="course-title"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/course/${course.id}`);
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          {course.title}
+        </h3>
         <p className="course-description">{course.description}</p>
 
         <div className="course-meta">
