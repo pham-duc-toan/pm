@@ -29,7 +29,11 @@ const Sidebar = () => {
           { icon: "📚", label: "Quản lý khóa học", path: "/admin/courses" },
           { icon: "💬", label: "Quản lý bình luận", path: "/admin/comments" },
           { icon: "🎨", label: "Quản lý Banner", path: "/admin/banners" },
-          { icon: "📧", label: "Email Templates", path: "/admin/templates" },
+          {
+            icon: "📧",
+            label: "Email Templates",
+            path: "/admin/email-templates",
+          },
           { icon: "⚙️", label: "Cài đặt hệ thống", path: "/admin/settings" },
         ];
       case "moderator":
