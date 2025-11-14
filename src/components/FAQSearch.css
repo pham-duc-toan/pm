@@ -1,0 +1,69 @@
+.faq-search-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 40px;
+}
+
+.faq-search-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.faq-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.faq-search-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.faq-search-icon {
+  font-size: 1.3rem;
+  margin-right: 12px;
+  color: #667eea;
+}
+
+.faq-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+.faq-search-input::placeholder {
+  color: #999;
+}
+
+.faq-clear-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.faq-clear-btn:hover {
+  color: #333;
+}

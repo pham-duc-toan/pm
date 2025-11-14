@@ -20,14 +20,9 @@ const Header = () => {
               <button onClick={() => navigate("/")} className="nav-link">
                 Khóa học
               </button>
-              {user?.role === "student" && (
-                <button
-                  onClick={() => navigate("/my-courses")}
-                  className="nav-link"
-                >
-                  Khóa học của tôi
-                </button>
-              )}
+              <button onClick={() => navigate("/faq")} className="nav-link">
+                FAQ
+              </button>
             </nav>
           )}
         </div>

@@ -13,6 +13,7 @@ import Payment from "./pages/Payment";
 import PaymentGateway from "./pages/PaymentGateway";
 import SearchResults from "./pages/SearchResults";
 import UserManagement from "./pages/Admin/UserManagement";
+import FAQ from "./pages/FAQ";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/search" element={<SearchResults />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/courses/:id" element={<CourseDetail />} />
             <Route

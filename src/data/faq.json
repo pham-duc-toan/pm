@@ -1,0 +1,172 @@
+{
+  "categories": [
+    {
+      "id": "account",
+      "name": "Tài khoản & Đăng nhập",
+      "icon": "👤",
+      "faqs": [
+        {
+          "id": "acc-1",
+          "question": "Làm thế nào để đăng ký tài khoản?",
+          "answer": "Bạn có thể đăng ký tài khoản bằng cách nhấn nút 'Đăng ký' ở góc trên bên phải. Điền thông tin email, mật khẩu và họ tên. Sau đó kiểm tra email để xác thực tài khoản."
+        },
+        {
+          "id": "acc-2",
+          "question": "Tôi quên mật khẩu, phải làm sao?",
+          "answer": "Nhấn vào 'Quên mật khẩu' ở trang đăng nhập. Nhập email đã đăng ký, chúng tôi sẽ gửi link đặt lại mật khẩu đến email của bạn. Link có hiệu lực trong 24 giờ."
+        },
+        {
+          "id": "acc-3",
+          "question": "Có thể thay đổi email tài khoản không?",
+          "answer": "Có, bạn vào Hồ sơ > Cài đặt tài khoản > Thay đổi email. Bạn cần xác thực cả email cũ và email mới để đảm bảo bảo mật."
+        },
+        {
+          "id": "acc-4",
+          "question": "Làm cách nào để xóa tài khoản?",
+          "answer": "Vào Hồ sơ > Cài đặt > Xóa tài khoản. Lưu ý: Sau khi xóa, tất cả dữ liệu học tập và khóa học đã mua sẽ bị xóa vĩnh viễn và không thể khôi phục."
+        }
+      ]
+    },
+    {
+      "id": "courses",
+      "name": "Khóa học",
+      "icon": "📚",
+      "faqs": [
+        {
+          "id": "course-1",
+          "question": "Làm thế nào để đăng ký khóa học?",
+          "answer": "Chọn khóa học bạn quan tâm > Nhấn 'Đăng ký học' > Chọn phương thức thanh toán > Hoàn tất thanh toán. Với khóa miễn phí, bạn có thể học ngay mà không cần thanh toán."
+        },
+        {
+          "id": "course-2",
+          "question": "Tôi có thể học khóa học trong bao lâu?",
+          "answer": "Sau khi đăng ký, bạn có quyền truy cập khóa học trọn đời. Bạn có thể học lại bất cứ lúc nào, không giới hạn số lần xem."
+        },
+        {
+          "id": "course-3",
+          "question": "Làm thế nào để theo dõi tiến độ học?",
+          "answer": "Tiến độ học tự động được cập nhật khi bạn hoàn thành mỗi bài học. Bạn có thể xem tiến độ chi tiết tại trang 'Khóa học của tôi' hoặc trong thanh tiến độ của từng khóa học."
+        },
+        {
+          "id": "course-4",
+          "question": "Có thể tải video bài giảng về xem offline không?",
+          "answer": "Hiện tại chúng tôi chưa hỗ trợ tải video về. Tuy nhiên, bạn có thể xem video trên mọi thiết bị có kết nối internet (máy tính, điện thoại, tablet)."
+        },
+        {
+          "id": "course-5",
+          "question": "Nếu không hài lòng, tôi có thể hoàn tiền không?",
+          "answer": "Có, bạn có thể yêu cầu hoàn tiền trong vòng 7 ngày kể từ ngày mua nếu chưa hoàn thành quá 30% khóa học. Vui lòng liên hệ bộ phận hỗ trợ để được xử lý."
+        }
+      ]
+    },
+    {
+      "id": "payment",
+      "name": "Thanh toán",
+      "icon": "💳",
+      "faqs": [
+        {
+          "id": "pay-1",
+          "question": "Có những phương thức thanh toán nào?",
+          "answer": "Chúng tôi hỗ trợ: Thẻ tín dụng/ghi nợ (Visa, MasterCard), Ví điện tử (MoMo, ZaloPay, VNPay), Chuyển khoản ngân hàng, Thanh toán tại cửa hàng tiện lợi."
+        },
+        {
+          "id": "pay-2",
+          "question": "Thanh toán có an toàn không?",
+          "answer": "Hoàn toàn an toàn. Chúng tôi sử dụng cổng thanh toán được mã hóa SSL 256-bit và tuân thủ tiêu chuẩn bảo mật PCI DSS. Thông tin thẻ của bạn không được lưu trữ trên hệ thống."
+        },
+        {
+          "id": "pay-3",
+          "question": "Tôi đã thanh toán nhưng chưa nhận được khóa học?",
+          "answer": "Thông thường khóa học sẽ được kích hoạt ngay sau khi thanh toán thành công. Nếu sau 30 phút vẫn chưa nhận được, vui lòng liên hệ hỗ trợ và cung cấp mã giao dịch."
+        },
+        {
+          "id": "pay-4",
+          "question": "Có hỗ trợ trả góp không?",
+          "answer": "Có, chúng tôi hỗ trợ trả góp 0% qua các đối tác như Home Credit, FE Credit cho đơn hàng từ 3.000.000đ trở lên. Thời gian trả góp từ 3-12 tháng."
+        }
+      ]
+    },
+    {
+      "id": "certificate",
+      "name": "Chứng chỉ",
+      "icon": "📜",
+      "faqs": [
+        {
+          "id": "cert-1",
+          "question": "Làm thế nào để nhận chứng chỉ?",
+          "answer": "Sau khi hoàn thành 100% khóa học và đạt tối thiểu 80% điểm bài kiểm tra cuối khóa, bạn sẽ tự động nhận chứng chỉ. Chứng chỉ có thể tải về định dạng PDF."
+        },
+        {
+          "id": "cert-2",
+          "question": "Chứng chỉ có giá trị không?",
+          "answer": "Chứng chỉ của chúng tôi được công nhận bởi nhiều doanh nghiệp trong và ngoài nước. Chứng chỉ có mã số xác thực duy nhất, có thể kiểm tra trên website."
+        },
+        {
+          "id": "cert-3",
+          "question": "Tôi có thể in chứng chỉ không?",
+          "answer": "Có, sau khi tải chứng chỉ PDF, bạn có thể in ra giấy. Chúng tôi khuyến nghị in trên giấy A4 khổ ngang với chất lượng cao để đảm bảo độ sắc nét."
+        },
+        {
+          "id": "cert-4",
+          "question": "Chứng chỉ có hết hạn không?",
+          "answer": "Không, chứng chỉ của chúng tôi không có thời hạn và có giá trị trọn đời. Tuy nhiên, do công nghệ thay đổi nhanh, chúng tôi khuyến khích học viên cập nhật kiến thức định kỳ."
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "name": "Kỹ thuật",
+      "icon": "⚙️",
+      "faqs": [
+        {
+          "id": "tech-1",
+          "question": "Video không phát được, phải làm sao?",
+          "answer": "Hãy thử: Làm mới trang (F5), Xóa cache trình duyệt, Thử trình duyệt khác (Chrome, Firefox, Safari), Kiểm tra kết nối internet. Nếu vẫn lỗi, liên hệ hỗ trợ.",
+          "links": [{ "text": "Hướng dẫn xóa cache", "url": "#" }]
+        },
+        {
+          "id": "tech-2",
+          "question": "Code editor không chạy được?",
+          "answer": "Đảm bảo bạn đã nhập đúng cú pháp code. Nhấn nút 'Reset' để khôi phục code mẫu. Nếu vẫn lỗi, thử làm mới trang hoặc đổi trình duyệt."
+        },
+        {
+          "id": "tech-3",
+          "question": "Trang web hiển thị lỗi, không vào được?",
+          "answer": "Có thể do: Trình duyệt cũ (cập nhật lên phiên bản mới nhất), Extension chặn (tắt AdBlock), Firewall/Antivirus chặn. Thử chế độ ẩn danh hoặc liên hệ hỗ trợ."
+        },
+        {
+          "id": "tech-4",
+          "question": "Hệ thống có tương thích với thiết bị di động không?",
+          "answer": "Có, website hoàn toàn responsive, tương thích với mọi thiết bị (máy tính, laptop, tablet, smartphone). Chúng tôi cũng đang phát triển ứng dụng mobile."
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Câu hỏi khác",
+      "icon": "💬",
+      "faqs": [
+        {
+          "id": "other-1",
+          "question": "Làm thế nào để liên hệ giảng viên?",
+          "answer": "Bạn có thể đặt câu hỏi trong phần Thảo luận của từng bài học. Giảng viên và cộng đồng sẽ trả lời trong vòng 24-48 giờ."
+        },
+        {
+          "id": "other-2",
+          "question": "Có thể học chung tài khoản với bạn bè không?",
+          "answer": "Không, mỗi tài khoản chỉ dành cho 1 người. Việc chia sẻ tài khoản vi phạm điều khoản sử dụng và có thể bị khóa vĩnh viễn."
+        },
+        {
+          "id": "other-3",
+          "question": "Có chương trình học bổng không?",
+          "answer": "Có, chúng tôi thường xuyên có các chương trình học bổng cho học sinh, sinh viên. Theo dõi Facebook/Email để cập nhật thông tin mới nhất."
+        },
+        {
+          "id": "other-4",
+          "question": "Làm thế nào để trở thành giảng viên?",
+          "answer": "Nếu bạn có kinh nghiệm và muốn chia sẻ kiến thức, vui lòng gửi đơn đăng ký giảng viên qua email: instructor@codelearn.io kèm CV và demo bài giảng."
+        }
+      ]
+    }
+  ]
+}
