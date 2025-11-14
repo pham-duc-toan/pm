@@ -11,6 +11,7 @@ import MyCourses from "./pages/MyCourses";
 import CourseLearn from "./pages/CourseLearn";
 import Payment from "./pages/Payment";
 import PaymentGateway from "./pages/PaymentGateway";
+import SearchResults from "./pages/SearchResults";
 import UserManagement from "./pages/Admin/UserManagement";
 import "./App.css";
 
@@ -28,7 +29,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/course/:id" element={<CourseDetail />} />
+            <Route path="/courses/:id" element={<CourseDetail />} />
             <Route
               path="/profile"
               element={isAuthenticated ? <Profile /> : <Login />}

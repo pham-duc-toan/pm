@@ -24,7 +24,10 @@ const CourseList = ({ featured = false, limit = null }) => {
       result = result.filter(
         (course) =>
           course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          course.description.toLowerCase().includes(searchTerm.toLowerCase())
+          course.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          course.instructor.fullName
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())
       );
     }
 

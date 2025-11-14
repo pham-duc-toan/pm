@@ -91,6 +91,11 @@ const CourseLearn = () => {
   const [showMentionDropdown, setShowMentionDropdown] = useState(false);
   const [mentionSearch, setMentionSearch] = useState("");
   const [cursorPosition, setCursorPosition] = useState(0);
+  const [editingComment, setEditingComment] = useState(null);
+  const [editContent, setEditContent] = useState("");
+  const [reportingItem, setReportingItem] = useState(null); // { type: 'comment' | 'reply', id, commentId? }
+  const [reportReason, setReportReason] = useState("");
+  const [showReportModal, setShowReportModal] = useState(false);
 
   useEffect(() => {
     if (!user) {
@@ -482,6 +487,100 @@ const CourseLearn = () => {
   const handleCancelReply = () => {
     setReplyingTo(null);
     setNewComment("");
+  };
+
+  const handleEditComment = (comment) => {
+    setEditingComment(comment.id);
+    setEditContent(comment.content);
+  };
+
+  const handleSaveEdit = (commentId) => {
+    if (editContent.trim()) {
+      setLocalComments(
+        localComments.map((comment) => {
+          if (comment.id === commentId) {
+            return {
+              ...comment,
+              content: editContent,
+              updatedAt: new Date().toISOString(),
+            };
+          }
+          return comment;
+        })
+      );
+      setEditingComment(null);
+      setEditContent("");
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingComment(null);
+    setEditContent("");
+  };
+
+  const handleDeleteComment = (commentId) => {
+    if (window.confirm("Bạn có chắc muốn xóa bình luận này?")) {
+      setLocalComments(
+        localComments.filter((comment) => comment.id !== commentId)
+      );
+    }
+  };
+
+  const handleDeleteReply = (commentId, replyId) => {
+    if (window.confirm("Bạn có chắc muốn xóa phản hồi này?")) {
+      setLocalComments(
+        localComments.map((comment) => {
+          if (comment.id === commentId) {
+            return {
+              ...comment,
+              replies: comment.replies.filter((reply) => reply.id !== replyId),
+            };
+          }
+          return comment;
+        })
+      );
+    }
+  };
+
+  const handleReportComment = (commentId) => {
+    setReportingItem({ type: "comment", id: commentId });
+    setReportReason("");
+    setShowReportModal(true);
+  };
+
+  const handleReportReply = (commentId, replyId) => {
+    setReportingItem({ type: "reply", id: replyId, commentId });
+    setReportReason("");
+    setShowReportModal(true);
+  };
+
+  const handleSubmitReport = () => {
+    if (!reportReason) {
+      alert("Vui lòng chọn lý do báo cáo!");
+      return;
+    }
+
+    // Lưu report vào state tạm (trong thực tế sẽ gửi API)
+    const reportData = {
+      ...reportingItem,
+      reason: reportReason,
+      reportedBy: user.id,
+      reportedAt: new Date().toISOString(),
+    };
+
+    console.log("Report submitted:", reportData);
+    alert("Đã gửi báo cáo. Cảm ơn bạn đã góp phần giữ cộng đồng trong sạch!");
+
+    // Reset
+    setShowReportModal(false);
+    setReportingItem(null);
+    setReportReason("");
+  };
+
+  const handleCancelReport = () => {
+    setShowReportModal(false);
+    setReportingItem(null);
+    setReportReason("");
   };
 
   return (
@@ -955,7 +1054,33 @@ const CourseLearn = () => {
                         </div>
                       )}
                     </div>
-                    <div className="comment-content">{comment.content}</div>
+
+                    {editingComment === comment.id ? (
+                      <div className="comment-edit-box">
+                        <textarea
+                          value={editContent}
+                          onChange={(e) => setEditContent(e.target.value)}
+                          rows="3"
+                        />
+                        <div className="edit-actions">
+                          <button
+                            className="btn-save-edit"
+                            onClick={() => handleSaveEdit(comment.id)}
+                          >
+                            ✓ Lưu
+                          </button>
+                          <button
+                            className="btn-cancel-edit"
+                            onClick={handleCancelEdit}
+                          >
+                            ✕ Hủy
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="comment-content">{comment.content}</div>
+                    )}
+
                     <div className="comment-actions">
                       <button className="comment-like">
                         👍 {comment.likes || 0}
@@ -970,6 +1095,31 @@ const CourseLearn = () => {
                         <span className="comment-replies">
                           {comment.replies.length} phản hồi
                         </span>
+                      )}
+
+                      {comment.userId === user?.id ? (
+                        <div className="comment-owner-actions">
+                          <button
+                            className="btn-edit-comment"
+                            onClick={() => handleEditComment(comment)}
+                            disabled={editingComment === comment.id}
+                          >
+                            ✏️ Sửa
+                          </button>
+                          <button
+                            className="btn-delete-comment"
+                            onClick={() => handleDeleteComment(comment.id)}
+                          >
+                            🗑️ Xóa
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          className="btn-report-comment"
+                          onClick={() => handleReportComment(comment.id)}
+                        >
+                          🚩 Báo cáo
+                        </button>
                       )}
                     </div>
 
@@ -991,6 +1141,26 @@ const CourseLearn = () => {
                                 )}
                               </span>
                               <p>{reply.content}</p>
+
+                              {reply.userId === user?.id ? (
+                                <button
+                                  className="btn-delete-reply"
+                                  onClick={() =>
+                                    handleDeleteReply(comment.id, reply.id)
+                                  }
+                                >
+                                  🗑️ Xóa
+                                </button>
+                              ) : (
+                                <button
+                                  className="btn-report-reply"
+                                  onClick={() =>
+                                    handleReportReply(comment.id, reply.id)
+                                  }
+                                >
+                                  🚩 Báo cáo
+                                </button>
+                              )}
                             </div>
                           </div>
                         ))}
@@ -1131,6 +1301,124 @@ const CourseLearn = () => {
           </div>
         )}
       </div>
+
+      {/* Report Modal */}
+      {showReportModal && (
+        <div className="report-modal-overlay" onClick={handleCancelReport}>
+          <div
+            className="report-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3>🚩 Báo cáo vi phạm</h3>
+            <p className="report-modal-description">
+              Vui lòng chọn lý do báo cáo. Đội ngũ quản trị sẽ xem xét và xử lý
+              nhanh nhất.
+            </p>
+
+            <div className="report-reasons">
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="spam"
+                  checked={reportReason === "spam"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>🚫 Spam</strong>
+                  <span>Nội dung quảng cáo, spam liên tục</span>
+                </div>
+              </label>
+
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="hate"
+                  checked={reportReason === "hate"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>😡 Ngôn từ gây thù ghét</strong>
+                  <span>Kỳ thị, xúc phạm cá nhân/nhóm người</span>
+                </div>
+              </label>
+
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="answer-reveal"
+                  checked={reportReason === "answer-reveal"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>🔓 Tiết lộ đáp án</strong>
+                  <span>Chia sẻ đáp án bài tập, quiz</span>
+                </div>
+              </label>
+
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="inappropriate"
+                  checked={reportReason === "inappropriate"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>⚠️ Nội dung không phù hợp</strong>
+                  <span>Nội dung nhạy cảm, bạo lực, phản cảm</span>
+                </div>
+              </label>
+
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="offtopic"
+                  checked={reportReason === "offtopic"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>📌 Không liên quan</strong>
+                  <span>Nội dung không liên quan đến bài học</span>
+                </div>
+              </label>
+
+              <label className="report-reason-option">
+                <input
+                  type="radio"
+                  name="reportReason"
+                  value="other"
+                  checked={reportReason === "other"}
+                  onChange={(e) => setReportReason(e.target.value)}
+                />
+                <div className="reason-content">
+                  <strong>❓ Lý do khác</strong>
+                  <span>Vi phạm quy định khác</span>
+                </div>
+              </label>
+            </div>
+
+            <div className="report-modal-actions">
+              <button
+                className="btn-cancel-report"
+                onClick={handleCancelReport}
+              >
+                Hủy
+              </button>
+              <button
+                className="btn-submit-report"
+                onClick={handleSubmitReport}
+                disabled={!reportReason}
+              >
+                Gửi báo cáo
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

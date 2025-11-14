@@ -1328,3 +1328,295 @@
   border-radius: 8px;
   margin: 1rem 0;
 }
+
+/* Comment Edit/Delete Styles */
+.comment-owner-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.btn-edit-comment,
+.btn-delete-comment {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-edit-comment {
+  color: #667eea;
+}
+
+.btn-edit-comment:hover:not(:disabled) {
+  background: #eef2ff;
+}
+
+.btn-edit-comment:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-delete-comment {
+  color: #ef4444;
+}
+
+.btn-delete-comment:hover {
+  background: #fee;
+}
+
+.comment-edit-box {
+  margin-top: 0.5rem;
+}
+
+.comment-edit-box textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.comment-edit-box textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-save-edit,
+.btn-cancel-edit {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-save-edit {
+  background: #667eea;
+  color: white;
+}
+
+.btn-save-edit:hover {
+  background: #5568d3;
+  transform: translateY(-1px);
+}
+
+.btn-cancel-edit {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.btn-cancel-edit:hover {
+  background: #cbd5e0;
+}
+
+.btn-delete-reply {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-delete-reply:hover {
+  background: #fee;
+}
+
+/* Report Button */
+.btn-report-comment,
+.btn-report-reply {
+  background: none;
+  border: none;
+  color: #718096;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-report-comment:hover,
+.btn-report-reply:hover {
+  background: #fff5f5;
+  color: #e53e3e;
+}
+
+/* Report Modal */
+.report-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.report-modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.report-modal-content h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+.report-modal-description {
+  margin: 0 0 1.5rem 0;
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.report-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-reason-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.report-reason-option:hover {
+  border-color: #667eea;
+  background: #f7faff;
+}
+
+.report-reason-option input[type="radio"] {
+  margin-top: 0.25rem;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.report-reason-option input[type="radio"]:checked ~ .reason-content {
+  color: #667eea;
+}
+
+.reason-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reason-content strong {
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.reason-content span {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.report-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.btn-cancel-report,
+.btn-submit-report {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-cancel-report {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.btn-cancel-report:hover {
+  background: #e2e8f0;
+}
+
+.btn-submit-report {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-submit-report:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-submit-report:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

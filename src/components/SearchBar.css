@@ -1,0 +1,243 @@
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.search-input-container:focus-within {
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.25);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.25rem;
+  font-size: 1.25rem;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 3rem 1rem 3.5rem;
+  border: none;
+  font-size: 1rem;
+  color: #2d3748;
+  background: transparent;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 140px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+
+.clear-search-btn:hover {
+  background: #f7fafc;
+  color: #4a5568;
+}
+
+.submit-search-btn {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.submit-search-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+  background: linear-gradient(90deg, #f0f4ff 0%, #faf5ff 100%);
+}
+
+.suggestion-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.suggestion-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-title {
+  font-size: 0.95rem;
+  color: #2d3748;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestion-title strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.suggestion-meta {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Scrollbar */
+.suggestions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 12px 12px 0;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar-wrapper {
+    max-width: 100%;
+  }
+
+  .search-input-container {
+    border-radius: 12px;
+  }
+
+  .search-input {
+    padding: 0.875rem 2.5rem 0.875rem 3rem;
+    font-size: 0.95rem;
+  }
+
+  .search-icon {
+    left: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .clear-search-btn {
+    right: 110px;
+  }
+
+  .submit-search-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .suggestion-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .suggestion-icon {
+    font-size: 1.25rem;
+  }
+
+  .suggestion-title {
+    font-size: 0.9rem;
+  }
+
+  .suggestion-meta {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    padding: 0.75rem 2rem 0.75rem 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .search-icon {
+    left: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .clear-search-btn {
+    right: 90px;
+    font-size: 1rem;
+  }
+
+  .submit-search-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}

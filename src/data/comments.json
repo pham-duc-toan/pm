@@ -217,6 +217,110 @@
       "updatedAt": "2025-10-26T09:30:00Z",
       "likes": 25,
       "replies": []
+    },
+    {
+      "id": "cmt-spam-1",
+      "type": "lesson",
+      "targetId": "1-1-1",
+      "userId": 999,
+      "userName": "Spam Bot",
+      "userAvatar": "https://i.pravatar.cc/150?img=60",
+      "content": "💰💰💰 Kiếm tiền online tại nhà, thu nhập 10-20 triệu/tháng! Inbox ngay để biết thêm chi tiết. Link: bit.ly/kiem-tien-online 💰💰💰",
+      "rating": null,
+      "createdAt": "2025-11-14T08:00:00Z",
+      "updatedAt": "2025-11-14T08:00:00Z",
+      "likes": 0,
+      "replies": []
+    },
+    {
+      "id": "cmt-hate-1",
+      "type": "lesson",
+      "targetId": "1-2-2",
+      "userId": 998,
+      "userName": "Toxic User",
+      "userAvatar": "https://i.pravatar.cc/150?img=61",
+      "content": "Giảng dở quá! Người dạy không có tâm, học phí lại đắt. Chắc lừa đảo học viên thôi.",
+      "rating": 1,
+      "createdAt": "2025-11-14T09:30:00Z",
+      "updatedAt": "2025-11-14T09:30:00Z",
+      "likes": 0,
+      "replies": [
+        {
+          "id": "reply-hate-1",
+          "userId": 997,
+          "userName": "Troll Account",
+          "userAvatar": "https://i.pravatar.cc/150?img=62",
+          "content": "Đồng ý! Những người như thế này không nên dạy học, chỉ biết lừa tiền học viên.",
+          "createdAt": "2025-11-14T10:00:00Z",
+          "likes": 0
+        }
+      ]
+    },
+    {
+      "id": "cmt-answer-reveal",
+      "type": "exercise",
+      "targetId": "ex-1-1",
+      "userId": 996,
+      "userName": "Answer Revealer",
+      "userAvatar": "https://i.pravatar.cc/150?img=63",
+      "content": "Đáp án bài này là: function add(a, b) { return a + b; } - Copy paste vào là được nhé các bạn!",
+      "rating": null,
+      "createdAt": "2025-11-14T11:15:00Z",
+      "updatedAt": "2025-11-14T11:15:00Z",
+      "likes": -5,
+      "replies": []
+    },
+    {
+      "id": "cmt-inappropriate",
+      "type": "lesson",
+      "targetId": "1-3-1",
+      "userId": 995,
+      "userName": "Bad Content User",
+      "userAvatar": "https://i.pravatar.cc/150?img=64",
+      "content": "Nội dung không phù hợp và chửi bới... [nội dung vi phạm quy tắc cộng đồng]",
+      "rating": null,
+      "createdAt": "2025-11-14T13:00:00Z",
+      "updatedAt": "2025-11-14T13:00:00Z",
+      "likes": -3,
+      "replies": []
+    },
+    {
+      "id": "cmt-offtopic",
+      "type": "lesson",
+      "targetId": "2-2-2",
+      "userId": 994,
+      "userName": "Off Topic Guy",
+      "userAvatar": "https://i.pravatar.cc/150?img=65",
+      "content": "Có ai biết quán ăn ngon gần đây không? Mình đang tìm quán phở ngon ở Hà Nội. Giới thiệu với!",
+      "rating": null,
+      "createdAt": "2025-11-14T14:30:00Z",
+      "updatedAt": "2025-11-14T14:30:00Z",
+      "likes": 0,
+      "replies": [
+        {
+          "id": "reply-offtopic-1",
+          "userId": 993,
+          "userName": "Another Off Topic",
+          "userAvatar": "https://i.pravatar.cc/150?img=66",
+          "content": "Mình biết quán phở ở Hoàn Kiếm ngon lắm! Inbox mình nhé",
+          "createdAt": "2025-11-14T15:00:00Z",
+          "likes": 0
+        }
+      ]
+    },
+    {
+      "id": "cmt-spam-2",
+      "type": "exercise",
+      "targetId": "ex-7-2",
+      "userId": 992,
+      "userName": "Advertiser",
+      "userAvatar": "https://i.pravatar.cc/150?img=67",
+      "content": "🎓 Khóa học lập trình React chỉ 99k! Inbox ngay để nhận ưu đãi. Tặng kèm khóa Node.js miễn phí! 🔥🔥🔥",
+      "rating": null,
+      "createdAt": "2025-11-14T16:00:00Z",
+      "updatedAt": "2025-11-14T16:00:00Z",
+      "likes": -2,
+      "replies": []
     }
   ]
 }

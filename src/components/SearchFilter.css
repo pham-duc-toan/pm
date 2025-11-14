@@ -13,7 +13,7 @@
 
 .search-icon {
   position: absolute;
-  right: 16px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
@@ -23,7 +23,7 @@
 
 .search-input {
   width: 100%;
-  padding: 14px 50px 14px 16px;
+  padding: 14px 50px 14px 50px;
   border: 2px solid #e5e7eb;
   border-radius: 10px;
   font-size: 15px;
@@ -58,6 +58,99 @@
 .clear-search:hover {
   background: #d1d5db;
   color: #1f2937;
+}
+
+/* Autocomplete Suggestions */
+.suggestions-dropdown-filter {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideDownFilter 0.2s ease-out;
+}
+
+@keyframes slideDownFilter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item-filter:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item-filter:hover,
+.suggestion-item-filter.selected {
+  background: linear-gradient(90deg, #f0f4ff 0%, #faf5ff 100%);
+}
+
+.suggestion-item-filter .suggestion-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.suggestion-item-filter .suggestion-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-item-filter .suggestion-title {
+  font-size: 0.95rem;
+  color: #2d3748;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestion-item-filter .suggestion-title strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.suggestion-item-filter .suggestion-meta {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.suggestions-dropdown-filter::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-dropdown-filter::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 10px 10px 0;
+}
+
+.suggestions-dropdown-filter::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.suggestions-dropdown-filter::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
 }
 
 .filters {
