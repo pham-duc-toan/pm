@@ -228,9 +228,17 @@ const CourseLearn = () => {
   };
 
   const handleNextLesson = () => {
-    // Đánh dấu bài hiện tại là hoàn thành trước khi chuyển
     const currentLessonId = currentLesson?.id;
+
+    // Tự động đánh dấu hoàn thành bài hiện tại khi chuyển sang bài tiếp
     if (currentLessonId && !completedLessons.includes(currentLessonId)) {
+      // Nếu là quiz, yêu cầu phải pass mới chuyển được
+      if (currentLesson?.type === "quiz" && !showQuizResult?.isPassed) {
+        alert("⚠️ Vui lòng hoàn thành bài kiểm tra đạt 100% để tiếp tục!");
+        return;
+      }
+
+      // Tự động đánh dấu hoàn thành cho các loại khác
       dispatch(
         completeLesson({
           enrollmentId: enrollment.id,
@@ -305,6 +313,12 @@ const CourseLearn = () => {
   };
 
   const goToLesson = (moduleIndex, lessonIndex) => {
+    // Kiểm tra xem bài có bị khóa không
+    if (isLessonLocked(moduleIndex, lessonIndex)) {
+      alert("⚠️ Vui lòng hoàn thành bài trước để mở khóa bài này!");
+      return;
+    }
+
     // Đánh dấu bài hiện tại là hoàn thành trước khi chuyển
     const currentLessonId = currentLesson?.id;
     if (
@@ -343,6 +357,53 @@ const CourseLearn = () => {
 
   const isLessonCompleted = (lessonId) => {
     return completedLessons.includes(lessonId);
+  };
+
+  const isLessonLocked = (moduleIndex, lessonIndex) => {
+    // Bài đầu tiên luôn mở khóa
+    if (moduleIndex === 0 && lessonIndex === 0) return false;
+
+    const currentLessonObj = curriculum[moduleIndex].lessons[lessonIndex];
+
+    // Nếu là quiz cuối khóa, kiểm tra đã hoàn thành tất cả bài trước chưa
+    if (
+      currentLessonObj.type === "quiz" &&
+      currentLessonObj.title.includes("Kiểm tra cuối khóa")
+    ) {
+      // Đếm tổng số bài (không tính quiz cuối)
+      let totalLessonsBeforeQuiz = 0;
+      for (let i = 0; i < curriculum.length; i++) {
+        for (let j = 0; j < curriculum[i].lessons.length; j++) {
+          if (i === moduleIndex && j === lessonIndex) break;
+          totalLessonsBeforeQuiz++;
+        }
+        if (i === moduleIndex) break;
+      }
+
+      // Kiểm tra đã hoàn thành đủ số bài chưa
+      return completedLessons.length < totalLessonsBeforeQuiz;
+    }
+
+    // Kiểm tra bài trước đó đã hoàn thành chưa
+    let prevModuleIndex = moduleIndex;
+    let prevLessonIndex = lessonIndex - 1;
+
+    if (prevLessonIndex < 0) {
+      // Nếu là bài đầu module, check bài cuối module trước
+      if (moduleIndex > 0) {
+        prevModuleIndex = moduleIndex - 1;
+        prevLessonIndex = curriculum[prevModuleIndex].lessons.length - 1;
+      } else {
+        return false; // Module đầu tiên
+      }
+    }
+
+    const prevLesson = curriculum[prevModuleIndex].lessons[prevLessonIndex];
+    return !completedLessons.includes(prevLesson.id);
+  };
+
+  const canAccessLesson = (moduleIndex, lessonIndex) => {
+    return !isLessonLocked(moduleIndex, lessonIndex);
   };
 
   const handleQuizSubmit = () => {
@@ -715,6 +776,7 @@ const CourseLearn = () => {
                 >
                   ← Bài trước
                 </button>
+
                 <button className="nav-btn next" onClick={handleNextLesson}>
                   Bài tiếp →
                 </button>
@@ -1263,17 +1325,26 @@ const CourseLearn = () => {
                         moduleIndex === currentModuleIndex &&
                         lessonIndex === currentLessonIndex;
                       const isCompleted = isLessonCompleted(lesson.id);
+                      const isLocked = isLessonLocked(moduleIndex, lessonIndex);
 
                       return (
                         <div
                           key={lessonIndex}
                           className={`lesson-sidebar ${
                             isActive ? "active" : ""
-                          } ${isCompleted ? "completed" : ""}`}
+                          } ${isCompleted ? "completed" : ""} ${
+                            isLocked ? "locked" : ""
+                          }`}
                           onClick={() => goToLesson(moduleIndex, lessonIndex)}
+                          style={{
+                            cursor: isLocked ? "not-allowed" : "pointer",
+                            opacity: isLocked ? 0.6 : 1,
+                          }}
                         >
                           <span className="lesson-icon">
-                            {isCompleted
+                            {isLocked
+                              ? "🔒"
+                              : isCompleted
                               ? "✓"
                               : lesson.type === "video"
                               ? "▶"
@@ -1286,7 +1357,7 @@ const CourseLearn = () => {
                           <span className="lesson-title-sidebar">
                             {lesson.title}
                           </span>
-                          {lesson.duration && (
+                          {lesson.duration && !isLocked && (
                             <span className="lesson-duration-sidebar">
                               {lesson.duration}
                             </span>

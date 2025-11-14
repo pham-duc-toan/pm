@@ -726,6 +726,17 @@
   transform: scale(1.02);
 }
 
+.nav-btn.complete {
+  background: #48bb78;
+  color: white;
+  flex: 1;
+}
+
+.nav-btn.complete:hover {
+  background: #38a169;
+  transform: scale(1.02);
+}
+
 .nav-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -826,6 +837,19 @@
 
 .lesson-sidebar.completed .lesson-icon {
   color: #28a745;
+}
+
+.lesson-sidebar.locked {
+  background: #f7fafc !important;
+  cursor: not-allowed !important;
+}
+
+.lesson-sidebar.locked .lesson-title-sidebar {
+  color: #a0aec0 !important;
+}
+
+.lesson-sidebar.locked .lesson-icon {
+  color: #cbd5e0;
 }
 
 .lesson-icon {
