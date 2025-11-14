@@ -1,0 +1,343 @@
+{
+  "reports": [
+    {
+      "id": "report-1",
+      "type": "comment",
+      "targetId": "comment-123",
+      "targetType": "comment",
+      "reportedBy": "user-5",
+      "reporterName": "Nguyễn Văn D",
+      "reason": "spam",
+      "description": "Bình luận chứa link quảng cáo spam",
+      "status": "pending",
+      "createdAt": "2025-11-13T10:30:00Z",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "action": null,
+      "content": {
+        "text": "🔥🔥 MUA NGAY TẠI LINK: http://spam-site.com 🔥🔥",
+        "courseId": 1,
+        "lessonId": "lesson-1-1",
+        "author": "spammer001",
+        "authorAvatar": "https://i.pravatar.cc/150?img=60"
+      }
+    },
+    {
+      "id": "report-2",
+      "type": "comment",
+      "targetId": "comment-456",
+      "targetType": "comment",
+      "reportedBy": "user-8",
+      "reporterName": "Trần Thị E",
+      "reason": "hate_speech",
+      "description": "Ngôn từ không phù hợp, xúc phạm người khác",
+      "status": "pending",
+      "createdAt": "2025-11-14T08:15:00Z",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "action": null,
+      "content": {
+        "text": "Bài giảng dở quá, giảng viên ngu người",
+        "courseId": 2,
+        "lessonId": "lesson-2-3",
+        "author": "angry_user",
+        "authorAvatar": "https://i.pravatar.cc/150?img=61"
+      }
+    },
+    {
+      "id": "report-3",
+      "type": "comment",
+      "targetId": "comment-789",
+      "targetType": "comment",
+      "reportedBy": "user-10",
+      "reporterName": "Phạm Văn F",
+      "reason": "inappropriate",
+      "description": "Nội dung không liên quan đến bài học",
+      "status": "resolved",
+      "createdAt": "2025-11-12T14:20:00Z",
+      "reviewedBy": "staff-1",
+      "reviewedAt": "2025-11-12T15:30:00Z",
+      "action": "hidden",
+      "content": {
+        "text": "Ai muốn kiếm tiền online inbox mình nhé",
+        "courseId": 3,
+        "lessonId": "lesson-3-2",
+        "author": "scammer123",
+        "authorAvatar": "https://i.pravatar.cc/150?img=62"
+      }
+    },
+    {
+      "id": "report-4",
+      "type": "course",
+      "targetId": "course-15",
+      "targetType": "course",
+      "reportedBy": "user-12",
+      "reporterName": "Lê Thị G",
+      "reason": "copyright",
+      "description": "Khóa học vi phạm bản quyền, copy từ nguồn khác",
+      "status": "pending",
+      "createdAt": "2025-11-13T16:45:00Z",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "action": null,
+      "content": {
+        "courseTitle": "Web Development Bootcamp",
+        "instructorName": "Nguyễn Văn X",
+        "originalSource": "https://udemy.com/original-course"
+      }
+    },
+    {
+      "id": "report-5",
+      "type": "comment",
+      "targetId": "comment-999",
+      "targetType": "comment",
+      "reportedBy": "user-7",
+      "reporterName": "Hoàng Văn H",
+      "reason": "spam",
+      "description": "Bot spam liên tục",
+      "status": "resolved",
+      "createdAt": "2025-11-11T09:00:00Z",
+      "reviewedBy": "staff-2",
+      "reviewedAt": "2025-11-11T10:15:00Z",
+      "action": "deleted",
+      "content": {
+        "text": "CLICK HERE TO WIN IPHONE 15 PRO MAX!!!",
+        "courseId": 1,
+        "lessonId": "lesson-1-5",
+        "author": "bot_spammer",
+        "authorAvatar": "https://i.pravatar.cc/150?img=63"
+      }
+    }
+  ],
+  "tickets": [
+    {
+      "id": "ticket-1",
+      "userId": "user-5",
+      "userName": "Nguyễn Văn D",
+      "userEmail": "nguyenvand@example.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=15",
+      "subject": "Không thể truy cập bài giảng video",
+      "category": "technical",
+      "priority": "high",
+      "status": "open",
+      "description": "Em đăng ký khóa học JavaScript nhưng không xem được video bài 5. Báo lỗi 'Video not available'.",
+      "createdAt": "2025-11-14T09:00:00Z",
+      "lastUpdated": "2025-11-14T09:00:00Z",
+      "assignedTo": null,
+      "courseId": 1,
+      "courseName": "JavaScript Fundamentals",
+      "replies": []
+    },
+    {
+      "id": "ticket-2",
+      "userId": "user-8",
+      "userName": "Trần Thị E",
+      "userEmail": "tranthie@example.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=18",
+      "subject": "Yêu cầu hoàn tiền khóa học",
+      "category": "billing",
+      "priority": "medium",
+      "status": "in_progress",
+      "description": "Em đã thanh toán nhầm khóa học React Advanced. Em muốn học khóa React Basics trước. Có thể hoàn tiền và chuyển sang khóa khác được không ạ?",
+      "createdAt": "2025-11-13T14:30:00Z",
+      "lastUpdated": "2025-11-14T08:20:00Z",
+      "assignedTo": "staff-3",
+      "courseId": 4,
+      "courseName": "React Advanced Patterns",
+      "replies": [
+        {
+          "id": "reply-1",
+          "staffId": "staff-3",
+          "staffName": "Lê Minh Hỗ",
+          "message": "Chào bạn, em đã xem yêu cầu của bạn. Theo chính sách, trong vòng 7 ngày sau khi mua có thể hoàn tiền. Bạn mua ngày nào ạ?",
+          "createdAt": "2025-11-14T08:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "ticket-3",
+      "userId": "user-10",
+      "userName": "Phạm Văn F",
+      "userEmail": "phamvanf@example.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=20",
+      "subject": "Hỏi về chứng chỉ hoàn thành",
+      "category": "certificate",
+      "priority": "low",
+      "status": "resolved",
+      "description": "Em đã hoàn thành 100% khóa Python nhưng chưa nhận được chứng chỉ. Khi nào em mới nhận được ạ?",
+      "createdAt": "2025-11-12T10:00:00Z",
+      "lastUpdated": "2025-11-12T16:30:00Z",
+      "assignedTo": "staff-3",
+      "courseId": 3,
+      "courseName": "Python for Data Science",
+      "replies": [
+        {
+          "id": "reply-2",
+          "staffId": "staff-3",
+          "staffName": "Lê Minh Hỗ",
+          "message": "Chào bạn! Để nhận chứng chỉ, bạn cần hoàn thành cả bài kiểm tra cuối khóa với điểm >= 80%. Bạn kiểm tra lại phần 'Final Test' nhé.",
+          "createdAt": "2025-11-12T11:30:00Z"
+        },
+        {
+          "id": "reply-3",
+          "userId": "user-10",
+          "userName": "Phạm Văn F",
+          "message": "Cảm ơn anh! Em vừa làm xong và đạt 85%. Đã nhận được chứng chỉ rồi ạ.",
+          "createdAt": "2025-11-12T16:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "ticket-4",
+      "userId": "user-12",
+      "userName": "Lê Thị G",
+      "userEmail": "lethig@example.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=22",
+      "subject": "Tài khoản bị khóa không rõ lý do",
+      "category": "account",
+      "priority": "high",
+      "status": "open",
+      "description": "Sáng nay em đăng nhập thì báo tài khoản bị tạm khóa. Em không vi phạm gì cả. Nhờ anh chị kiểm tra giúp em.",
+      "createdAt": "2025-11-14T07:00:00Z",
+      "lastUpdated": "2025-11-14T07:00:00Z",
+      "assignedTo": null,
+      "courseId": null,
+      "courseName": null,
+      "replies": []
+    },
+    {
+      "id": "ticket-5",
+      "userId": "user-7",
+      "userName": "Hoàng Văn H",
+      "userEmail": "hoangvanh@example.com",
+      "userAvatar": "https://i.pravatar.cc/150?img=17",
+      "subject": "Câu hỏi về nội dung bài giảng",
+      "category": "course_content",
+      "priority": "low",
+      "status": "resolved",
+      "description": "Em không hiểu phần giải thích về Async/Await trong bài 12. Có tài liệu tham khảo thêm không ạ?",
+      "createdAt": "2025-11-13T15:00:00Z",
+      "lastUpdated": "2025-11-13T16:45:00Z",
+      "assignedTo": "staff-3",
+      "courseId": 1,
+      "courseName": "JavaScript Fundamentals",
+      "replies": [
+        {
+          "id": "reply-4",
+          "staffId": "staff-3",
+          "staffName": "Lê Minh Hỗ",
+          "message": "Chào bạn! Mình đã gửi cho bạn link bài viết chi tiết về Async/Await qua email rồi nhé. Nếu còn thắc mắc gì cứ hỏi mình.",
+          "createdAt": "2025-11-13T16:45:00Z"
+        }
+      ]
+    }
+  ],
+  "chatSessions": [
+    {
+      "id": "chat-1",
+      "userId": "user-5",
+      "userName": "Nguyễn Văn D",
+      "userAvatar": "https://i.pravatar.cc/150?img=15",
+      "status": "active",
+      "assignedTo": "staff-3",
+      "lastMessage": "Em cảm ơn anh ạ!",
+      "lastMessageTime": "2025-11-14T10:25:00Z",
+      "unreadCount": 1,
+      "messages": [
+        {
+          "id": "msg-1",
+          "senderId": "user-5",
+          "senderType": "user",
+          "message": "Chào anh! Em có thắc mắc về khóa học JavaScript ạ.",
+          "timestamp": "2025-11-14T10:20:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-2",
+          "senderId": "staff-3",
+          "senderType": "staff",
+          "message": "Chào bạn! Bạn cần hỗ trợ gì nhé?",
+          "timestamp": "2025-11-14T10:21:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-3",
+          "senderId": "user-5",
+          "senderType": "user",
+          "message": "Em muốn hỏi về phần Promise trong bài 10. Em chưa hiểu rõ lắm.",
+          "timestamp": "2025-11-14T10:23:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-4",
+          "senderId": "staff-3",
+          "senderType": "staff",
+          "message": "Được bạn! Promise là cách xử lý bất đồng bộ trong JS. Mình sẽ gửi cho bạn tài liệu và ví dụ chi tiết nhé.",
+          "timestamp": "2025-11-14T10:24:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-5",
+          "senderId": "user-5",
+          "senderType": "user",
+          "message": "Em cảm ơn anh ạ!",
+          "timestamp": "2025-11-14T10:25:00Z",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": "chat-2",
+      "userId": "user-8",
+      "userName": "Trần Thị E",
+      "userAvatar": "https://i.pravatar.cc/150?img=18",
+      "status": "closed",
+      "assignedTo": "staff-3",
+      "lastMessage": "Cảm ơn anh đã hỗ trợ!",
+      "lastMessageTime": "2025-11-13T16:00:00Z",
+      "unreadCount": 0,
+      "messages": [
+        {
+          "id": "msg-6",
+          "senderId": "user-8",
+          "senderType": "user",
+          "message": "Anh ơi, em thanh toán mà bị lỗi ạ.",
+          "timestamp": "2025-11-13T15:45:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-7",
+          "senderId": "staff-3",
+          "senderType": "staff",
+          "message": "Bạn thanh toán bằng phương thức nào vậy?",
+          "timestamp": "2025-11-13T15:47:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-8",
+          "senderId": "user-8",
+          "senderType": "user",
+          "message": "Em dùng VNPay ạ. Bấm thanh toán xong nó báo lỗi.",
+          "timestamp": "2025-11-13T15:48:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-9",
+          "senderId": "staff-3",
+          "senderType": "staff",
+          "message": "Mình đã check lại hệ thống rồi. Bạn thử thanh toán lại xem nhé, đã fix lỗi rồi.",
+          "timestamp": "2025-11-13T15:55:00Z",
+          "read": true
+        },
+        {
+          "id": "msg-10",
+          "senderId": "user-8",
+          "senderType": "user",
+          "message": "Cảm ơn anh đã hỗ trợ!",
+          "timestamp": "2025-11-13T16:00:00Z",
+          "read": true
+        }
+      ]
+    }
+  ]
+}

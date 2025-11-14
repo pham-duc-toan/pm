@@ -1,0 +1,257 @@
+.moderation-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #1a202c;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stat.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.stat.resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filters button:hover {
+  border-color: #667eea;
+  color: #667eea;
+  background: #f7f7ff;
+}
+
+.filters button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.report-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-left: 4px solid #ffc107;
+}
+
+.report-card.resolved {
+  border-left-color: #4caf50;
+  opacity: 0.8;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.reporter-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reason-badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.reason-badge.spam {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.reason-badge.hate_speech {
+  background: #fce4ec;
+  color: #880e4f;
+}
+
+.reason-badge.inappropriate {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.report-time {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.report-description {
+  margin-bottom: 1rem;
+}
+
+.report-description strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.report-description p {
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+.comment-content {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.comment-author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.comment-author span {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.comment-text {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+.comment-meta {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+}
+
+.btn.approve {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+}
+
+.btn.hide {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.btn.delete {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.btn.flag {
+  background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.resolution-info {
+  padding: 1rem;
+  background: #d4edda;
+  border-radius: 8px;
+  color: #155724;
+}
+
+.resolution-info strong {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .moderation-page {
+    padding: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+}

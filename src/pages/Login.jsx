@@ -5,6 +5,7 @@ import { loginStart, loginSuccess, loginFailure } from "../store/authSlice";
 import { loadEnrollmentsFromStorage } from "../store/enrollmentSlice";
 import { DEFAULT_AVATAR } from "../utils/constants";
 import usersData from "../data/users.json";
+import staffData from "../data/staff.json";
 import "./Login.css";
 
 const Login = () => {
@@ -23,12 +24,37 @@ const Login = () => {
 
     // Simulate API delay
     setTimeout(() => {
-      const user = usersData.users.find(
+      // Check trong users.json (admin, teacher, student)
+      let user = usersData.users.find(
         (u) =>
           u.username === formData.username && u.password === formData.password
       );
 
-      if (user && user.isActive) {
+      // Nếu không tìm thấy, check trong staff.json (moderator, supporter)
+      if (!user) {
+        const staff = staffData.staff.find(
+          (s) =>
+            s.email === formData.username && s.password === formData.password
+        );
+
+        if (staff && staff.status === "active") {
+          // Convert staff format to user format
+          user = {
+            id: staff.id,
+            username: staff.email,
+            email: staff.email,
+            fullName: staff.fullName,
+            role: staff.role,
+            avatar: staff.avatar,
+            isActive: true,
+            permissions: staff.permissions,
+            department: staff.department,
+            phone: staff.phone,
+          };
+        }
+      }
+
+      if (user && (user.isActive || user.status === "active")) {
         // Load paid enrollments vào localStorage nếu user có
         if (user.paidEnrollments && user.paidEnrollments.length > 0) {
           const existingEnrollments = JSON.parse(
@@ -78,8 +104,8 @@ const Login = () => {
   const handleDemoLogin = (role) => {
     const demoUsers = {
       admin: { username: "admin001", password: "admin123" },
-      moderator: { username: "moderator001", password: "mod123" },
-      support: { username: "support001", password: "support123" },
+      moderator: { username: "moderator1@codelearn.io", password: "123456" },
+      supporter: { username: "support1@codelearn.io", password: "123456" },
       teacher: { username: "teacher001", password: "teacher123" },
       student: { username: "student001", password: "student123" },
     };
@@ -253,7 +279,7 @@ const Login = () => {
               Kiểm duyệt
             </button>
             <button
-              onClick={() => handleDemoLogin("support")}
+              onClick={() => handleDemoLogin("supporter")}
               className="demo-btn support"
             >
               Hỗ trợ

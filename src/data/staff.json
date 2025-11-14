@@ -1,0 +1,185 @@
+{
+  "staff": [
+    {
+      "id": "staff-1",
+      "email": "moderator1@codelearn.io",
+      "password": "123456",
+      "fullName": "Nguyễn Văn Kiểm",
+      "role": "moderator",
+      "avatar": "https://i.pravatar.cc/150?img=11",
+      "permissions": [
+        "manage_comments",
+        "flag_spam",
+        "hide_content",
+        "view_reports"
+      ],
+      "status": "active",
+      "createdAt": "2024-01-15T08:00:00Z",
+      "lastLogin": "2025-11-14T09:30:00Z",
+      "phone": "0901234567",
+      "department": "Content Moderation"
+    },
+    {
+      "id": "staff-2",
+      "email": "moderator2@codelearn.io",
+      "password": "123456",
+      "fullName": "Trần Thị Duyệt",
+      "role": "moderator",
+      "avatar": "https://i.pravatar.cc/150?img=23",
+      "permissions": [
+        "manage_comments",
+        "flag_spam",
+        "hide_content",
+        "view_reports",
+        "review_courses"
+      ],
+      "status": "active",
+      "createdAt": "2024-02-10T10:00:00Z",
+      "lastLogin": "2025-11-13T16:45:00Z",
+      "phone": "0912345678",
+      "department": "Quality Assurance"
+    },
+    {
+      "id": "staff-3",
+      "email": "support1@codelearn.io",
+      "password": "123456",
+      "fullName": "Lê Minh Hỗ",
+      "role": "supporter",
+      "avatar": "https://i.pravatar.cc/150?img=33",
+      "permissions": ["view_student_info", "chat_support", "view_orders"],
+      "status": "active",
+      "createdAt": "2024-03-05T14:00:00Z",
+      "lastLogin": "2025-11-14T10:15:00Z",
+      "phone": "0923456789",
+      "department": "Customer Support"
+    },
+    {
+      "id": "staff-4",
+      "email": "support2@codelearn.io",
+      "password": "123456",
+      "fullName": "Phạm Thu Trợ",
+      "role": "supporter",
+      "avatar": "https://i.pravatar.cc/150?img=44",
+      "permissions": ["view_student_info", "chat_support"],
+      "status": "inactive",
+      "createdAt": "2024-04-20T09:00:00Z",
+      "lastLogin": "2025-10-30T11:20:00Z",
+      "phone": "0934567890",
+      "department": "Customer Support"
+    }
+  ],
+  "actionLogs": [
+    {
+      "id": "log-1",
+      "staffId": "staff-1",
+      "action": "hide_comment",
+      "targetType": "comment",
+      "targetId": "comment-123",
+      "reason": "Spam content",
+      "timestamp": "2025-11-13T14:30:00Z",
+      "details": "Hidden comment with ID comment-123 due to spam"
+    },
+    {
+      "id": "log-2",
+      "staffId": "staff-2",
+      "action": "approve_course",
+      "targetType": "course",
+      "targetId": "course-5",
+      "reason": "Meets quality standards",
+      "timestamp": "2025-11-12T10:20:00Z",
+      "details": "Approved course 'Advanced React Patterns'"
+    },
+    {
+      "id": "log-3",
+      "staffId": "staff-1",
+      "action": "flag_spam",
+      "targetType": "comment",
+      "targetId": "comment-456",
+      "reason": "Inappropriate language",
+      "timestamp": "2025-11-11T16:45:00Z",
+      "details": "Flagged comment as spam"
+    },
+    {
+      "id": "log-4",
+      "staffId": "staff-3",
+      "action": "view_student",
+      "targetType": "user",
+      "targetId": "user-5",
+      "reason": "Support ticket #1234",
+      "timestamp": "2025-11-10T09:15:00Z",
+      "details": "Viewed student profile for support inquiry"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "perm-1",
+      "code": "manage_comments",
+      "name": "Quản lý bình luận",
+      "description": "Duyệt, ẩn, gỡ bình luận",
+      "category": "content"
+    },
+    {
+      "id": "perm-2",
+      "code": "flag_spam",
+      "name": "Đánh dấu spam/hate",
+      "description": "Flag nội dung vi phạm",
+      "category": "content"
+    },
+    {
+      "id": "perm-3",
+      "code": "hide_content",
+      "name": "Ẩn nội dung",
+      "description": "Ẩn bài viết, bình luận",
+      "category": "content"
+    },
+    {
+      "id": "perm-4",
+      "code": "review_courses",
+      "name": "Kiểm duyệt khóa học",
+      "description": "Duyệt/từ chối khóa học",
+      "category": "course"
+    },
+    {
+      "id": "perm-5",
+      "code": "view_reports",
+      "name": "Xem báo cáo",
+      "description": "Xem các báo cáo vi phạm",
+      "category": "analytics"
+    },
+    {
+      "id": "perm-6",
+      "code": "view_student_info",
+      "name": "Xem thông tin học viên",
+      "description": "Xem chi tiết profile học viên",
+      "category": "support"
+    },
+    {
+      "id": "perm-7",
+      "code": "chat_support",
+      "name": "Chat hỗ trợ",
+      "description": "Trò chuyện với học viên",
+      "category": "support"
+    },
+    {
+      "id": "perm-8",
+      "code": "view_orders",
+      "name": "Xem đơn hàng",
+      "description": "Xem lịch sử thanh toán",
+      "category": "support"
+    },
+    {
+      "id": "perm-9",
+      "code": "manage_banners",
+      "name": "Quản lý banner",
+      "description": "Thêm, sửa, xóa banner quảng cáo",
+      "category": "marketing"
+    },
+    {
+      "id": "perm-10",
+      "code": "manage_templates",
+      "name": "Quản lý template email",
+      "description": "Tạo và chỉnh sửa template",
+      "category": "communication"
+    }
+  ]
+}

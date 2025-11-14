@@ -212,7 +212,7 @@ const CourseStudents = () => {
                           className="btn-view-progress"
                           onClick={() =>
                             navigate(
-                              `/instructor/student/${student.id}/progress?courseId=${courseId}`
+                              `/instructor/course/${courseId}/student/${student.id}/progress`
                             )
                           }
                           title="Xem tiến độ chi tiết"

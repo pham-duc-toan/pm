@@ -5,6 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import store from "./store";
+import initData from "./utils/initData";
+
+// Init dữ liệu demo khi app khởi động
+initData();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

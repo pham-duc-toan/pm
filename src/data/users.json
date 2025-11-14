@@ -2,6 +2,7 @@
   "users": [
     {
       "id": 1,
+      "username": "admin001",
       "email": "admin@codelearn.io",
       "password": "admin123",
       "role": "admin",

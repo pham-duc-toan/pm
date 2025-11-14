@@ -13,12 +13,26 @@ import Payment from "./pages/Payment";
 import PaymentGateway from "./pages/PaymentGateway";
 import SearchResults from "./pages/SearchResults";
 import UserManagement from "./pages/Admin/UserManagement";
+import StaffManagement from "./pages/Admin/StaffManagement";
+import SystemReport from "./pages/Admin/SystemReport";
+import BannerManagement from "./pages/Admin/BannerManagement";
+import CourseManagementAdmin from "./pages/Admin/CourseManagementAdmin";
+import CommentManagement from "./pages/Admin/CommentManagement";
+import EmailTemplates from "./pages/Admin/EmailTemplates";
+import SystemSettings from "./pages/Admin/SystemSettings";
 import FAQ from "./pages/FAQ";
 import CourseManagement from "./pages/Instructor/CourseManagement";
 import CourseStudents from "./pages/Instructor/CourseStudents";
+import StudentDetailProgress from "./pages/Instructor/StudentDetailProgress";
 import LessonManagement from "./pages/Instructor/LessonManagement";
 import ExerciseManagement from "./pages/Instructor/ExerciseManagement";
 import Statistics from "./pages/Instructor/Statistics";
+import CommentModeration from "./pages/Moderator/CommentModeration";
+import CourseReview from "./pages/Moderator/CourseReview";
+import ReportsManagement from "./pages/Moderator/ReportsManagement";
+import SupportChat from "./pages/Support/SupportChat";
+import TicketManagement from "./pages/Support/TicketManagement";
+import EmailSupport from "./pages/Support/EmailSupport";
 import "./App.css";
 
 function App() {
@@ -64,6 +78,76 @@ function App() {
               element={isAuthenticated ? <UserManagement /> : <Login />}
             />
             <Route
+              path="/admin/staff-management"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <StaffManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/system-report"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <SystemReport />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/banners"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <BannerManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/courses"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <CourseManagementAdmin />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/comments"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <CommentManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/email-templates"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <EmailTemplates />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/admin/settings"
+              element={
+                isAuthenticated && user?.role === "admin" ? (
+                  <SystemSettings />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
               path="/instructor/courses"
               element={
                 isAuthenticated && user?.role === "teacher" ? (
@@ -78,6 +162,16 @@ function App() {
               element={
                 isAuthenticated && user?.role === "teacher" ? (
                   <CourseStudents />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/instructor/course/:courseId/student/:userId/progress"
+              element={
+                isAuthenticated && user?.role === "teacher" ? (
+                  <StudentDetailProgress />
                 ) : (
                   <Login />
                 )
@@ -108,6 +202,66 @@ function App() {
               element={
                 isAuthenticated && user?.role === "teacher" ? (
                   <Statistics />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/moderator/comments"
+              element={
+                isAuthenticated && user?.role === "moderator" ? (
+                  <CommentModeration />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/moderator/courses"
+              element={
+                isAuthenticated && user?.role === "moderator" ? (
+                  <CourseReview />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/moderator/reports"
+              element={
+                isAuthenticated && user?.role === "moderator" ? (
+                  <ReportsManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/support/chat"
+              element={
+                isAuthenticated && user?.role === "supporter" ? (
+                  <SupportChat />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/support/email"
+              element={
+                isAuthenticated && user?.role === "supporter" ? (
+                  <EmailSupport />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/support/tickets"
+              element={
+                isAuthenticated && user?.role === "supporter" ? (
+                  <TicketManagement />
                 ) : (
                   <Login />
                 )

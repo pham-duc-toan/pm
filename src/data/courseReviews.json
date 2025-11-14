@@ -1,0 +1,65 @@
+{
+  "courseReviews": [
+    {
+      "id": "review-1",
+      "courseId": 1,
+      "instructorId": "user-2",
+      "status": "pending",
+      "submittedAt": "2025-11-10T14:30:00Z",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "result": null,
+      "reason": null,
+      "suggestions": [],
+      "courseSnapshot": {
+        "title": "JavaScript Fundamentals",
+        "description": "Khóa học JavaScript từ cơ bản đến nâng cao",
+        "lessonsCount": 24,
+        "totalDuration": 480,
+        "price": 499000
+      }
+    },
+    {
+      "id": "review-2",
+      "courseId": 3,
+      "instructorId": "user-3",
+      "status": "approved",
+      "submittedAt": "2025-11-05T10:00:00Z",
+      "reviewedBy": "staff-2",
+      "reviewedAt": "2025-11-06T09:15:00Z",
+      "result": "approved",
+      "reason": "Nội dung đầy đủ, chất lượng tốt",
+      "suggestions": [],
+      "courseSnapshot": {
+        "title": "Python for Data Science",
+        "description": "Học Python cho phân tích dữ liệu",
+        "lessonsCount": 30,
+        "totalDuration": 600,
+        "price": 799000
+      }
+    },
+    {
+      "id": "review-3",
+      "courseId": 5,
+      "instructorId": "user-2",
+      "status": "rejected",
+      "submittedAt": "2025-11-01T08:00:00Z",
+      "reviewedBy": "staff-2",
+      "reviewedAt": "2025-11-02T14:20:00Z",
+      "result": "rejected",
+      "reason": "Nội dung bài giảng chưa đầy đủ, thiếu bài tập thực hành",
+      "suggestions": [
+        "Bổ sung thêm 5-7 bài tập code thực hành",
+        "Cải thiện chất lượng video (âm thanh bị nhiễu)",
+        "Thêm quiz kiểm tra cuối mỗi chương"
+      ],
+      "courseSnapshot": {
+        "title": "Advanced React Patterns",
+        "description": "Các pattern nâng cao trong React",
+        "lessonsCount": 15,
+        "totalDuration": 300,
+        "price": 599000
+      }
+    }
+  ]
+}

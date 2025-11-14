@@ -154,16 +154,19 @@
 }
 
 .filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex !important;
+  flex-direction: row !important;
   gap: 16px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 6px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .filter-group label {
@@ -212,8 +215,12 @@
   }
 
   .filters {
-    grid-template-columns: 1fr;
+    flex-direction: row !important;
     gap: 12px;
+  }
+
+  .filter-group {
+    min-width: 150px;
   }
 
   .search-input {

@@ -16,9 +16,20 @@ const Sidebar = () => {
             label: "Quản lý tài khoản",
             path: "/admin/user-management",
           },
+          {
+            icon: "👔",
+            label: "Quản lý nhân viên",
+            path: "/admin/staff-management",
+          },
+          {
+            icon: "📊",
+            label: "Báo cáo hệ thống",
+            path: "/admin/system-report",
+          },
           { icon: "📚", label: "Quản lý khóa học", path: "/admin/courses" },
-          { icon: "📊", label: "Thống kê", path: "/admin/statistics" },
           { icon: "💬", label: "Quản lý bình luận", path: "/admin/comments" },
+          { icon: "🎨", label: "Quản lý Banner", path: "/admin/banners" },
+          { icon: "📧", label: "Email Templates", path: "/admin/templates" },
           { icon: "⚙️", label: "Cài đặt hệ thống", path: "/admin/settings" },
         ];
       case "moderator":
@@ -33,7 +44,7 @@ const Sidebar = () => {
           { icon: "🚨", label: "Báo cáo vi phạm", path: "/moderator/reports" },
           { icon: "📊", label: "Báo cáo", path: "/moderator/statistics" },
         ];
-      case "support":
+      case "supporter":
         return [
           { icon: "🏠", label: "Trang chủ", path: "/" },
           { icon: "💬", label: "Chat hỗ trợ", path: "/support/chat" },
