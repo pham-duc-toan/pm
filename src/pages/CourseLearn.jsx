@@ -85,6 +85,12 @@ const CourseLearn = () => {
   const [showSidebar, setShowSidebar] = useState(true);
   const [quizAnswers, setQuizAnswers] = useState({});
   const [showQuizResult, setShowQuizResult] = useState(false);
+  const [newComment, setNewComment] = useState("");
+  const [localComments, setLocalComments] = useState([]);
+  const [replyingTo, setReplyingTo] = useState(null);
+  const [showMentionDropdown, setShowMentionDropdown] = useState(false);
+  const [mentionSearch, setMentionSearch] = useState("");
+  const [cursorPosition, setCursorPosition] = useState(0);
 
   useEffect(() => {
     if (!user) {
@@ -158,13 +164,16 @@ const CourseLearn = () => {
       : null;
 
   // Lấy comments cho lesson hiện tại
-  const lessonComments = commentsData.comments.filter(
-    (c) =>
-      (c.type === "lesson" && c.targetId === currentLesson?.id) ||
-      (c.type === "exercise" &&
-        currentExercise &&
-        c.targetId === currentExercise.id)
-  );
+  const lessonComments = [
+    ...commentsData.comments.filter(
+      (c) =>
+        (c.type === "lesson" && c.targetId === currentLesson?.id) ||
+        (c.type === "exercise" &&
+          currentExercise &&
+          c.targetId === currentExercise.id)
+    ),
+    ...localComments,
+  ];
 
   const totalLessons = curriculum.reduce(
     (sum, module) => sum + module.lessons.length,
@@ -364,6 +373,115 @@ const CourseLearn = () => {
   const handleRetryQuiz = () => {
     setQuizAnswers({});
     setShowQuizResult(false);
+  };
+
+  const mentionableUsers = [
+    { username: "admin", name: "Admin", role: "Quản trị viên" },
+    { username: "kiemduyetvien", name: "Kiểm duyệt viên", role: "Moderator" },
+    { username: "hotro", name: "Hỗ trợ", role: "Support" },
+    { username: "giangvien", name: "Giảng viên", role: "Instructor" },
+  ];
+
+  const handleCommentChange = (e) => {
+    const value = e.target.value;
+    const cursor = e.target.selectionStart;
+    setNewComment(value);
+    setCursorPosition(cursor);
+
+    // Detect @ mention
+    const textBeforeCursor = value.slice(0, cursor);
+    const lastAtIndex = textBeforeCursor.lastIndexOf("@");
+
+    if (lastAtIndex !== -1) {
+      const searchText = textBeforeCursor.slice(lastAtIndex + 1);
+      if (searchText.length >= 0 && !searchText.includes(" ")) {
+        setMentionSearch(searchText.toLowerCase());
+        setShowMentionDropdown(true);
+      } else {
+        setShowMentionDropdown(false);
+      }
+    } else {
+      setShowMentionDropdown(false);
+    }
+  };
+
+  const handleSelectMention = (username) => {
+    const textBeforeCursor = newComment.slice(0, cursorPosition);
+    const lastAtIndex = textBeforeCursor.lastIndexOf("@");
+    const textBeforeAt = newComment.slice(0, lastAtIndex);
+    const textAfterCursor = newComment.slice(cursorPosition);
+    const newText = `${textBeforeAt}@${username} ${textAfterCursor}`;
+
+    setNewComment(newText);
+    setShowMentionDropdown(false);
+    setMentionSearch("");
+  };
+
+  const filteredMentions = mentionableUsers.filter(
+    (u) =>
+      u.username.toLowerCase().includes(mentionSearch) ||
+      u.name.toLowerCase().includes(mentionSearch)
+  );
+
+  const handleAddComment = () => {
+    if (newComment.trim()) {
+      if (replyingTo) {
+        // Add reply to existing comment
+        const reply = {
+          id: `reply-${Date.now()}`,
+          userId: user?.id,
+          userName: user?.fullName || user?.name,
+          userAvatar: user?.avatar || "https://i.pravatar.cc/150?img=1",
+          content: newComment,
+          createdAt: new Date().toISOString(),
+          likes: 0,
+        };
+
+        setLocalComments(
+          localComments.map((comment) => {
+            if (comment.id === replyingTo) {
+              return {
+                ...comment,
+                replies: [...(comment.replies || []), reply],
+              };
+            }
+            return comment;
+          })
+        );
+
+        setReplyingTo(null);
+      } else {
+        // Add new comment
+        const comment = {
+          id: `local-${Date.now()}`,
+          type: currentLesson?.type === "exercise" ? "exercise" : "lesson",
+          targetId: currentLesson?.id,
+          userId: user?.id,
+          userName: user?.fullName || user?.name,
+          userAvatar: user?.avatar || "https://i.pravatar.cc/150?img=1",
+          content: newComment,
+          rating: null,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          likes: 0,
+          replies: [],
+        };
+        setLocalComments([...localComments, comment]);
+      }
+
+      setNewComment("");
+      setShowMentionDropdown(false);
+    }
+  };
+
+  const handleReply = (commentId) => {
+    setReplyingTo(commentId);
+    document.querySelector(".add-comment-box textarea")?.focus();
+  };
+
+  const handleCancelReply = () => {
+    setReplyingTo(null);
+    setNewComment("");
   };
 
   return (
@@ -842,9 +960,15 @@ const CourseLearn = () => {
                       <button className="comment-like">
                         👍 {comment.likes || 0}
                       </button>
+                      <button
+                        className="comment-reply-btn"
+                        onClick={() => handleReply(comment.id)}
+                      >
+                        💬 Trả lời
+                      </button>
                       {comment.replies && comment.replies.length > 0 && (
                         <span className="comment-replies">
-                          💬 {comment.replies.length} phản hồi
+                          {comment.replies.length} phản hồi
                         </span>
                       )}
                     </div>
@@ -885,8 +1009,63 @@ const CourseLearn = () => {
             )}
 
             <div className="add-comment-box">
-              <textarea placeholder="Viết bình luận của bạn..." rows="3" />
-              <button className="btn-submit-comment">Gửi bình luận</button>
+              {replyingTo && (
+                <div className="replying-to-banner">
+                  <span>💬 Đang trả lời bình luận...</span>
+                  <button
+                    onClick={handleCancelReply}
+                    className="cancel-reply-btn"
+                  >
+                    ✕
+                  </button>
+                </div>
+              )}
+              <div className="comment-input-wrapper">
+                <textarea
+                  placeholder={
+                    replyingTo
+                      ? "Viết phản hồi của bạn... (Nhập @ để mention)"
+                      : "Viết bình luận của bạn... (Nhập @ để mention)"
+                  }
+                  rows="3"
+                  value={newComment}
+                  onChange={handleCommentChange}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+                      handleAddComment();
+                    }
+                  }}
+                />
+                {showMentionDropdown && filteredMentions.length > 0 && (
+                  <div className="mention-dropdown">
+                    {filteredMentions.map((user, idx) => (
+                      <div
+                        key={idx}
+                        className="mention-item"
+                        onClick={() => handleSelectMention(user.username)}
+                      >
+                        <span className="mention-username">
+                          @{user.username}
+                        </span>
+                        <span className="mention-name">{user.name}</span>
+                        <span className="mention-role">{user.role}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="comment-actions-row">
+                <small className="hint-text">
+                  💡 Nhập @ để mention • Ctrl+Enter để gửi
+                </small>
+                <button
+                  className="btn-submit-comment"
+                  onClick={handleAddComment}
+                  disabled={!newComment.trim()}
+                >
+                  {replyingTo ? "Gửi phản hồi" : "Gửi bình luận"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
