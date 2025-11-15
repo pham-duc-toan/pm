@@ -400,14 +400,17 @@ const enrollmentSlice = createSlice({
     },
 
     createPendingPayment: (state, action) => {
-      const { courseId, userId, course, paymentMethod } = action.payload;
+      const { id, courseId, userId, course, paymentMethod } = action.payload;
+
+      const paymentId = id || `PAY-${Date.now()}`;
+
       const payment = {
-        id: `PAY-${Date.now()}`,
+        id: paymentId,
         courseId,
         userId,
-        courseName: course.title,
-        amount: course.price,
-        paymentMethod,
+        courseName: course?.title || "",
+        amount: course?.price || 0,
+        paymentMethod: paymentMethod || null,
         status: "pending",
         createdAt: new Date().toISOString(),
       };

@@ -15,7 +15,19 @@ const Payment = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
-  const { payment, course } = location.state || {};
+  // Lấy từ localStorage nếu không có trong state
+  const getPaymentData = () => {
+    if (location.state?.payment && location.state?.course) {
+      return location.state;
+    }
+    const storedData = localStorage.getItem("pendingPayment");
+    if (storedData) {
+      return JSON.parse(storedData);
+    }
+    return { payment: null, course: null };
+  };
+
+  const { payment, course } = getPaymentData();
   const [selectedMethod, setSelectedMethod] = useState("");
   const [processing, setProcessing] = useState(false);
   const [countdown, setCountdown] = useState(3);
@@ -59,17 +71,23 @@ const Payment = () => {
 
     setProcessing(true);
 
+    // Lưu vào localStorage cho PaymentGateway
+    localStorage.setItem(
+      "currentPayment",
+      JSON.stringify({ payment, course, paymentMethod: selectedMethod })
+    );
+
     // Simulate payment gateway redirect
     setTimeout(() => {
-      navigate("/payment-gateway", {
-        state: { payment, course, paymentMethod: selectedMethod },
-      });
+      window.location.href = "/payment-gateway";
     }, 1500);
   };
 
   const handleCancel = () => {
     if (window.confirm("Bạn có chắc muốn hủy thanh toán?")) {
       dispatch(cancelPayment({ paymentId: payment.id }));
+      localStorage.removeItem("pendingPayment");
+      localStorage.removeItem("currentPayment");
       navigate("/");
     }
   };

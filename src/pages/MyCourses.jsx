@@ -74,7 +74,6 @@ const MyCourses = () => {
                   <h3
                     className="course-title"
                     onClick={() => navigate(`/course/${course.id}`)}
-                    style={{ cursor: "pointer" }}
                   >
                     {course.title}
                   </h3>
@@ -88,11 +87,11 @@ const MyCourses = () => {
                   </div>
 
                   <div className="course-meta">
-                    <span className="meta-item">
+                    <span className="meta-item1">
                       <span className="meta-icon">⏱️</span>
                       {course.totalDuration || course.duration}
                     </span>
-                    <span className="meta-item">
+                    <span className="meta-item1">
                       <span className="meta-icon">📊</span>
                       {course.level}
                     </span>

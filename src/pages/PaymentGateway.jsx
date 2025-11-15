@@ -15,7 +15,23 @@ const PaymentGateway = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
-  const { payment, course, paymentMethod } = location.state || {};
+  // Lấy từ localStorage nếu không có trong state
+  const getPaymentData = () => {
+    if (
+      location.state?.payment &&
+      location.state?.course &&
+      location.state?.paymentMethod
+    ) {
+      return location.state;
+    }
+    const storedData = localStorage.getItem("currentPayment");
+    if (storedData) {
+      return JSON.parse(storedData);
+    }
+    return { payment: null, course: null, paymentMethod: null };
+  };
+
+  const { payment, course, paymentMethod } = getPaymentData();
   const [processing, setProcessing] = useState(true);
   const [result, setResult] = useState(null);
   const [countdown, setCountdown] = useState(5);
@@ -43,6 +59,10 @@ const PaymentGateway = () => {
             transactionId,
           })
         );
+
+        // Xóa localStorage sau khi thanh toán thành công
+        localStorage.removeItem("pendingPayment");
+        localStorage.removeItem("currentPayment");
 
         // Add notification
         dispatch(
@@ -72,6 +92,8 @@ const PaymentGateway = () => {
             error: errorMsg,
           })
         );
+
+        // Không xóa localStorage khi fail để user có thể retry
 
         dispatch(
           addNotification({
@@ -266,7 +288,14 @@ const PaymentGateway = () => {
               <button className="btn-primary" onClick={handleManualRedirect}>
                 Thử lại
               </button>
-              <button className="btn-secondary" onClick={() => navigate("/")}>
+              <button
+                className="btn-secondary"
+                onClick={() => {
+                  localStorage.removeItem("pendingPayment");
+                  localStorage.removeItem("currentPayment");
+                  navigate("/");
+                }}
+              >
                 Về trang chủ
               </button>
             </div>

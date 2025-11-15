@@ -61,6 +61,8 @@
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .my-course-card:hover {
@@ -136,10 +138,9 @@
 
 .course-info {
   padding: 20px;
-  img {
-    width: 100px;
-    height: 100px;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .course-category {
@@ -159,6 +160,13 @@
   margin-bottom: 10px;
   line-height: 1.4;
   transition: color 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .course-title:hover {
@@ -173,6 +181,7 @@
   margin-bottom: 15px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -204,8 +213,12 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #666;
+  color: #1a1a2e;
   font-size: 0.9rem;
+  font-weight: 500;
+  span {
+    color: rgb(12, 10, 10) !important;
+  }
 }
 
 .meta-icon {
@@ -233,10 +246,12 @@
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .btn-continue {
-  flex: 1;
+  flex: 2;
+  min-width: 140px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
@@ -245,6 +260,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-continue:hover {
@@ -252,6 +268,8 @@
 }
 
 .btn-invoice {
+  flex: 1;
+  min-width: 100px;
   background: white;
   border: 2px solid #667eea;
   color: #667eea;
@@ -260,6 +278,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-invoice:hover {
@@ -268,6 +287,8 @@
 }
 
 .btn-detail {
+  flex: 1;
+  min-width: 100px;
   background: white;
   border: 2px solid #10b981;
   color: #10b981;
@@ -276,6 +297,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-detail:hover {

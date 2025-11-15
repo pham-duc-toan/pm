@@ -127,12 +127,15 @@
   border-top: 1px solid #e5e7eb;
 }
 
-.meta-item {
+.meta-item1 {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #6b7280;
+  color: #000000 !important;
+  span {
+    color: #000000 !important;
+  }
 }
 
 .meta-icon {

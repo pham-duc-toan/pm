@@ -123,13 +123,13 @@ const CourseDetail = () => {
   const handleEnroll = () => {
     if (!user) {
       alert("Vui lòng đăng nhập để đăng ký khóa học!");
-      navigate("/login");
+      window.location.href = "/login";
       return;
     }
 
     if (isEnrolled) {
       alert("Bạn đã đăng ký khóa học này rồi!");
-      navigate("/my-courses");
+      window.location.href = "/my-courses";
       return;
     }
 
@@ -170,9 +170,13 @@ const CourseDetail = () => {
 
       dispatch(createPendingPayment(payment));
 
-      navigate("/payment", {
-        state: { payment, course },
-      });
+      // Lưu vào localStorage để tránh mất dữ liệu khi chuyển trang
+      localStorage.setItem(
+        "pendingPayment",
+        JSON.stringify({ payment, course })
+      );
+
+      window.location.href = "/payment";
     }
   };
 

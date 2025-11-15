@@ -73,16 +73,22 @@
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  color: white !important;
+  color: rgb(20, 20, 20) !important;
+  span {
+    color: rgb(12, 10, 10) !important;
+  }
 }
 
 .meta-item * {
-  color: white !important;
+  color: rgb(12, 10, 10) !important;
+  span {
+    color: rgb(12, 10, 10) !important;
+  }
 }
 
 .meta-icon {
   font-size: 18px;
-  color: white;
+  color: rgb(12, 12, 12);
 }
 
 .level-badge {

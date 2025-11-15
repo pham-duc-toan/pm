@@ -26,12 +26,12 @@ const UserMenu = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/login");
+    window.location.href = "/login";
     setIsOpen(false);
   };
 
   const handleProfileClick = () => {
-    navigate("/profile");
+    window.location.href = "/profile";
     setIsOpen(false);
   };
 
@@ -97,7 +97,7 @@ const UserMenu = () => {
               <>
                 <button
                   className="user-menu-item"
-                  onClick={() => navigate("/my-courses")}
+                  onClick={() => (window.location.href = "/my-courses")}
                 >
                   <span className="menu-icon">📚</span>
                   <span>Khóa học của tôi</span>
@@ -116,7 +116,7 @@ const UserMenu = () => {
               <>
                 <button
                   className="user-menu-item"
-                  onClick={() => navigate("/teacher/courses")}
+                  onClick={() => (window.location.href = "/teacher/courses")}
                 >
                   <span className="menu-icon">📚</span>
                   <span>Khóa học của tôi</span>

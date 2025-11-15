@@ -12,12 +12,15 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <div className="header-left">
-          <h1 className="logo" onClick={() => navigate("/")}>
+          <h1 className="logo" onClick={() => (window.location.href = "/")}>
             🎓 EduSystem
           </h1>
           {isAuthenticated && (
             <nav className="header-nav">
-              <button onClick={() => navigate("/")} className="nav-link">
+              <button
+                onClick={() => (window.location.href = "/")}
+                className="nav-link"
+              >
                 Khóa học
               </button>
               <button onClick={() => navigate("/faq")} className="nav-link">
@@ -35,11 +38,14 @@ const Header = () => {
             </div>
           ) : (
             <div className="auth-buttons">
-              <button onClick={() => navigate("/login")} className="login-btn">
+              <button
+                onClick={() => (window.location.href = "/login")}
+                className="login-btn"
+              >
                 Đăng nhập
               </button>
               <button
-                onClick={() => navigate("/register")}
+                onClick={() => (window.location.href = "/register")}
                 className="register-btn"
               >
                 Đăng ký
