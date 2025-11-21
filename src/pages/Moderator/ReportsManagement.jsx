@@ -151,8 +151,7 @@ const ReportsManagement = () => {
             </div>
 
             <div className="reporter-info">
-              <strong>📢 Báo cáo bởi:</strong> {report.reporterName} (
-              {report.reporterEmail})
+              <strong>📢 Báo cáo bởi:</strong> {report.reporterName}
             </div>
 
             <div className="report-description">
@@ -163,31 +162,53 @@ const ReportsManagement = () => {
             {report.content && (
               <div className="reported-content">
                 <strong>Nội dung bị báo cáo:</strong>
-                {report.type === "comment" && (
+                {report.type === "comment" && report.content && (
                   <div className="comment-preview">
                     <div className="author-info">
                       <img
-                        src={report.content.authorAvatar}
-                        alt={report.content.author}
+                        src={
+                          report.content.authorAvatar ||
+                          "https://i.pravatar.cc/150?img=0"
+                        }
+                        alt={report.content.author || "User"}
                       />
-                      <span>{report.content.author}</span>
+                      <span>{report.content.author || "Unknown"}</span>
                     </div>
-                    <p>{report.content.text}</p>
-                    <small>
-                      Khóa học ID: {report.content.courseId} • Bài học:{" "}
-                      {report.content.lessonId}
-                    </small>
+                    <p>{report.content.text || ""}</p>
+                    {report.content.courseId && (
+                      <small>
+                        Khóa học ID: {report.content.courseId}
+                        {report.content.lessonId &&
+                          ` • Bài học: ${report.content.lessonId}`}
+                      </small>
+                    )}
                   </div>
                 )}
-                {report.type === "course" && (
+                {report.type === "course" && report.content && (
                   <div className="course-preview">
-                    <p>
-                      <strong>Tiêu đề:</strong> {report.content.courseTitle}
-                    </p>
-                    <p>
-                      <strong>Giảng viên:</strong>{" "}
-                      {report.content.instructorName}
-                    </p>
+                    {report.content.courseTitle && (
+                      <p>
+                        <strong>Tiêu đề:</strong> {report.content.courseTitle}
+                      </p>
+                    )}
+                    {report.content.instructorName && (
+                      <p>
+                        <strong>Giảng viên:</strong>{" "}
+                        {report.content.instructorName}
+                      </p>
+                    )}
+                    {report.content.originalSource && (
+                      <p>
+                        <strong>Nguồn gốc:</strong>{" "}
+                        <a
+                          href={report.content.originalSource}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {report.content.originalSource}
+                        </a>
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
@@ -223,13 +244,17 @@ const ReportsManagement = () => {
             ) : (
               <div className="resolution-info">
                 <p>
-                  <strong>✅ Đã xử lý:</strong> {report.action} bởi{" "}
-                  {report.resolvedByName}
+                  <strong>✅ Đã xử lý:</strong> {report.action || "N/A"} bởi{" "}
+                  {report.resolvedByName || report.reviewedBy || "N/A"}
                 </p>
-                <p>
-                  <strong>Thời gian:</strong>{" "}
-                  {new Date(report.resolvedAt).toLocaleString("vi-VN")}
-                </p>
+                {(report.resolvedAt || report.reviewedAt) && (
+                  <p>
+                    <strong>Thời gian:</strong>{" "}
+                    {new Date(
+                      report.resolvedAt || report.reviewedAt
+                    ).toLocaleString("vi-VN")}
+                  </p>
+                )}
               </div>
             )}
           </div>

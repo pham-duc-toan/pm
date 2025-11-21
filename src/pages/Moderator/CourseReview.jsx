@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import courseReviewsData from "../../data/courseReviews.json";
+import coursesData from "../../data/courses.json";
 import "./CourseReview.css";
 
 const CourseReview = () => {
@@ -21,10 +22,11 @@ const CourseReview = () => {
         ? {
             ...r,
             status: action === "approved" ? "approved" : "rejected",
+            result: action === "approved" ? "approved" : "rejected",
             reviewedBy: user.id,
             reviewedByName: user.fullName,
             reviewedAt: new Date().toISOString(),
-            rejectionReason: action === "rejected" ? actionReason : null,
+            reason: action === "rejected" ? actionReason : r.reason || "",
           }
         : r
     );
@@ -41,6 +43,11 @@ const CourseReview = () => {
     if (filter === "rejected") return r.status === "rejected";
     return true;
   });
+
+  // Hàm lấy thông tin khóa học từ courses.json
+  const getCourseInfo = (courseId) => {
+    return coursesData.courses.find((c) => c.id === courseId);
+  };
 
   return (
     <div className="course-review-page">
@@ -87,80 +94,120 @@ const CourseReview = () => {
       </div>
 
       <div className="reviews-grid">
-        {filteredReviews.map((review) => (
-          <div key={review.id} className={`review-card ${review.status}`}>
-            <div className="course-thumbnail">
-              <img src={review.thumbnail} alt={review.title} />
-              <span className={`status-badge ${review.status}`}>
-                {review.status === "pending"
-                  ? "⏳ Chờ duyệt"
-                  : review.status === "approved"
-                  ? "✅ Đã duyệt"
-                  : "❌ Từ chối"}
-              </span>
-            </div>
+        {filteredReviews.map((review) => {
+          const courseInfo = getCourseInfo(review.courseId);
+          const snapshot = review.courseSnapshot || {};
 
-            <div className="course-info">
-              <h3>{review.title}</h3>
-              <p className="instructor">👨‍🏫 {review.instructorName}</p>
-              <p className="description">{review.description}</p>
-
-              <div className="course-meta">
-                <span>📊 {review.level}</span>
-                <span>⏱️ {review.duration}</span>
-                <span>💰 {review.price.toLocaleString()}đ</span>
+          return (
+            <div key={review.id} className={`review-card ${review.status}`}>
+              <div className="course-thumbnail">
+                <img
+                  src={
+                    courseInfo?.thumbnail ||
+                    "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop"
+                  }
+                  alt={snapshot.title || "Course"}
+                />
+                <span className={`status-badge ${review.status}`}>
+                  {review.status === "pending"
+                    ? "⏳ Chờ duyệt"
+                    : review.status === "approved"
+                    ? "✅ Đã duyệt"
+                    : "❌ Từ chối"}
+                </span>
               </div>
 
-              <div className="course-details">
-                <p>
-                  <strong>Danh mục:</strong> {review.category}
+              <div className="course-info">
+                <h3>{snapshot.title || "Khóa học"}</h3>
+                <p className="instructor">
+                  👨‍🏫 {courseInfo?.instructor?.fullName || "Giảng viên"}
                 </p>
-                <p>
-                  <strong>Số bài học:</strong> {review.lessonCount}
+                <p className="description">
+                  {snapshot.description ||
+                    courseInfo?.description ||
+                    "Không có mô tả"}
                 </p>
-                <p>
-                  <strong>Ngôn ngữ:</strong> {review.language}
-                </p>
-                <p>
-                  <strong>Ngày tạo:</strong>{" "}
-                  {new Date(review.submittedAt).toLocaleDateString("vi-VN")}
-                </p>
-              </div>
 
-              {review.status === "pending" ? (
-                <div className="action-buttons">
-                  <button
-                    className="btn approve"
-                    onClick={() => handleAction(review.id, "approved")}
-                  >
-                    ✅ Phê duyệt
-                  </button>
-                  <button
-                    className="btn reject"
-                    onClick={() => setSelectedReview(review)}
-                  >
-                    ❌ Từ chối
-                  </button>
+                <div className="course-meta">
+                  <span>📊 {courseInfo?.level || "Chưa xác định"}</span>
+                  <span>
+                    ⏱️{" "}
+                    {snapshot.totalDuration
+                      ? `${Math.floor(snapshot.totalDuration / 60)} giờ ${
+                          snapshot.totalDuration % 60
+                        } phút`
+                      : courseInfo?.totalDuration || "N/A"}
+                  </span>
+                  <span>💰 {(snapshot.price || 0).toLocaleString()}đ</span>
                 </div>
-              ) : (
-                <div className="review-info">
+
+                <div className="course-details">
                   <p>
-                    <strong>Người duyệt:</strong> {review.reviewedByName}
+                    <strong>Danh mục:</strong>{" "}
+                    {courseInfo?.category || "Chưa xác định"}
                   </p>
                   <p>
-                    <strong>Thời gian:</strong>{" "}
-                    {new Date(review.reviewedAt).toLocaleString("vi-VN")}
+                    <strong>Số bài học:</strong>{" "}
+                    {snapshot.lessonsCount || courseInfo?.totalLessons || 0}
                   </p>
-                  {review.rejectionReason && (
-                    <p className="rejection-reason">
-                      <strong>Lý do từ chối:</strong> {review.rejectionReason}
+                  <p>
+                    <strong>Ngôn ngữ:</strong>{" "}
+                    {courseInfo?.language || "Tiếng Việt"}
+                  </p>
+                  <p>
+                    <strong>Ngày gửi:</strong>{" "}
+                    {new Date(review.submittedAt).toLocaleDateString("vi-VN")}
+                  </p>
+                </div>
+
+                {review.status === "pending" ? (
+                  <div className="action-buttons">
+                    <button
+                      className="btn approve"
+                      onClick={() => handleAction(review.id, "approved")}
+                    >
+                      ✅ Phê duyệt
+                    </button>
+                    <button
+                      className="btn reject"
+                      onClick={() => setSelectedReview(review)}
+                    >
+                      ❌ Từ chối
+                    </button>
+                  </div>
+                ) : (
+                  <div className="review-info">
+                    <p>
+                      <strong>Người duyệt:</strong>{" "}
+                      {review.reviewedByName || review.reviewedBy || "N/A"}
                     </p>
-                  )}
-                </div>
-              )}
+                    {review.reviewedAt && (
+                      <p>
+                        <strong>Thời gian:</strong>{" "}
+                        {new Date(review.reviewedAt).toLocaleString("vi-VN")}
+                      </p>
+                    )}
+                    {review.reason && (
+                      <p className="rejection-reason">
+                        <strong>Lý do:</strong> {review.reason}
+                      </p>
+                    )}
+                    {review.suggestions && review.suggestions.length > 0 && (
+                      <div className="suggestions">
+                        <strong>Đề xuất cải thiện:</strong>
+                        <ul>
+                          {review.suggestions.map((sug, idx) => (
+                            <li key={idx}>{sug}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {selectedReview && (
@@ -168,7 +215,10 @@ const CourseReview = () => {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>Từ chối khóa học</h2>
             <p>
-              Bạn đang từ chối khóa học: <strong>{selectedReview.title}</strong>
+              Bạn đang từ chối khóa học:{" "}
+              <strong>
+                {selectedReview.courseSnapshot?.title || "Khóa học"}
+              </strong>
             </p>
             <textarea
               value={reason}

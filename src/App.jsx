@@ -30,6 +30,7 @@ import Statistics from "./pages/Instructor/Statistics";
 import CommentModeration from "./pages/Moderator/CommentModeration";
 import CourseReview from "./pages/Moderator/CourseReview";
 import ReportsManagement from "./pages/Moderator/ReportsManagement";
+import ModeratorStatistics from "./pages/Moderator/Statistics";
 import SupportChat from "./pages/Support/SupportChat";
 import TicketManagement from "./pages/Support/TicketManagement";
 import EmailSupport from "./pages/Support/EmailSupport";
@@ -237,6 +238,16 @@ function App() {
               element={
                 isAuthenticated && user?.role === "moderator" ? (
                   <ReportsManagement />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              path="/moderator/statistics"
+              element={
+                isAuthenticated && user?.role === "moderator" ? (
+                  <ModeratorStatistics />
                 ) : (
                   <Login />
                 )
